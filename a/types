@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leap2A core specification - draft of 2011</title>
+<!-- ********* change this back to full URL ********* -->
+<link href="../wide.css" rel="stylesheet" type="text/css" media="screen" />
+<style>
+hr {border:1px #82ba52 solid; height:5px; color:#82ba52; background-color:#82ba52}
+ul {padding-left:1.5em}
+.tableGreenBorder {
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+}
+.tableGreenBorder th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+}
+.tableGreenBorder tr.leap2a td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #f0ffe5;
+}
+.tableGreenBorder td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+}
+@media print
+{
+body {font-family:sans-serif; font-size:smaller}
+h2 {page-break-before:always}
+table {border:1px solid black; border-collapse:collapse}
+th, td {padding:0.5em; border:1px solid black; border-collapse:collapse}
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+
+<div id="header">
+<table width="100%">
+<tbody>
+<tr>
+<td>
+<h1>
+<a href="../index.html"><img style="border:0" src="../images/logo_200px.png" width="200" height="65" alt="Leap2" /></a>
+</h1>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="content">
+<h1>Types</h1>
+<p>This page specifies the types of portfolio item or Atom entry.<br /> The type value is represented with an rdf:type sub-element of atom:entry.</p>
+<p>Different types are needed to guide receiving systems on what information is vital to the interpretation of the item,  and how to process that information. These types have either been used, or their use clearly foreseen as appropriate and raising no problematic issues.</p>
+<h3>Types of item</h3>
+<p>If an item has no other type, it is treated simply as an entry, much like a blog entry.</p>
+<ul>
+<li><a href="type/entry">entry</a></li>
+</ul>
+<p>All the following types can be degraded to entries, by appending to the content all information from fields not present in plain entries.</p>
+<ul>
+<li><a href="type/ability">ability</a></li>
+<li><a href="type/achievement">achievement</a></li>
+<li><a href="type/activity">activity</a></li>
+<li><a href="type/affiliation">affiliation</a></li>
+<li><a href="type/meeting">meeting</a></li>
+<li><a href="type/organization">organization</a></li>
+<li><a href="type/person">person</a></li>
+<li><a href="type/plan">plan</a></li>
+<li><a href="type/publication">publication</a></li>
+<li><a href="type/resource">resource</a></li>
+<li><a href="type/selection">selection</a></li>
+</ul>
+<p>The type of item is represented by</p>
+<pre>&lt;rdf:type rdf:resource="leap2:..." /&gt; or &lt;rdf:type rdf:resource="http://terms.leapspecs.org/..." /&gt;
+</pre>
+<h3>Characteristics of any item</h3>
+<h4>Literals:</h4>
+<ul>
+<li><a href="literals#title">title</a> (mandatory in every case, even if it has to be constructed, and must not be empty)</li>
+<li><a href="literals#Record_metadata">published, updated</a></li>
+<li><a href="literals#content_or_description">content</a> = normally the main text associated with the item. For anything like a blog entry or reflection, the content is simply what is written. For many items, however, Atom's content element is best thought of as a description of the item's subject.</li>
+<li><a href="literals#summary">summary</a> = if used, should give just a summary of the content, as is the intention in Atom. This should <em>not</em> be used for other purposes.</li>
+</ul>
+<h4>Literal or relationship</h4>
+<ul>
+<li><a href="literals#author">author</a> (seen as structured literal)</li>
+<li><a href="relationships#Author">author</a> (seen as relationship)        
+<ul>
+<li>(author is mandatory if the containing feed has no author, though it normally has one)</li>
+</ul>
+</li>
+<li><a href="literals#contributor">contributor</a> (seen as structured literal)</li>
+<li><a href="relationships#contributor">contributor</a> (seen as relationship)</li>
+</ul>
+<h4>Relationships:</h4>
+<ul>
+<li><a href="relationships#relation">relation</a> → any other related item not related more specifically; any URI</li>
+<li><a href="relationships#is_part_of">is part of</a> → <a href="type/selection">selection</a></li>
+<li><a href="relationships#license">license</a> → URI returning a representation of the license for this entry</li>
+<li><a href="relationships#alternate">alternate</a> → translations of the same type of entry, using the same kinds of representation</li>
+<li><a href="relationships#enclosure">enclosure</a> → file incidentally attached to the item, not through a <a href="type/resource">resource</a> (see <a href="files">files</a>)</li>
+<li><a href="relationships#relation">relation</a> → <a href="type/resource">resource</a> mentioned in the item content, with no more specific relation</li>
+</ul>
+<h4>Categories:</h4>
+<h4>Notes:</h4>
+<p>These Literals, relationships and categories can apply to any type, in addition to the ones specified for each particular type.</p>
+<h3>Use of CURIEs</h3>
+<p>To <a href="concepts#CURIEs">use CURIEs</a> with Leap2A types, declare</p>
+<pre> xmlns:leap2="http://terms.leapspecs.org/" 
+ </pre>
+<p>in the opening element of the XML. Examples are given in place.</p>
+<h2>See also:</h2>
+<ul>
+	<li><a href="core-specification#types">the relevant section of the core specification</a></li>
+	<li><a href="http://wiki.leapspecs.org/2A/types">The wiki page for later developments</a></li>
+</ul>
+
+<hr />
+
+</div>
+</div>
+
+</body>
+
+</html>

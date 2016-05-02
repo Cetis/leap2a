@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>meeting type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>meeting type</h1>
+</div>
+
+<div id="content">
+<h1>Meeting</h1>
+<p><em>One of the <a href="../types" title="2A/types">Leap2A item types</a></em></p>
+<pre>&lt;rdf:type rdf:resource="leap2:meeting" /&gt; or
+&lt;rdf:type rdf:resource="<a href="http://www.cetis.org.uk/leap2/terms/meeting" rel="nofollow">http://www.cetis.org.uk/leap2/terms/meeting</a>" /&gt;   </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>Refers to a meeting, relevant to the portfolio holder, involving two or more people, held in a particular location between specific times, which may have agenda and outcomes of interest to the portfolio holder</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td></td>
+</tr>
+<tr>
+<td>Literals used:</td>
+<td>
+<ul>
+<li><a href="../literals#date" title="2A/literals">date</a> <a href="../literals#point" title="2A/literals">point</a>="<a href="../literals#start" title="2A/literals">start</a>" = scheduled or actual start time of meeting</li>
+<li><a href="../literals#date" title="2A/literals">date</a> <a href="../literals#point" title="2A/literals">point</a>="<a href="../literals#end" title="2A/literals">end</a>" = scheduled or actual end time of meeting</li>
+<li><a href="../literals#spatial" title="2A/literals">spatial</a> = place or location or address of meeting</li>
+<li><a href="../literals#status" title="2A/literals">status</a> = planned, progressing or completed</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Relationships used:</td>
+<td>
+<ul>
+<li><a href="../relationships#has_agenda" title="2A/relationships">has agenda</a> → any appropriate</li>
+<li><a href="../relationships#has_outcome" title="2A/relationships">has outcome</a> → any appropriate</li>
+<li><a href="../relationships#attended_by" title="2A/relationships">attended by</a> → person or <a href="../type/entry" title="2A/entry">entry</a> listing people</li>
+<li><a href="../relationships#supported_by" title="2A/relationships">supported by</a> → <a href="../type/plan" title="2A/plan">plan</a> or resource</li>
+<li><a href="../relationships#reflected_on_by" title="2A/relationships">reflected on by</a> → <a href="../entry" title="2A/entry">entry</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td>
+<ul>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/life_area" title="2A/categories/life area">life area</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Can degrade to:<br /> / inherits from:</td>
+<td><a href="../type/activity" title="2A/activity">activity</a></td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>This is a very important class of items in the PDP world, with its own special elements.
+<p>Meetings can either be records or be calendar or diary items. Systems claiming to be able to import meetings must make sensible use of time and place information provided.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /> See also <a href="http://wiki.cetis.ac.uk/LEAP_meeting" rel="nofollow">earlier ideas on meeting</a></p>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>affiliation type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>affiliation type</h1>
+</div>
+
+<div id="content">
+<h1>Affiliation</h1>
+<p><em>One of the <a href="../types" title="2A/types">Leap2A item types</a></em></p>
+<pre>&lt;rdf:type rdf:resource="leap2:affiliation" /&gt;
+or &lt;rdf:type rdf:resource="<a href="http://www.cetis.org.uk/leap2/terms/affiliation" rel="nofollow">http://www.cetis.org.uk/leap2/terms/affiliation</a>" /&gt;   </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>An affiliation describes the association with some specific organization, where the holder holds any role within that organization or any enduring relationship with it. The concept as in Leap2A includes relationships like membership, that are normally considered to be affiliations, but can extend beyond that to any state-like relationship that is not being exercised as an ongoing activity.</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td>
+<pre>&lt;entry&gt;<br />&lt;id&gt;portfolio:43129&lt;/id&gt;<br />&lt;title&gt;Royal Yachting Association&lt;/title&gt;<br />&lt;published&gt;2008-09-24T09:36:21+01:00&lt;/published&gt;
+&lt;updated&gt;2008-09-24T09:36:31+01:00&lt;/updated&gt;<br />&lt;link rel="leap2:supported_by" href="portfolio:43129/org" /&gt;<br />&lt;content type="text"&gt;I became a sailing coach <br />following an intensive  training course at the Welsh National Watersport Centre - Plas Menai. <br />After 5 years I became the Regional Coach for the West  Midlands&lt;/content&gt;<br />&lt;rdf:type rdf:resource="leap2:affiliation" /&gt; 
+&lt;leap2:roleid&gt;323456&lt;/leap2:roleid&gt;<br />&lt;leap2:myrole&gt;Sailing Coach&lt;/leap2:myrole&gt;
+&lt;leap2:date leap2:point="start"&gt;1990-07-09&lt;/leap2:date&gt;<br />&lt;/entry&gt;<br />&lt;entry&gt;<br />&lt;id&gt;portfolio:43129/org&lt;/id&gt;<br />&lt;title&gt;Royal Yachting Association&lt;/title&gt;<br />&lt;updated&gt;2008-09-24T09:36:31+01:00&lt;/updated&gt;<br />&lt;link rel="leap2:supports" href="portfolio:43129" /&gt;<br />&lt;content type="text"&gt;The RYA is the national body for all forms of boating, including dinghy<br /> and yacht racing, <br />motor and sail cruising,   RIBs and sports boats, powerboat racing, windsurfing,   <br />inland cruising and narrowboats, and personal<br /> watercraft.&lt;/content&gt;<br />&lt;rdf:type rdf:resource="leap2:organization" /&gt;<br />&lt;leap2:orgdata leap2:field="preferred_org_name"&gt;RYA&lt;/leap2:orgdata&gt;<br />&lt;/entry&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>Literals used:</td>
+<td>
+<ul>
+<li><a href="../literals#content_or_description" title="2A/literals">content</a> = description related to the affiliation <em>(not a description of the organization)</em></li>
+<li><a href="../literals#date" title="2A/literals">date</a> <a href="../literals#point" title="2A/literals">point</a>="<a href="../literals#start" title="2A/literals">start</a>" = date affiliation started or is planned to start</li>
+<li><a href="../literals#date" title="2A/literals">date</a> <a href="../literals#point" title="2A/literals">point</a>="<a href="../literals#end" title="2A/literals">end</a>" = date affiliation ended or is planned to end</li>
+<li><a href="../literals#roleid" title="2A/literals">roleid</a> = holder's id in this role with the organization affiliated with</li>
+<li><a href="../literals#myrole" title="2A/literals">myrole</a> = role with the organization affiliated with</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Relationships used:</td>
+<td>
+<ul>
+<li><a href="../relationships#has_evidence" title="2A/relationships">has evidence</a> → evidential items</li>
+<li><a href="../relationships#reflected_on_by" title="2A/relationships">reflected on by</a> → <a href="../type/entry" title="2A/entry">entry</a></li>
+<li><a href="../relationships#has_part" title="2A/relationships">has part</a> → <strong>affiliation</strong></li>
+<li><a href="../relationships#is_part_of" title="2A/relationships">is part of</a> → <strong>affiliation</strong></li>
+<li><a href="../relationships#supported_by" title="2A/relationships">supported by</a> → <a href="../type/organization" title="2A/organization">organization</a> affilated to</li>
+<li><a href="../relationships#relation" title="2A/relationships">relation</a> → any other organization that is otherwise related to the activity</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td>
+<ul>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/life_area" title="2A/categories/life area">life area</a></li>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/common_item#Intermission" title="2A/categories/common item">common item: Intermission</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Can degrade to:<br /> / inherits from:</td>
+<td><a href="../type/activity" title="2A/activity">activity</a></td>
+</tr>
+<tr>
+<td>Sub-types:</td>
+<td></td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>
+<p>(Example based on one supplied by PebblePad.) New elements record the id for the portfolio holder's affiliation. Each affiliation must be supported by exactly one Leap<a href="http://wiki.cetis.org.uk/leap2/a/organization" title="2A/organization">2A/organization</a>. If the role changes within an affiliation, a number of shorter affiliation items, each with a different given role, may occur as parts of a longer overall affiliation item where the role is not given. In this case, the shorter affiliation items may be regarded as inheriting the organization details from the longer overall one. People are associated with organizations over considerable periods of time, and within that time they may have various roles, each of which may last for a particular time. For instance, one may start as a student member, and progress to being an associate member, fellow, etc.</p>
+<p>The history of this concept in e-portfolio use goes back at least to IMS LIP, which has an "affiliation" element that in its own way provides for this (<a href="http://www.imsglobal.org/profiles/lipinfo01.html#6.3.9" rel="nofollow">information model</a>; <a href="http://www.imsglobal.org/profiles/lipbind01.html#3.10" rel="nofollow">binding</a>; <a href="http://www.imsglobal.org/profiles/lipbest01.html#3.2.10" rel="nofollow">best practice guide</a>).</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</body>
+</html>

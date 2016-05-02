@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>publication type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>publication type</h1>
+</div>
+
+<div id="content">
+<h1>Publication</h1>
+<p><em>One of the <a href="../types" title="2A/types">Leap2A item types</a></em></p>
+<pre>&lt;rdf:type rdf:resource="leap2:publication" /&gt; or
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/publication" /&gt;  </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>A wrapper for a publication relevant to the portfolio holder. The publication can either be one that the holder has authored or contributed to, or one that is just of interest or value to the holder.</td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td>
+<ul>
+<li>book</li>
+<li>journal article</li>
+<li>web publication</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Literals:</td>
+<td>
+<ul>
+<li><a href="../literals#title" title="2A/literals">title</a> = official title, as published</li>
+<li><a href="../literals#content_or_description" title="2A/literals">content</a> = citation details in a format appropriate for the type of publication (may have embedded web links)</li>
+<li><a href="../literals#summary" title="2A/literals">summary</a> = the official abstract, if published, or similar summary</li>
+<li><a href="../literals#myrole" title="2A/literals">myrole</a> = the holder's role in the creation of the publication</li>
+<li><a href="http://dublincore.org/documents/dcmi-terms/#terms-issued" rel="nofollow">dcterms:issued</a> = official publication date (see <a href="../literals#official_publication_date" title="2A/literals">date</a>)</li>
+<li><a href="http://dublincore.org/documents/dcmi-terms/#terms-creator" rel="nofollow">dcterms:creator</a> = an author of the (attached or linked) publication</li>
+<li><a href="http://dublincore.org/documents/dcmi-terms/#terms-contributor" rel="nofollow">dcterms:contributor</a> = a contributor to the (attached or linked) publication</li>
+<li><a href="../literals#spatial" title="2A/literals">spatial</a> = the spatial extent of relevance of the publication</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Relationships:</td>
+<td>
+<ul>
+<li><a href="../relationships#enclosure" title="2A/relationships">enclosure</a> → the actual publication as an attached file</li>
+<li><a href="../relationships#self" title="2A/relationships">self</a> → the URL of the actual publication available on the Web.</li>
+<li>(From Leap<a href="../resource" title="2A/resource">2A/resource</a>) <a href="../relationships#is_evidence_of" title="2A/relationships">is evidence of</a>; <a href="../relationships#reflected_on_by" title="2A/relationships">reflected on by</a>; <a href="../relationships#is_outcome_of" title="2A/relationships">is outcome of</a>; <a href="../relationships#supports" title="2A/relationships">supports</a>; <a href="../relationships#alternate" title="2A/relationships">alternate</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td>
+<ul>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/resource_type" title="2A/categories/resource type">resource type</a>: Offline; Printed; Web</li>
+<li>(possibly) <a href="http://wiki.cetis.org.uk/leap2/a/possible_categories#publication_type" title="2A/possible categories">publication type</a>? (Not yet specified.)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Can degrade to:<br /> / inherits from:</td>
+<td><a href="../resource" title="2A/resource">resource</a></td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>
+<p>If a publication is openly accessible, it may be referred to by URL rather than included. In this case, do not use an enclosure link, but instead use link rel="self". It would also be normal to link to the publication with an ordinary &lt;a&gt; element within the content citation, if given as xhtml.</p>
+<p>It is not the role of Leap2A to define extensive metadata for publications, as this is done extensively elsewhere. In principle, metadata can be included in other native XML formats. Some candidates for this include</p>
+<ul>
+<li><a href="http://dublincore.org/documents/dc-xml-guidelines/" rel="nofollow">Guidelines for implementing Dublin Core in XML</a></li>
+<li><a href="http://dtd.nlm.nih.gov/articleauthoring/3.0/" rel="nofollow">Article Authoring Tag Set</a> from U.S. National Library of Medicine and National Center for Biotechnology Information</li>
+</ul>
+<p>Metadata elements would be placed under the entry element, at the same level as (but not inside) the content.</p>
+<p>If any Dublin Core elements are present, the namespace must be declared in the feed element,</p>
+e.g. as
+<pre>xmlns:dcterms="http://purl.org/dc/terms/"</pre>
+Then you can use
+<pre>&lt;dcterms:issued&gt;2010-04-12&lt;/dcterms:issued&gt;</pre>
+<p>at the same level as title and content. This namespace abbreviation "dcterms" is very common and recommended. Similarly, any other element used from outside Atom and Leap2A will need its own namespace.</p>
+<p>The dcterms:creator and determs:contributor elements are strictly optional. If any dcterms:creator elements are given, they must correspond to the authors appearing in the content element.</p>
+<p>The atom:author of the Leap2A publication item still refers to the author of the item, i.e. the person who has placed the publication record in the portfolio or other system. If, as normal, the author is defined at the feed level, no author element is expected within the publication entry.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</body>
+</html>

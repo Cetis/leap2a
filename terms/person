@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>leap2:person</title>
+<meta http-equiv="REFRESH" content="5;url=../a/specification#person" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>leap2:person</h1>
+</div>
+
+<div id="content">
+<p>The correct URI for this Leap2 term is</p>
+<h2>http://www.cetis.org.uk/leap2/terms/person</h2>
+<p>Now redirecting to information about it.</p>
+</div>
+</div>
+</body>
+</html>

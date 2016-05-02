@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC
+  "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Leap2A licence based on the OWFa 1.0</title>
+    <link href="../default.css" rel="stylesheet" type="text/css" media="screen" />
+  </head>
+  <body>
+<div id="container">
+<div id="header">
+    <a href="../a/index"><img style="border:0" src="../images/logo_200px.png" width="200" height="65" alt="Leap2A" /></a>
+</div>
+
+<div id="content">
+<div style="font-style:italic; font-size:small">
+<p>This licence agreement was intended be signed by the relevant people and bodies who 
+regard themselves either as holding intellectual property rights in, 
+or as having contributed substantial intellectual property to, 
+the 2010-07 version of Leap2A.
+This version of the Leap2A licence is currently held here.
+</p>
+<p>The following reproduces the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0/">OWFa 1.0</a>
+with the name and version of Leap2A filled in.</p>
+</div>
+
+<hr />
+
+<h1>Open Web Foundation<br />
+Final Specification Agreement
+(OWFa 1.0)</h1>
+<h2>(Patent and Copyright Grants)</h2>
+
+<h3>1. The Purpose of this Agreement.</h3>
+</p>This Agreement sets forth the
+terms under which I make certain copyright and patent rights available
+to you for your Implementation of the Specification.  Capitalized
+terms are defined in the Agreement's last section.  </p>
+
+<h3>2. Copyrights.</h3>
+<dl>
+<dt>2.1. <em>Copyright Grant.</em></dt>
+<dd>I grant to you a perpetual (for the duration of the applicable copyright), worldwide, non-exclusive, no-charge, royalty-free, copyright license, without any obligation for accounting to me, to reproduce, prepare derivative works of, publicly display, publicly perform, sublicense, distribute, and implement the Specification to the full extent of my copyright interest in the Specification.
+</dd>
+<dt>2.2 <em>Attribution.</em> </dt>
+<dd>As a condition of the copyright grant, you must include an attribution to the Specification in any derivative work you make based on the Specification. That attribution must include, at minimum, the Specification name and version number.  
+</dd>
+</dl>
+
+<h3>3. Patents.</h3>
+
+<dl>
+<dt>3.1. <em>Patent Non-Assert.</em> 
+</dt>
+<dd>
+  <dl>
+  <dt>3.1.1. <em>The Promise.</em></dt>
+  <dd>I, on behalf of myself and my successors in interest and assigns, irrevocably promise not to assert my Granted Claims against you for your Permitted Uses, subject to the terms and conditions of Section 3.1. This is a personal promise directly from me to you, and you acknowledge as a condition of benefiting from it that no rights from me are received from suppliers, distributors, or otherwise in connection with this promise. This promise also applies to your Permitted Uses of any other specifications incorporating all required portions of the Specification.
+  </dd>
+
+  <dt>3.1.2. <em>Termination.</em></dt>
+  <dd>
+    <dl>
+    <dt>3.1.2.1. <em>As a Result of Claims by You.</em></dt>
+    <dd>All rights, grants, and promises made by me to you under this Agreement are terminated if you file, maintain, or voluntarily participate in a lawsuit against me or any person or entity asserting that its Permitted Uses infringe any Granted Claims you would have had the right to enforce had you signed this Agreement, unless that suit was in response to a corresponding suit first brought against you.
+    </dd>
+    <dt>3.1.2.2. <em>As Result of Claims by a Related Entity of Mine.</em></dt>
+    <dd>If a Related Entity of mine files, maintains, or voluntarily participates in a lawsuit asserting that a Permitted Use infringes any Granted Claims it would have had the right to enforce had it signed this Agreement, then I relinquish any rights, grants, and promises I have received for the Specification from other signatories of this Agreement, unless a) my promise to you was terminated pursuant to section 3.1.2.1, or b) that suit was in response to a corresponding suit first brought by you against the Related Entity. 
+    </dd>
+    </dl>
+  </dd>
+
+  <dt>3.1.3. <em>Additional Conditions.</em></dt>
+  <dd>This promise is not an assurance (i) that any of my copyrights or issued patent claims cover an implementation of the Specification or are enforceable or (ii) that an implementation of the Specification would not infringe intellectual property rights of any third party. Notwithstanding the personal nature of my promise, this promise is intended to be binding on any future owner, assignee or exclusive licensee to whom has been given the right to enforce any Granted Claims against third parties.</em>
+  </dd>
+  <dt>3.1.4 <em>Bankruptcy.</em></dt>
+  <dd>Solely for purposes of Section 365(n) of Title 11, United States Bankruptcy Code and any equivalent law in any foreign jurisdiction, this promise will be treated as if it were a license and you may elect to retain your rights under this promise if I (or any owner of any patents or patent applications referenced herein), as a debtor in possession, or a bankruptcy trustee, reject this non-assert.</em>
+  </dd>
+  </dl>
+
+  <dt><p>3.2. <em>Patent License Commitment.</em></dt>
+<dd>In addition to rights granted in 3.1, on behalf of me and my successors in interest and assigns, I agree to grant to you a no charge, royalty free license to my Granted Claims on reasonable and non-discriminatory terms, where such license applies only to those Granted Claims infringed by the implementation of the Specification, solely for your Permitted Uses.
+</dd>
+</dl>
+
+<h3>4. No Other Rights.</h3>
+<p>
+Except as specifically set forth in this Agreement, no other express or implied patent, trademark, copyright, or other property rights are granted under this Agreement, including by implication, waiver, or estoppel. </p>
+
+
+<h3>5. Antitrust Compliance.</h3>
+<p>
+I acknowledge that I may compete with other participants, that I am under no obligation to implement the Specification, that each participant is free to develop competing technologies and standards, and that each party is free to license its patent rights to third parties, including for the purpose of enabling competing technologies and standards.</p>
+
+
+<h3>6. Non-Circumvention.</h3>
+<p>
+I agree that I will not intentionally take or willfully assist any third party to take any action for the purpose of circumventing my obligations under this Agreement. </p>
+
+
+<h3>7. Representations, Warranties and Disclaimers.</h3>
+<p>
+I represent and warrant that I am legally entitled to grant the rights and promises set forth in this Agreement. IN ALL OTHER RESPECTS THE SPECIFICATION IS PROVIDED &quot;AS IS.&quot; The entire risk as to implementing or otherwise using the Specification is assumed by the implementer and user. Except as stated herein, I expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the Specification. IN NO EVENT WILL ANY PARTY BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. All of my obligations under Section 3 regarding the transfer, successors in interest, or assignment of Granted Claims will be satisfied if I notify the transferee or assignee of any patent that I know contains Granted Claims of the obligations under Section 3. Nothing in this Agreement requires me to undertake a patent search. </p>
+
+
+<h3>8. Definitions.</h3>
+
+<dl>
+<dt>8.1. <em>Agreement</em>.</dt>
+<dd>“Agreement” means this OWFa document, which sets forth the rights, grants, promises, limitations, conditions, obligations, and disclaimers made available for the particular Specification.</dd>
+
+<dt>8.2. <em>Bound Entities</em>.</dt>
+<dd>“Bound Entities” means the entity listed below and any entities that the Bound Entity Controls.</dd>
+
+<dt>8.3. <em>Control</em>.</dt>
+<dd>“Control” means direct or indirect control of more than 50% of the voting power to elect directors of that corporation, or for any other entity, the power to direct management of such entity.</dd>
+
+<dt>8.4. <em>Granted Claims</em>.</dt>
+<dd>"Granted Claims" are those patent claims that I own or control, including those patent claims I acquire or control after the Date below, that are infringed by Permitted Uses. Granted Claims include only those patent claims that are infringed by the implementation of any portions of the Specification where the Specification describes the functionality causing the infringement in detail and does not merely reference the functionality causing the infringement.</dd>
+
+<dt>8.5. <em>I, Me, or My</em>.</dt>
+<dd>“I,” “me,” or “my” refers to the signatory below and its Bound Entities, if applicable.</dd>
+
+<dt>8.6. <em>Permitted Uses</em>.</dt>
+<dd>“Permitted Uses” means making, using, selling, offering for sale, importing or distributing any implementation of the Specification 1) only to the extent it implements the Specification and 2) so long as all required portions of the Specification are implemented. Permitted Uses do not extend to any portion of an implementation that is not included in the Specification.</dd>
+
+<dt>8.7. <em>Related Entities</em>.</dt>
+<dd>“Related Entities” means 1) any entity that Controls the Bound Entity (“Upstream Entity”), and 2) any other entity that is Controlled by an Upstream Entity that is not itself a Bound Entity.</dd>
+
+<dt>8.8. <em>Specification</em>.</dt>
+<dd>“Specification” means the Specification identified below.</dd>
+
+<dt>8.9. <em>You or Your</em>.</dt>
+<dd>“You,” “you,” or “your” means any person or entity who exercises copyright or patent rights granted under this Agreement, and any person or entity you Control.</dd>
+  
+</ul>
+
+<h3 style="border:2px solid black; padding:1em"><em>Specification and version:</em> Leap2A version of 2010-07</h3>
+
+<table style="border-collapse:collapse; font-size:small">
+<tbody>
+<tr>
+<td colspan="2">
+<p><b>If signing this OWFa as an individual:</b> </p>
+<p><i>I acknowledge that, depending upon local law or contractual agreements, when I am employed by or acting on behalf of another entity, the promises I make relating to this Specification may actually be obligations of that other entity. In such a situation, I represent that I have been authorized by that entity to make these promises. I also understand that certain Specification projects may require additional private identifying information or certifications from me before they accept this Agreement.</i></p>
+</td>
+</tr>
+
+<tr><td width="20%" align="right">Signed name</td><td style="border:1px solid black; padding:1en">&nbsp;</td></tr>
+<tr><td width="20%" align="right">Print name</td><td style="border:1px solid black; padding:1en">&nbsp;</td></tr>
+<tr><td width="20%" align="right">Email address</td><td style="border:1px solid black; padding:1en">&nbsp;</td></tr>
+<tr><td width="20%" align="right">Date</td><td style="border:1px solid black; padding:1en">&nbsp;</td></tr>
+<tr>
+<td colspan="2">
+<p><b>If signing this OWFa as a Bound Entity: </b></p>
+<p><i>I certify that I am authorized to execute this Agreement on behalf of the Bound Entity named below, and that all promises made herein relating to this Specification are commitments of the Bound Entity.</i></p>
+</td>
+</tr>
+
+<tr><td width="20%" align="right">Signed name</td><td style="border:1px solid black; padding:1en">&nbsp;</td></tr>
+<tr><td width="20%" align="right">Print name</td><td style="border:1px solid black; padding:1en">&nbsp;</td></tr>
+<tr><td width="20%" align="right">Email address</td><td style="border:1px solid black; padding:1en">&nbsp;</td></tr>
+<tr><td width="20%" align="right">Date</td><td style="border:1px solid black; padding:1en">&nbsp;</td></tr>
+<tr><td width="20%" align="right">Title</td><td style="border:1px solid black; padding:1en">&nbsp;</td></tr>
+<tr><td width="20%" align="right">Bound Entity</td><td style="border:1px solid black; padding:1en">&nbsp;</td></tr>
+<tr><td width="20%" align="right">Address</td><td style="border:1px solid black; padding:1en">&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;</td></tr>
+</tbody></table>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>resource type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>resource type</h1>
+</div>
+
+<div id="content">
+<h1>Resource</h1>
+<p><em>One of the <a href="../types">Leap2A item types</a></em></p>
+<pre>&lt;rdf:type rdf:resource="leap2:resource" /&gt; or
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/resource" /&gt;  </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>A wrapper for a digital resource, or just a description of an unlinked resource (perhaps a physical resource), relevant to the portfolio holder, other than something that is better represented as a publication, person, organization or selection.</td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td>See the <a href="http://wiki.cetis.org.uk/leap2/a/categories/resource_type">resource types</a></td>
+</tr>
+<tr>
+<td>Literals:</td>
+<td>
+<ul>
+<li><a href="../literals#content_or_description">content</a> =               <ol>
+<li>description of the resource(s)</li>
+<li>list of resources</li>
+</ol> 
+<ul>
+<li>do not use <a href="http://tools.ietf.org/html/rfc4287#page-15" rel="nofollow">atomInlineOtherContent or atomOutOfLineContent</a> constructs</li>
+</ul>
+</li>
+<li><a href="../literals#spatial">spatial</a> = the spatial location of the resource, for material resources; otherwise, the spatial extent of applicability or relevance of the resource</li>
+<li><a href="http://dublincore.org/documents/dcmi-terms/#terms-creator" rel="nofollow">dcterms:creator</a> = a creator or author of the linked resource</li>
+<li><a href="http://dublincore.org/documents/dcmi-terms/#terms-contributor" rel="nofollow">dcterms:contributor</a> = a contributor to the linked resource</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Relationships:</td>
+<td>
+<ul>
+<li><a href="../relationships#enclosure">enclosure</a> → an included file that is the resource</li>
+<li><a href="../relationships#self">self</a> → the URL of the resource that is on the available on the Web.</li>
+<li><a href="../relationships#is_evidence_of">is evidence of</a> → items that can have evidence</li>
+<li><a href="../relationships#reflected_on_by">reflected on by</a> → <a href="../type/entry">entry</a></li>
+<li><a href="../relationships#is_outcome_of">is outcome of</a> → <a href="../type/activity">activity</a></li>
+<li><a href="../relationships#supports">supports</a> → <a href="../type/activity">activity</a> or other <a href="../type/entry">entry</a></li>
+<li><a href="../relationships#relation">relation</a> → <a href="../type/entry">entry</a> referring to the resource, but with no more specific relationship</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td>
+<ul>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/resource_type">resource type</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Can degrade to:<br /> / inherits from:</td>
+<td><a href="../entry">entry</a></td>
+</tr>
+<tr>
+<td>Sub-types:</td>
+<td><a href="../publication">publication</a></td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>
+<p>The author of a resource entry is generally the portfolio owner, and may not be the creator of the resource. This is because the resource item may contain a description as content, and the author of the item / entry needs to be the author of this description. Normally, learners author the fact that this resource is relevant to them, and possibly the way in which it is.</p>
+<p>If a digital resource is referred to by URL rather than included, do not use an enclosure link, but instead a link rel="self". It would also be normal to link to the resource with an ordinary &lt;a&gt; element within xhtml content.</p>
+<p>Some resources can be attached as files. In these cases, there is more than one way in Atom of referring to a file, but for Leap2A we want to be as consistent as possible. As described in Leap<a href="../files">2A/files</a>, there should be a link to the file with rel="enclosure". For example, for a single audio reference, e.g. podcast entry, one can use:</p>
+<pre>&lt;rdf:type rdf:resource="leap2:resource" /&gt;<br />&lt;category scheme="categories:resource_type#" term="Offline" /&gt;<br />  &lt;!-- or category scheme="http://wiki.cetis.org.uk/leap2/a/categories/resource_type#" term="Offline" / --&gt;<br />&lt;link rel="enclosure" type="audio/mpeg" length="..." href="..." /&gt;<br />&lt;content&gt;(A description of the podcast...)&lt;/content&gt;  </pre>
+<p>Any description should go in the entry content.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See also:</p>
+<ul>
+<li>Leap<a href="../files">2A/files</a>;</li>
+<li>the <a href="http://wiki.cetis.ac.uk/2009-03/Leap2A_types#resource" rel="nofollow">2009-03 version</a>;</li>
+<li>earlier <a href="http://wiki.cetis.ac.uk/LEAP_resource" rel="nofollow">ideas on resource</a>.</li>
+</ul>
+
+</div>
+</div>
+</body>
+</html>

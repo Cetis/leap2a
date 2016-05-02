@@ -1,0 +1,2590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC
+  "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Leap2A core specification - draft of 2011</title>
+<!-- ********* change this back to full URL ********* -->
+<link href="../wide.css" rel="stylesheet" type="text/css" media="screen" />
+<style>
+hr {border:1px #82ba52 solid; height:5px; color:#82ba52; background-color:#82ba52}
+ul {padding-left:1.5em}
+.tableGreenBorder {
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+}
+.tableGreenBorder th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+}
+.tableGreenBorder tr.leap2a td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #f0ffe5;
+}
+.tableGreenBorder td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+}
+@media print
+{
+body {font-family:sans-serif; font-size:smaller}
+h2 {page-break-before:always}
+table {border:1px solid black; border-collapse:collapse}
+th, td {padding:0.5em; border:1px solid black; border-collapse:collapse}
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+
+<div id="header">
+<table width="100%">
+<tbody>
+<tr>
+<td>
+<h1>
+<a href="../index.html"><img style="border:0" src="../images/logo_200px.png" width="200" height="65" alt="Leap2" /></a>
+</h1>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="content">
+
+<h1>The Leap2A specification for e-portfolio portability and interoperability</h1>
+
+<h2>Preface</h2>
+<p>Leap2A is an interoperability specification for the portability of e-portfolio information.
+It is based on Atom, and licenced with OWFa 1.0.
+</p>
+<p>For the convenience of the reader and user, the specification is offered in two equivalent formats:</p>
+<ul>
+<li>as <a href="specification.html">a single free-standing HTML page, this page</a>;</li>
+<li>and as <a href="Leap2A_core-specification.pdf">a PDF document</a>.</li>
+</ul>
+
+<h2 style="page-break-before:always" id="contents">Contents</h2>
+
+<hr />
+
+<ul>
+<li style="font-weight:bold"><a href="#introduction">Introduction</a></li>
+<li style="font-weight:bold"><a href="#terminology">Terminology and abbreviations</a></li>
+</ul>
+
+<table class="tableGreenBorder">
+<tr>
+  <th rowspan="2">&nbsp;
+  </th>
+  <th rowspan="2">
+    <a href="#classes">Classes</a><br />including <br /><a href="#types">Item types</a>
+  </th>
+  <th colspan="3g">
+    <a href="#properties">Properties</a>
+  </th>
+ 
+</tr>
+
+<tr>
+  <th>
+    Relationships<br /> from items<br />
+    to <a href="#relationships">other items</a> and<br />
+    to <a href="#attachment">other things</a>
+  </th>
+  <th>
+    Literal<br />properties<br />
+    from <a href="#Atom:properties">Atom</a>,<br />
+    <a href="#leap2:properties">Leap2</a>, etc.
+  </th>
+  <th>
+    <a href="#mixedprops">Mixed<br />properties</a><br />
+    and<br />
+    <a href="#attributes">Attributes</a>
+  </th>
+</tr>
+
+<tr valign="top">
+  <th>taken<br />from<br />Atom
+  </th>
+  <td>
+    <ul>
+    <li><a href="#entry">entry</a></li>
+    <li><a href="#feed">feed</a></li>
+    <li><a href="#person-construct">person construct</a></li>
+    </ul>
+  </td>
+
+  <td>
+    <ul>
+    <li><a href="#alternate">alternate</a></li>
+    <li><a href="#enclosure">enclosure</a></li>
+    <li><a href="#in_reply_to">in-reply-to</a></li>
+    <li><a href="#license">license</a></li>
+    <li><a href="#has_reply">replies</a></li>
+    <li><a href="#relation">related</a></li>
+    <li><a href="#self">self</a></li>
+    </ul>
+  </td>
+
+  <td>
+    <ul>
+    <li><a href="#content1">content</a></li>
+    <li><a href="#idterm">id</a></li>
+    <li><a href="#name">name</a></li>
+    <li><a href="#published">published</a></li>
+    <li><a href="#rights">rights</a></li>
+    <li><a href="#summary">summary</a></li>
+    <li><a href="#title">title</a></li>
+    <li><a href="#updated">updated</a></li>
+    </ul>
+  </td>
+
+  <td>
+    <ul>
+    <li><a href="#author">author</a></li>
+    <li><a href="#contributorAtom">contributor</a></li>
+    <li><a href="#category">category</a></li>
+    <li><a href="#atomlabel">label</a></li>
+    <li><a href="#scheme">scheme</a></li>
+    <li><a href="#term">term</a></li>
+    </ul>
+  </td>
+
+</tr>
+
+<tr valign="top">
+  <th>taken<br />from<br />elsewhere
+  </th>
+
+  <td>
+    <ul>
+    </ul>
+  </td>
+
+  <td>
+    <ul>
+    </ul>
+  </td>
+
+  <td>
+    <ul>
+    <li><a href="#issued">issued</a></li>
+    </ul>
+  </td>
+
+  <td>
+    <ul>
+    <li><a href="#contributorDC">contributor</a></li>
+    <li><a href="#creator">creator</a></li>
+    <li><a href="#type">type</a></li>
+    </ul>
+  </td>
+
+</tr>
+
+<tr valign="top">
+  <th>native<br />to<br />Leap2
+  </th>
+  <td>
+    <ul>
+    <li><a href="#ability">ability</a></li>
+    <li><a href="#achievement">achievement</a></li>
+    <li><a href="#activity">activity</a></li>
+    <li><a href="#affiliation">affiliation</a></li>
+    <li><a href="#meeting">meeting</a></li>
+    <li><a href="#organization">organization</a></li>
+    <li><a href="#person">person</a></li>
+    <li><a href="#plan">plan</a></li>
+    <li><a href="#publication">publication</a></li>
+    <li><a href="#resource">resource</a></li>
+    <li><a href="#selection">selection</a></li>
+    </ul>
+  </td>
+
+  <td>
+    <ul>
+    <li><a href="#attended_by">attended by</a></li>
+    <li><a href="#attends">attends</a></li>
+    <li><a href="#has_agenda">has_agenda</a></li>
+    <li><a href="#has_evidence">has_evidence</a></li>
+    <li><a href="#has_outcome">has_outcome</a></li>
+    <li><a href="#has_part">has_part</a></li>
+    <li><a href="#has_reply">has_reply</a></li>
+    <li><a href="#in_reply_to">in_reply_to</a></li>
+    <li><a href="#is_agenda_of">is_agenda_of</a></li>
+    <li><a href="#is_evidence_of">is_evidence_of</a></li>
+    <li><a href="#is_outcome_of">is_outcome_of</a></li>
+    <li><a href="#is_part_of">is_part_of</a></li>
+    <li><a href="#reflected_on_by">reflected_on_by</a></li>
+    <li><a href="#reflects_on">reflects_on</a></li>
+    <li><a href="#relation">relation</a></li>
+    <li><a href="#supported_by">supported_by</a></li>
+    <li><a href="#supports">supports</a></li>
+    </ul>
+  </td>
+
+  <td>
+    <ul>
+    <li><a href="#activetime">activetime</a></li>
+    <li><a href="#addressline">addressline</a></li>
+    <li><a href="#country">country</a></li>
+    <li><a href="#date">date</a></li>
+    <li><a href="#myrole">myrole</a></li>
+    <li><a href="#postcode">postcode</a></li>
+    <li><a href="#roleid">roleid</a></li>
+    <li><a href="#spatial">spatial</a></li>
+    <li><a href="#status">status</a></li>
+    <li><a href="#version">version</a></li>
+    </ul>
+  </td>
+
+  <td>
+    <ul>
+    <li><a href="#countrycode">countrycode</a></li>
+    <li><a href="#display_order">display_order</a></li>
+    <li><a href="#field">field</a></li>
+    <li><a href="#label">label</a></li>
+    <li><a href="#point">point</a></li>
+    <li><a href="#service">service</a></li>
+    <li><a href="#stage">stage</a></li>
+    <li><a href="#when_added">when_added</a></li>
+    </ul>
+  </td>
+
+</tr>
+</table>
+
+<ul>
+<li style="font-weight:bold"><a href="#data">Data about people and organizations</a></li>
+</ul>
+
+<table class="tableGreenBorder">
+<tr valign="top">
+<td><ul><li><a href="#persondata">persondata</a></li></ul></td>
+<td><ul><li><a href="#orgdata">orgdata</a></li></ul></td>
+</tr>
+<tr valign="middle">
+<td>
+<ul>
+<li><a href="#full_name">full name</a></li>
+<li><a href="#legal_family_name">legal family name</a></li>
+<li><a href="#legal_given_name">legal given name</a></li>
+<li><a href="#preferred_family_name">preferred family name</a></li>
+<li><a href="#preferred_given_name">preferred given name</a></li>
+<li><a href="#family_name_first">family name first</a></li>
+<li><a href="#name_prefix">name prefix</a></li>
+<li><a href="#name_suffix">name suffix</a></li>
+<li><a href="#country">country</a></li>
+<li><a href="#dob">dob</a></li>
+<li><a href="#gender">gender</a></li>
+<li><a href="#website">website</a></li>
+<li><a href="#idfield">id</a></li>
+<li><a href="#openid">openid</a></li>
+<li><a href="#email">email</a></li>
+<li><a href="#homephone">homephone</a></li>
+<li><a href="#workphone">workphone</a></li>
+<li><a href="#mobile">mobile</a></li>
+<li><a href="#minicom">minicom</a></li>
+<li><a href="#fax">fax</a></li>
+<li><a href="#other">other</a></li>
+</ul>
+</td>
+
+<td>
+<ul>
+<li><a href="#legal_org_name">legal org name</a></li>
+<li><a href="#preferred_org_name">preferred org name</a></li>
+<li><a href="#country">country</a></li>
+<li><a href="#website">website</a></li>
+<li><a href="#idfield">id</a></li>
+<li><a href="#email">email</a></li>
+<li><a href="#workphone">workphone</a></li>
+<li><a href="#minicom">minicom</a></li>
+<li><a href="#fax">fax</a></li>
+<li><a href="#other">other</a></li>
+</ul>
+</td>
+</tr>
+</table>
+
+<ul>
+<li style="font-weight:bold"><a href="#categoryschemes">Leap2A category schemes</a></li>
+  <ul>
+  <li><a href="#audience">audience</a></li>
+  <li><a href="#check">check</a></li>
+  <li><a href="#common_item">common_item</a></li>
+  <li><a href="#learning_cycle">learning_cycle</a></li>
+  <li><a href="#life_area">life_area</a></li>
+  <li><a href="#person_type">person_type</a></li>
+  <li><a href="#priority">priority</a></li>
+  <li><a href="#readiness">readiness</a></li>
+  <li><a href="#resource_type">resource_type</a></li>
+  <li><a href="#selection_type">selection_type</a></li>
+  <li><a href="#SWOT">SWOT</a></li>
+  </ul>
+</ul>
+<ul>
+<li style="font-weight:bold"><a href="#implementation">Implementing Leap2A using Atom</a></li>
+<li style="font-weight:bold"><a href="#references">References</a></li>
+</ul>
+
+<hr />
+
+<h2 style="page-break-before:always" id="introduction">Introduction</h2>
+
+<hr />
+
+<p>Individual people can gather, manage and display information to support their learning, development, planning and action at any stage and in any area of life. The information gathered in one setting can be useful in other settings, and various tools or services could be used to help with these processes.
+</p>
+
+<p>Leap2A offers a model for representing information and resources authored, owned, controlled or collected by individuals &mdash; </p>
+<ul>
+<li>descriptions of what they have achieved, created, done or experienced;</li>
+<li>information about themselves, their abilities and qualities; </li>
+<li>any kind of supporting information or evidence from any source;</li>
+<li>their thoughts or reflections on anything past, present or future;</li>
+<li>their plans;</li>
+<li>and their presentations of selections of this information for other people</li>
+</ul>
+<p>&mdash; so that the various tools or services used by the individual can more easily share or pass relevant information between each other. Information transfer of this kind, possibly containing sensitive information, needs careful attention to privacy, security, identity, authentication and authorisation, which all have a much wider scope than e-portfolio systems, and Leap2A does not attempt to specify anything related to them.
+</p>
+
+<p>Leap2A specifies a structure for small meaningful self-contained units &mdash; items &mdash; of information. Leap2A also allows description of and reference to non-item resources, through a set of relationships between items of information, and between items and the resources that they represent and refer to. It does not specify or require structure for non-item resources. 
+</p>
+
+<p>Leap2A recognises that resources can be local and electronic, like attached files; non-local and electronic, like resources on the web; or physical, in which case they can be described and can have URIs. Electronic resources can simply be thought of as attached in the same sense as attachments to a blog post. It is preferable especially where they are used more than once, or need description, to have one special Leap2A item associated with each resource, to hold any description and metadata for that resource.
+</p>
+
+<p>Leap2A also specifies a set of categories that can apply to Leap2A items, and allows the application of other categories defined by individuals or organisations.
+</p>
+
+<p>So as to keep documentation about any particular feature together, for each term, this specification defines first the binding-independent structure, and then, with a slightly different background colour, how to implement the particular structure based on the Atom Syndication Format (the "A" of Leap2A), together with links to examples and further documentation.
+</p>
+
+<hr />
+
+<h2 style="page-break-before:always" id="terminology">Terminology and abbreviations</h2>
+
+<hr />
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", 
+"RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
+<br />However, these words are not capitalised in this document.</p>
+
+<dl>
+<dt>item</dt>
+  <dd>This term is used extensively throughout this document, 
+  to refer to any actual self-contained set of information and/or metadata
+  that is implemented in Leap2A as an Atom entry. 
+  All Atom entries in Leap2A represent items.
+  Logically speaking, an item is distinct from the relationships that it participates in,
+  though in Atom these relationships are represented by link instances contained within the entry.
+  Leap2A items are also distinct from any attached file to which they might relate.
+  </dd>
+<dt>portfolio holder</dt>
+  <dd>This term refers to the person to whom all the portfolio information is related.
+  </dd>
+<dt>CV</dt>
+  <dd>curriculum vitae (or r&eacute;sum&eacute;)
+  </dd>
+<dt>IM</dt>
+  <dd>instant messaging
+  </dd>
+<dt>ISO</dt>
+  <dd>the International Organization for Standardization
+  </dd>
+<dt>LRS</dt>
+  <dd>the UK's <a href="http://www.learningrecordsservice.org.uk/">Learning Records Service</a></dd>
+<dt>MIAP</dt>
+  <dd>Managing Information Across Partners: a UK government organisation that preceded the LRS
+  </dd>
+<dt>RFC</dt>
+  <dd>request for comments &mdash; see <a href="http://en.wikipedia.org/wiki/Request_for_Comments">Wikipedia</a>.
+  </dd>
+<dt>URI</dt>
+  <dd>uniform resource identifier as defined in <a href="http://tools.ietf.org/html/rfc3986">RFC 3986</a> (see also <a href="http://en.wikipedia.org/wiki/Uniform_Resource_Identifier">Wikipedia</a>)
+  </dd>
+<dt>URL</dt>
+  <dd>uniform resource locator as defined in <a href="http://tools.ietf.org/html/rfc3986">RFC 3986</a> (see also <a href="http://en.wikipedia.org/wiki/Uniform_Resource_Locator">Wikipedia</a>)
+  </dd>
+<dt>VOIP</dt>
+  <dd>Voice over IP &mdash; see <a href="http://en.wikipedia.org/wiki/Voice_over_IP">Wikipedia</a>
+  </dd>
+<dt>XHTML</dt>
+  <dd>eXtensible HyperText Markup Language &mdash; see <a href="http://en.wikipedia.org/wiki/XHTML">Wikipedia</a>
+  </dd>
+<dt>XML</dt>
+  <dd><a href="http://www.w3.org/XML/">Extensible Markup Language</a> (see also <a href="http://en.wikipedia.org/wiki/XML">Wikipedia</a>)
+  </dd>
+</dl>
+
+
+<!-- ############################ Classes ########################### -->
+
+<hr />
+
+<h2 style="page-break-before:always" id="classes">Leap2 classes</h2>
+
+<hr />
+
+<h4>Note on inheritance of constraints</h4>
+<p>All constraints applying to a class shall also apply to all classes that refine that class.</p>
+
+<h3 id="atomclasses">Classes from Atom</h3>
+
+<table class="tableGreenBorder">
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="entry"><td colspan="2"><h4>term: entry</h4></td></tr>
+	<tr><td>definition:</td><td>expression, reflection, entry, post, note, comment, or similar, together with associated metadata</td></tr>
+	<tr><td>notes:</td><td>The default class for Leap2 items.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/entry">http://www.cetis.org.uk/leap2/terms/entry</a></td></tr>
+	<tr><td>refines:</td><td>&nbsp;</td></tr>
+	<tr><td>refined by:</td><td>
+		<a href="#ability">ability</a>;
+		<a href="#achievement">achievement</a>;
+		<a href="#activity">activity</a>;
+		<a href="#organization">organization</a>;
+		<a href="#person">person</a>;
+		<a href="#plan">plan</a>;
+		<a href="#resource">resource</a>;
+		<a href="#selection">selection</a>;
+	</td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>must have exactly one <a href="#author">author</a> property if the item author is not the same as the feed author</li>
+	  <li>must have exactly one <a href="#idterm">id</a> property (as in Atom)</li>
+	  <li>must have exactly one <a href="#title">title</a> property (as in Atom)</li>
+	  <li>must have exactly one <a href="#updated">updated</a> property (as in Atom)</li>
+	  <li>must have exactly one <a href="#type">type</a> property</li>
+	  <li>must have exactly one <a href="#content">content</a> property (stricter than Atom)</li>
+	  <li>must not have more than one <a href="#summary">summary</a> property (as in Atom)</li>
+	  <li>must not have more than one <a href="#published">published</a> property (as in Atom)</li>
+	  <li>must not have more than one <a href="#rights">rights</a> property (as in Atom)</li>
+	  <li>must not have more than one <a href="#status">status</a> property</li>
+	  <li>must not have more than one <a href="#myrole">myrole</a> property</li>
+	  <li>must not have more than one <a href="#activetime">activetime</a> property</li>
+	  <li>must not have more than one <a href="#issued">issued</a> property</li>
+	  <li>must not have more than one <a href="#date">date</a> property with the same <a href="#point">point</a> attribute value</li>
+	  <li>must comply with other Atom constraints not affecting elements specified by Leap2A</li>
+	  </ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+As in Atom. If not one of the more refined types, should include<br />
+<code>&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/entry" /&gt;</code>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.1.2">entry</a></li>
+</ul>
+</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="feed"><td colspan="2"><h4>term: feed</h4></td></tr>
+	<tr><td>definition:</td><td>whole set of items, relationships and resources communicated together</td></tr>
+	<tr><td>notes:</td><td>This may be the complete set of things stored in a system for an individual, or a set of them.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/feed">http://www.cetis.org.uk/leap2/terms/feed</a></td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>must have exactly one <a href="#version">version</a> property</li>
+	  <li>must have exactly one <a href="#author">author</a> property (stricter than Atom)</li>
+	  <li>must have exactly one <a href="#idterm">id</a> property (as in Atom)</li>
+	  <li>must have exactly one <a href="#title">title</a> property (as in Atom)</li>
+	  <li>must have exactly one <a href="#updated">updated</a> property (as in Atom)</li>
+	  <li>must comply with other Atom constraints not affecting elements specified by Leap2A</li>
+	  <li>should not have any Atom icon properties</li>
+	  <li>should not have any Atom logo properties</li>
+	  </ul>
+        </td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>As in Atom</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.1.1">feed</a></li>
+</ul>
+	</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="person-construct"><td colspan="2"><h4>term: person_construct</h4></td></tr>
+	<tr><td>definition:</td><td>information identifying a person or organization</td></tr>
+	<tr><td>notes:</td><td>This structure from Atom doesn't fit in well with Leap2A, but is preserved to maintain compatibility with Atom. In Leap2A, a person is represented by a <a href="#person">person item</a>, and authorship and contributorship would ideally be represented simply by a link. But in Atom, an author is seen as something quite different from an entry. The reconciliation is that the atom:author element has a URI, originally intended to hold a personal URI for the author. In Leap2A, this URI element should be used to point to the person item. As the persondata in a person item will normally contain an e-mail address, the email element in Atom should not be used in Leap2A. When importing a plain Atom feed, it would make sense to store person_construct information, but to export it in the form of a Leap2A person item. </td></tr>
+	<tr><td>constraints:</td><td>
+<ul>
+<li>must have exactly one <a href="#name">name</a> property (Atom)</li>
+<li>should have one <a href="#uri">uri</a> property</li>
+<li>must not have more than one <a href="#uri">uri</a> property (Atom)</li>
+<li>should not have any <a href="#email">email</a> properties</li>
+<li>must not have more than one <a href="#email">email</a> property (Atom)</li>
+</ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>As in Atom, except that the uri element should be the identifier of the relevant person item, if one exists. If a person item exists, the e-mail element should not be used in the person construct.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-3.2">Person construct</a></li>
+</ul>
+</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+</table>
+
+<h3 id="types">Leap2 item types</h3>
+
+<table class="tableGreenBorder">
+
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="ability"><td colspan="2"><h4>term: ability</h4></td></tr>
+	<tr><td>definition:</td><td>description applicable to what a person might know or be able to do</td></tr>
+	<tr><td>notes:</td><td>Either links to definition or described directly by portfolio holder.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/ability">http://www.cetis.org.uk/leap2/terms/ability</a></td></tr>
+	<tr><td>refines:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>constraints:</td><td></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;entry&gt;
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/ability" /&gt;
+...
+&lt;/entry&gt;</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="achievement"><td colspan="2"><h4>term: achievement</h4></td></tr>
+	<tr><td>definition:</td><td>information about a desired state of the world that has been aided by the agency of the portfolio holder</td></tr>
+	<tr><td>notes:</td><td>Achievements are seen as being achieved at a particular time, in contrast to activities.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/achievement">http://www.cetis.org.uk/leap2/terms/achievement</a></td></tr>
+	<tr><td>refines:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>constraints:</td>
+	<td><ul>
+	  <li>should have one <a href="#date">date</a> property</li>
+	  <li>must not have more than two <a href="#date">date</a> properties</li>
+	</ul></td>
+	</tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;entry&gt;
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/achievement" /&gt;
+...
+&lt;/entry&gt;</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="activity"><td colspan="2"><h4>term: activity</h4></td></tr>
+	<tr><td>definition:</td><td>information about a happening, event, episode, occupation, experience, etc. that can have a start and an end</td></tr>
+	<tr><td>notes:</td><td>May comprise a group of lesser activities.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/activity">http://www.cetis.org.uk/leap2/terms/activity</a></td></tr>
+	<tr><td>refines:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>refined by:</td><td>
+		<a href="#affiliation">affiliation</a>;
+		<a href="#meeting">meeting</a>
+	</td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>should have at least one <a href="#date">date</a> property</li>
+	  <li>must not have more than three <a href="#date">date</a> properties</li>
+	</ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;entry&gt;
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/activity" /&gt;
+...
+&lt;/entry&gt;</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="affiliation"><td colspan="2"><h4>term: affiliation</h4></td></tr>
+	<tr><td>definition:</td><td>information about an association of the portfolio holder with some specific organization</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/affiliation">http://www.cetis.org.uk/leap2/terms/affiliation</a></td></tr>
+	<tr><td>refines:</td><td><a href="#activity">activity</a></td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>should have one <a href="#date">date</a> property with a point attribute value of "start"</li>
+	  <li>should have one <a href="#myrole">myrole</a> property</li>
+	  <li>should have one <a href="#supported_by">supported_by</a>
+	   property linking to the <a href="#organization">organization</a></li>
+	  </ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;entry&gt;
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/affiliation" /&gt;
+...
+&lt;/entry&gt;</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="meeting"><td colspan="2"><h4>term: meeting</h4></td></tr>
+	<tr><td>definition:</td><td>information about an activity involving two or more people</td></tr>
+	<tr><td>notes:</td><td>A meeting may have agenda and outcomes of interest to the portfolio holder.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/meeting">http://www.cetis.org.uk/leap2/terms/meeting</a></td></tr>
+	<tr><td>refines:</td><td><a href="#activity">activity</a></td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>should have one <a href="#spatial">spatial</a> property</li>
+	  </ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;entry&gt;
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/meeting" /&gt;
+...
+&lt;/entry&gt;</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="organization"><td colspan="2"><h4>term: organization</h4></td></tr>
+	<tr><td>definition:</td><td>information about a commercial, social or political entity of interest to the portfolio holder</td></tr>
+	<tr><td>notes:</td><td>Information about the role of the portfolio holder 
+with respect to this organization should be held in an <a href="#affiliation">affiliation</a> item, 
+linked by a <a href="#supports">supports</a> property of the organization.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/organization">http://www.cetis.org.uk/leap2/terms/organization</a></td></tr>
+	<tr><td>refines:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>should not have any <a href="#myrole">myrole</a> properties</li>
+	  <li>should not have any <a href="#roleid">roleid</a> properties</li>
+	  </ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;entry&gt;
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/organization" /&gt;
+...
+&lt;/entry&gt;</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="person"><td colspan="2"><h4>term: person</h4></td></tr>
+	<tr><td>definition:</td><td>information about the portfolio holder or another person of relevance to the portfolio</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/person">http://www.cetis.org.uk/leap2/terms/person</a></td></tr>
+	<tr><td>refines:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>should have one <a href="#person_type">person_type</a> category</li>
+	  </ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;entry&gt;
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/person" /&gt;
+...
+&lt;/entry&gt;</pre>
+Should include some <a href="#persondata">persondata</a> as a sub-element.
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="plan"><td colspan="2"><h4>term: plan</h4></td></tr>
+	<tr><td>definition:</td><td>formulation of a course of action intended to bring about some end result or achievement</td></tr>
+	<tr><td>notes:</td><td>A considered plan will typically be intended to achieve one of the portfolio holder's goals or purposes, and may involve several planned activities, or sub-plans intended to bring about intermediate goals.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/plan">http://www.cetis.org.uk/leap2/terms/plan</a></td></tr>
+	<tr><td>refines:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>should have at least one <a href="#date">date</a> property</li>
+	  </ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;entry&gt;
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/plan" /&gt;
+...
+&lt;/entry&gt;</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="publication"><td colspan="2"><h4>term: publication</h4></td></tr>
+	<tr><td>definition:</td><td>information about a publication relevant to the portfolio holder</td></tr>
+	<tr><td>notes:</td><td>The publication can either be one that the holder has authored or contributed to, or one that is just of interest or value to the holder.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/publication">http://www.cetis.org.uk/leap2/terms/publication</a></td></tr>
+	<tr><td>refines:</td><td><a href="#resource">resource</a></td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>should have one <a href="#summary">summary</a> property giving an abstract of the publication</li>
+	  <li>should have one <a href="#myrole">myrole</a> property</li>
+	  </ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;entry&gt;
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/publication" /&gt;
+...
+&lt;/entry&gt;</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="resource"><td colspan="2"><h4>term: resource</h4></td></tr>
+	<tr><td>definition:</td><td>information about something relevant to and of value to the portfolio holder</td></tr>
+	<tr><td>notes:</td><td>This could be a digital resource, or just a description of a non-digital or non-linked resource, relevant to the portfolio holder, other than something that is better represented as a publication, person, organization or selection.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/resource">http://www.cetis.org.uk/leap2/terms/resource</a></td></tr>
+	<tr><td>refines:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>refined by:</td><td>
+		<a href="#publication">publication</a>;
+	</td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>should have one <a href="#resource_type">resource_type</a> category</li>
+	  </ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;entry&gt;
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/resource" /&gt;
+...
+&lt;/entry&gt;</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="selection"><td colspan="2"><h4>term: selection</h4></td></tr>
+	<tr><td>definition:</td><td>set of related portfolio items or external resources</td></tr>
+	<tr><td>notes:</td><td>A selection is typically selected by the portfolio holder for a particular purpose and for display to a particular audience</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/selection">http://www.cetis.org.uk/leap2/terms/selection</a></td></tr>
+	<tr><td>refines:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>should have one <a href="#selection_type">selection_type</a> category</li>
+	  </ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;entry&gt;
+&lt;rdf:type rdf:resource="http://www.cetis.org.uk/leap2/terms/selection" /&gt;
+...
+&lt;/entry&gt;</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+</table>
+
+
+<!-- ############################ Properties ########################### -->
+
+<hr />
+
+<h2 style="page-break-before:always" id="leap2:properties">Leap2 properties</h2>
+
+<hr />
+
+<p><em>When the definite article <strong>the</strong> is used, it refers to the domain object which has this property.</em></p>
+
+<h3 id="relationships">Relationships between items</h3>
+
+<p>The value of the href attribute shall be the same as the identifier of the other entry related to. The definition specifies the significance or meaning of the other entry.
+</p>
+
+<table class="tableGreenBorder">
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="attended_by"><td colspan="2"><h4>term: attended_by</h4></td></tr>
+	<tr><td>definition:</td><td>person attending the activity</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/attended_by">http://www.cetis.org.uk/leap2/terms/attended_by</a></td></tr>
+	<tr><td>refines:</td><td><a href="#supported_by">supported_by</a></td></tr>
+	<tr><td>domain:</td><td><a href="#activity">activity</a></td></tr>
+	<tr><td>range:</td><td><a href="#person">person</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/attended_by" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="attends"><td colspan="2"><h4>term: attends</h4></td></tr>
+	<tr><td>definition:</td><td>activity attended by the person</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/attends">http://www.cetis.org.uk/leap2/terms/attends</a></td></tr>
+	<tr><td>refines:</td><td><a href="#supports">supports</a></td></tr>
+	<tr><td>domain:</td><td><a href="#person">person</a></td></tr>
+	<tr><td>range:</td><td><a href="#activity">activity</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/attends" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="has_agenda"><td colspan="2"><h4>term: has_agenda</h4></td></tr>
+	<tr><td>definition:</td><td>something on the agenda of the meeting</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/has_agenda">http://www.cetis.org.uk/leap2/terms/has_agenda</a></td></tr>
+	<tr><td>refines:</td><td><a href="#supported_by">supported_by</a></td></tr>
+	<tr><td>domain:</td><td><a href="#meeting">meeting</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/had_agenda" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="has_evidence"><td colspan="2"><h4>term: has_evidence</h4></td></tr>
+	<tr><td>definition:</td><td>some evidence for the item</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/has_evidence">http://www.cetis.org.uk/leap2/terms/has_evidence</a></td></tr>
+	<tr><td>refines:</td><td><a href="#supported_by">supported_by</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/has_evidence" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="has_outcome"><td colspan="2"><h4>term: has_outcome</h4></td></tr>
+	<tr><td>definition:</td><td>outcome of the meeting</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/has_outcome">http://www.cetis.org.uk/leap2/terms/has_outcome</a></td></tr>
+	<tr><td>refines:</td><td><a href="#supports">supports</a></td></tr>
+	<tr><td>domain:</td><td><a href="#activity">activity</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/has_outcome" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="has_part"><td colspan="2"><h4>term: has_part</h4></td></tr>
+	<tr><td>definition:</td><td>part by composition</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/has_part">http://www.cetis.org.uk/leap2/terms/has_part</a></td></tr>
+	<tr><td>refines:</td><td><a href="#relation">relation</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>attributes:</td> <td>
+<dl>
+<dt><a href="#display_order">display_order</a> (optional)</dt>
+  <dd>integer; lower numbers should be displayed earlier than higher ones in any listing of parts</dd>
+<dt><a href="#when_added">when_added</a> (optional)</dt>
+  <dd>date-time when part was added to whole; also serves as alternative method for display ordering</dd>
+</dl>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/has_part" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="has_reply"><td colspan="2"><h4>term: has_reply</h4><p>alias: replies (Atom)</p></td></tr>
+	<tr><td>definition:</td><td>reply to the item</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/has_reply">http://www.cetis.org.uk/leap2/terms/has_reply</a></td></tr>
+	<tr><td>refines:</td><td><a href="#relation">relation</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="replies" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom Threading Extensions: <a href="http://tools.ietf.org/html/rfc4685#section-4">replies link rel attribute value</a></li>
+</ul>
+</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="in_reply_to"><td colspan="2"><h4>term: in_reply_to</h4><p>alias: thr:in-reply-to (Atom)</p></td></tr>
+	<tr><td>definition:</td><td>item that was replied to by the present one</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/in_reply_to">http://www.cetis.org.uk/leap2/terms/in_reply_to</a></td></tr>
+	<tr><td>refines:</td><td><a href="#relation">relation</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;thr:in-reply-to href="..." /&gt;</code>
+within domain item.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom Threading Extensions: <a href="http://tools.ietf.org/html/rfc4685#section-3">in-reply-to</a></li>
+</ul>
+	</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="is_agenda_of"><td colspan="2"><h4>term: is_agenda_of</h4></td></tr>
+	<tr><td>definition:</td><td>meeting for which the item is agenda</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/is_agenda_of">http://www.cetis.org.uk/leap2/terms/is_agenda_of</a></td></tr>
+	<tr><td>refines:</td><td><a href="#supports">supports</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#meeting">meeting</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/is_agenda_of" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="is_evidence_of"><td colspan="2"><h4>term: is_evidence_of</h4></td></tr>
+	<tr><td>definition:</td><td>subject of an item which the item is evidence of</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/is_evidence_of">http://www.cetis.org.uk/leap2/terms/is_evidence_of</a></td></tr>
+	<tr><td>refines:</td><td><a href="#relation">relation</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/is_evidence_of" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="is_outcome_of"><td colspan="2"><h4>term: is_outcome_of</h4></td></tr>
+	<tr><td>definition:</td><td>outcome of the activity</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/is_outcome_of">http://www.cetis.org.uk/leap2/terms/is_outcome_of</a></td></tr>
+	<tr><td>refines:</td><td><a href="#supported_by">supported_by</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#meeting">activity</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/is_outcome_of" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="is_part_of"><td colspan="2"><h4>term: is_part_of</h4></td></tr>
+	<tr><td>definition:</td><td>whole of which the item represents a part by composition</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/is_part_of">http://www.cetis.org.uk/leap2/terms/is_part_of</a></td></tr>
+	<tr><td>refines:</td><td><a href="#relation">relation</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>attributes:</td> <td>
+<dl>
+<dt><a href="#display_order">display_order</a> (optional)</dt>
+  <dd>integer; lower numbers should be displayed earlier that higher ones in any listing of parts</dd>
+<dt><a href="#when_added">when_added</a> (optional)</dt>
+  <dd>date-time when part was added to whole; also serves as alternative method for display ordering</dd>
+</dl>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/is_part_of" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="reflected_on_by"><td colspan="2"><h4>term: reflected_on_by</h4></td></tr>
+	<tr><td>definition:</td><td>item that reflects on the present item</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/reflected_on_by">http://www.cetis.org.uk/leap2/terms/reflected_on_by</a></td></tr>
+	<tr><td>refines:</td><td><a href="#relation">relation</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/reflected_on_by" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="reflects_on"><td colspan="2"><h4>term: reflects_on</h4></td></tr>
+	<tr><td>definition:</td><td>item that the present item reflects on</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/reflects_on">http://www.cetis.org.uk/leap2/terms/reflects_on</a></td></tr>
+	<tr><td>refines:</td><td><a href="#relation">relation</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/reflects_on" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="relation"><td colspan="2"><h4>term: relation</h4><p>alias: related (Atom)</p></td></tr>
+	<tr><td>definition:</td><td>another item related to the present item</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/relation">http://www.cetis.org.uk/leap2/terms/relation</a></td></tr>
+	<tr><td>refines:</td><td></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="related" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>In Atom: <a href="http://tools.ietf.org/html/rfc4287#page-22">related link rel attribute value</a></li>
+</ul>
+	</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="supported_by"><td colspan="2"><h4>term: supported_by</h4></td></tr>
+	<tr><td>definition:</td><td>item that supports (or whose subject supports) the present one (or its subject)</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/supported_by">http://www.cetis.org.uk/leap2/terms/supported_by</a></td></tr>
+	<tr><td>refines:</td><td><a href="#relation">relation</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/supported_by" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="supports"><td colspan="2"><h4>term: supports</h4></td></tr>
+	<tr><td>definition:</td><td>item that (or the subject of which) the present item (or its subject) supports in some way</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/supports">http://www.cetis.org.uk/leap2/terms/supports</a></td></tr>
+	<tr><td>refines:</td><td><a href="#relation">relation</a></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td><a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="http://www.cetis.org.uk/leap2/terms/supports" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+
+</table>
+
+<!-- ####################### Items and other things #################### -->
+
+<h3 id="attachment">Relationships between items and other things</h3>
+
+<p>The value of the href attribute shall be the appropriate identifier for the thing related to. If the thing related to is another item, this shall be its internal identifer. If it is an attached file, this shall be the relative URL of that file in the zip archive. If it is another resource, this shall be the URI of that resource.
+</p>
+
+<table class="tableGreenBorder">
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="alternate"><td colspan="2"><h4>term: alternate</h4></td></tr>
+	<tr><td>definition:</td><td>&quot;alternate version of the resource&quot;</td></tr>
+	<tr><td>notes:</td><td>Discouraged in Leap2A, except to provide translated entries of any kind, in which case the hreflang attribute should be used.</td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td>anything, including another <a href="#entry">entry</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="alternate" href="..." hreflang="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+	<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#page-22">alternate</a></li>
+</ul>
+	</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="enclosure"><td colspan="2"><h4>term: enclosure</h4></td></tr>
+	<tr><td>definition:</td><td>attached file</td></tr>
+	<tr><td>notes:</td><td>Normal use is from a <a href="#resource">resource</a> to a file enclosed. Additionally, usable to note an attached file referred to once in any other item.</td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td>attached file</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="enclosure" href="..." length="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+	<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#page-22">enclosure</a></li>
+</ul>
+	</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="license"><td colspan="2"><h4>term: license</h4></td></tr>
+	<tr><td>definition:</td><td>license under which the item or feed is published</td></tr>
+	<tr><td>notes:</td><td>"The IRI specified by the link's href attribute SHOULD be dereferenceable to return a representation of the license. The license representation MAY be machine readable." Note American spelling. For human-readable text, use <a href="#rights">rights</a>.</td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td>license</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="license" type="..." href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+	<li>Atom License Extension: <a href="http://tools.ietf.org/html/rfc4946">license</a></li>
+	<li>Creative Commons: <a href="http://wiki.creativecommons.org/Atom">Atom</a></li>
+</ul>
+	</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="self"><td colspan="2"><h4>term: self</h4></td></tr>
+	<tr><td>definition:</td><td>equivalent resource</td></tr>
+	<tr><td>notes:</td><td>Should be used when a <a href="#resource">resource</a> refers to something available on the web, rather than something attached. Also may be used in a <a href="#feed">feed</a> if there is a URL that delivers this feed or an updated version of it.</td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>range:</td><td>resource</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<code>&lt;link rel="self" href="..." /&gt;</code>
+as <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">Atom link</a>.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+	<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#page-22">self</a></li>
+</ul>
+	</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+</table>
+
+<!-- ######################## Literal Properties ####################### -->
+<!-- ############################## from Atom ########################## -->
+
+<h3 id="Atom:properties">Literal properties from Atom</h3>
+
+<table class="tableGreenBorder">
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="content1"><td colspan="2"><h4>term: content</h4></td></tr>
+	<tr><td>definition:</td><td>the substance of the item</td></tr>
+	<tr><td>notes:</td><td>For items that have a subject, this normally describes the subject. For entries and other items without a subject, this is the content.</td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>data type:</td><td>text or XHTML</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>As in Atom</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.1.3">content</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="idterm"><td colspan="2"><h4>term: id</h4></td></tr>
+	<tr><td>definition:</td><td>&quot;permanent, universally unique identifier&quot;</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>data type:</td><td>URI</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>As Atom constrains these to being URIs, all item identifiers must take the form of URIs. It is allowed to have full URIs, but if full URIs are not used (in an effort to create a more readable and shorter xml file) all item identifiers must start with prefix of the form <code>portfolio:</code> (which is the recommended convention). For example <code>portfolio:entry-123</code></td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.2.6">id</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="name"><td colspan="2"><h4>term: name</h4></td></tr>
+	<tr><td>definition:</td><td>&quot;human-readable name for the person&quot;</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>domain:</td><td><a href="#person-construct">person construct</a></td></tr>
+	<tr><td>data type:</td><td>text</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>As in Atom</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-3.2.1">name</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="published"><td colspan="2"><h4>term: published</h4></td></tr>
+	<tr><td>definition:</td><td>&quot;instant in time associated with an event early in the life cycle of the entry&quot;</td></tr>
+	<tr><td>notes:</td><td>The date refers to the item itself, not any subject of the item.</td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>data type:</td><td><a href="http://tools.ietf.org/html/rfc3339">RFC 3339</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>As in Atom (note <a href="http://tools.ietf.org/html/rfc4287#section-3.3">Date Construct</a> additional constraints on RFC 3339)</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.2.9">published</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="rights"><td colspan="2"><h4>term: rights</h4></td></tr>
+	<tr><td>definition:</td><td>&quot;information about rights held in and over an entry or feed&quot;</td></tr>
+	<tr><td>notes:</td><td>This is for human-readable information. For a machine-readable URI, use <a href="#license">license</a>.</td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>data type:</td><td>text</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>As in Atom</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.2.10">rights</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="summary"><td colspan="2"><h4>term: summary</h4></td></tr>
+	<tr><td>definition:</td><td>&quot;short summary, abstract, or excerpt of an entry&quot;</td></tr>
+	<tr><td>notes:</td><td>This should not duplicate the title or content.</td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>data type:</td><td>text</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>As in Atom</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.2.13">summary</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="title"><td colspan="2"><h4>term: title</h4></td></tr>
+	<tr><td>definition:</td><td>text to be read indicating subject matter</td></tr>
+	<tr><td>notes:</td><td>This needs to be human-readable and suitable for having as the text for a link, as in a list of entries.</td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>data type:</td><td>text</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>As in Atom</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.2.14">title</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="updated"><td colspan="2"><h4>term: updated</h4></td></tr>
+	<tr><td>definition:</td><td>most recent time at which the item was significantly modified</td></tr>
+	<tr><td>notes:</td><td>May be same as published.</td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>data type:</td><td><a href="http://tools.ietf.org/html/rfc3339">RFC 3339</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>As in Atom (note <a href="http://tools.ietf.org/html/rfc4287#section-3.3">Date Construct</a> additional constraints on RFC 3339)</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.2.15">updated</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="uri"><td colspan="2"><h4>term: uri</h4></td></tr>
+	<tr><td>definition:</td><td>identifier of the related <a href="#person">person</a> item</td></tr>
+	<tr><td>notes:</td><td>If no corresponding person item exists, may be used as in Atom to give a URI associated with the person.</td></tr>
+	<tr><td>domain:</td><td><a href="#person-construct">person construct</a></td></tr>
+	<tr><td>data type:</td><td>URI</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>As in Atom, except that for Leap2A the value should be the identifier of the person item in the current feed.</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-3.2.2">uri</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+</table>
+
+<!-- ########################## mixed elsewhere ######################## -->
+
+<h3 id="mixedprops">Mixed properties and properties taken from elsewhere</h3>
+
+<table class="tableGreenBorder">
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="author"><td colspan="2"><h4>term: author</h4></td></tr>
+	<tr><td>definition:</td><td>agent responsible for authoring the item</td></tr>
+	<tr><td>notes:</td><td>This refers either to the feed as a whole, or to an item as a record, not to the thing referred to or described.</td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a>, <a href="#feed">feed</a></td></tr>
+	<tr><td>range:</td><td><a href="#person-construct">person construct</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;author&gt;
+    &lt;name&gt;...&lt;/name&gt;
+    &lt;uri&gt;...&lt;/uri&gt;
+&lt;/author&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.2.1">author</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="contributorAtom"><td colspan="2"><h4>term: contributor (Atom)</h4></td></tr>
+	<tr><td>definition:</td><td>agent contributing to an item, other than an author</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a>, <a href="#feed">feed</a></td></tr>
+	<tr><td>range:</td><td><a href="#person-construct">person construct</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;contributor&gt;
+    &lt;name&gt;...&lt;/name&gt;
+    &lt;uri&gt;...&lt;/uri&gt;
+&lt;/contributor&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.2.3">contributor</a></li>
+</ul></td></tr>
+
+	<tr id="contributorDC"><td colspan="2"><h4>term: contributor (Dublin Core)</h4></td></tr>
+	<tr><td>definition:</td><td>agent contributing to a resource, other than a creator</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>domain:</td><td><a href="#resource">resource</a></td></tr>
+	<tr><td>range:</td><td><a href="#organization">organization</a>, <a href="#person">person</a></td></tr>
+	<tr><td>data type:</td><td>text; URI</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;dcterms:contributor&gt;...&lt;/dcterms:contributor&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Dublin Core: <a href="http://dublincore.org/documents/dcmi-terms/#terms-contributor">contributor</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="creator"><td colspan="2"><h4>term: creator</h4></td></tr>
+	<tr><td>definition:</td><td>agent responsible for authorship or creation of a resource referred to</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>domain:</td><td><a href="#resource">resource</a></td></tr>
+	<tr><td>range:</td><td><a href="#organization">organization</a>, <a href="#person">person</a></td></tr>
+	<tr><td>data type:</td><td>text; URI</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;dcterms:creator&gt;...&lt;/dcterms:creator&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Dublin Core: <a href="http://dublincore.org/documents/dcmi-terms/#terms-creator">creator</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="issued"><td colspan="2"><h4>term: issued</h4></td></tr>
+	<tr><td>definition:</td><td>publication date of the indicated resource</td></tr>
+	<tr><td>notes:</td><td>This refers to the publication itself, not the record about it.</td></tr>
+	<tr><td>domain:</td><td><a href="#publication">publication</a></td></tr>
+	<tr><td>data type:</td><td><a href="http://www.w3.org/TR/NOTE-datetime">W3C-DTF</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;dcterms:issued&gt;...&lt;/dcterms:issued&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Dublin Core: <a href="http://dublincore.org/documents/dcmi-terms/#terms-issued">issued</a></li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="type"><td colspan="2"><h4>term: type</h4></td></tr>
+	<tr><td>definition:</td><td>type of item in Leap2A terms</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>domain:</td><td><a href="#entry">entry</a></td></tr>
+	<tr><td>data type:</td><td><a href="#types">Leap2A type URI</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;rdf:type rdf:resource="..." /&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>RDF: <a href="http://www.w3.org/TR/rdf-schema/#ch_type">type</a> in RDF Schema</li>
+</ul></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+</table>
+
+<!-- ######################### native to Leap2A ######################## -->
+
+<h3 id="leap2:properties">Properties native to Leap2A</h3>
+
+<table class="tableGreenBorder">
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="activetime"><td colspan="2"><h4>term: activetime</h4></td></tr>
+	<tr><td>definition:</td><td>time actually spent on the activity</td></tr>
+	<tr><td>notes:</td><td>Could be recorded for assessment, credit, time accounting or just personal record purposes.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/activetime">http://www.cetis.org.uk/leap2/terms/activetime</a></td></tr>
+	<tr><td>domain:</td><td><a href="#activity">activity</a></td></tr>
+	<tr><td>data type:</td><td>ISO 8601 duration</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>translate to readable text and append "Time spent: ..." to content</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;leap2:activetime&gt;...&lt;/leap2:activetime&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="addressline"><td colspan="2"><h4>term: addressline</h4></td></tr>
+	<tr><td>definition:</td><td>line of a postal address</td></tr>
+	<tr><td>notes:</td><td> </td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/addressline">http://www.cetis.org.uk/leap2/terms/addressline</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#spatial">spatial</a></td></tr>
+	<tr><td>data type:</td><td>text</td></tr>
+	<tr><td>attributes:</td> <td>
+<dl>
+<dt><a href="#label">label</a> (optional)</dt>
+  <dd>human readable locally-defined label for the kind of address</dd>
+</dl>
+	</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>insert in place into <a href="#spatial">spatial</a>; discard label</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;leap2:addressline leap2:label="..."&gt;...&lt;/leap2:addressline&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="country"><td colspan="2"><h4>term: country</h4></td></tr>
+	<tr><td>definition:</td><td>country of residence, nationality or similar</td></tr>
+	<tr><td>notes:</td><td> </td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/country">http://www.cetis.org.uk/leap2/terms/country</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#spatial">spatial</a></td></tr>
+	<tr><td>data type:</td><td>text</td></tr>
+	<tr><td>attributes:</td> <td>
+<dl>
+<dt><a href="#countrycode">countrycode</a> (recommended)</dt>
+  <dd>3-letter code corresponding to the country given: <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1</a></dd>
+</dl>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>&lt;leap2:country leap2:countrycode="..."&gt;...&lt;/country&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="date"><td colspan="2"><h4>term: date</h4></td></tr>
+	<tr><td>definition:</td><td>Gregorian date associated with the subject of the item</td></tr>
+	<tr><td>notes:</td><td>This is not temporal metadata about the records themselves (published, updated).</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/date">http://www.cetis.org.uk/leap2/terms/date</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#entry">entry</a> </td></tr>
+	<tr><td>data type:</td><td><a href="http://www.w3.org/TR/NOTE-datetime">W3C-DTF</a></td></tr>
+	<tr><td>attributes:</td> <td>
+<dl>
+<dt><a href="#point">point</a> (mandatory)</dt>
+  <dd>one of: &quot;end&quot;; &quot;start&quot;; &quot;target&quot;</dd>
+<dt><a href="#label">label</a> (optional)</dt>
+  <dd>human readable description of date</dd>
+</dl>
+	</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>append <em>lll: vvv</em> to <a href="#content1">content</a> where
+<ul>
+<li><em>lll</em> is the point attribute value</li>
+<li><em>vvv</em> is the label attribute value if present, otherwise the date itself, preferably in human readable form</li>
+</ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;leap2:date leap2:point="..." leap2:label="..."&gt;
+2011-03-07T11:25+00:00
+&lt;/leap2:date&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="myrole"><td colspan="2"><h4>term: myrole</h4></td></tr>
+	<tr><td>definition:</td><td>role of the portfolio holder relative to the parent item</td></tr>
+	<tr><td>notes:</td><td>
+<ul>
+<li> As a property of an <a href="#affiliation">affiliation</a> it represents the membership role, such as "Fellow" or "Director".</li>
+<li> As a property of an <a href="#activity">activity</a> (including a meeting) it could be "delegate", "attendee", "speaker" or "organiser", 
+or for an activity representing a period of employment, similarly to 
+the <a href="http://tools.ietf.org/html/rfc2426#section-3.5.2">vCard role</a>.</li>
+<li>As a property of a resource (including <a href="#publication">publication</a>) it represents the role the holder played in the creation of that resource.</li>
+</ul> 
+	</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/myrole">http://www.cetis.org.uk/leap2/terms/myrole</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#entry">entry</a> </td></tr>
+	<tr><td>data type:</td><td>text</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>append <em>lll: vvv</em> to <a href="#content1">content</a> where
+<ul>
+<li><em>lll</em> is "My role"</li>
+<li><em>vvv</em> is the element text node</li>
+</ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;leap2:myrole&gt;...&lt;/leap2:myrole&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="postcode"><td colspan="2"><h4>term: postcode</h4></td></tr>
+	<tr><td>definition:</td><td>postal code</td></tr>
+	<tr><td>notes:</td><td>The code can be in any country's format, therefore has no constraints.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/postcode">http://www.cetis.org.uk/leap2/terms/postcode</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#spatial">spatial</a> </td></tr>
+	<tr><td>data type:</td><td>text in a format approved for postal addresses</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>insert in place into <a href="#spatial">spatial</a></td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;leap2:postcode&gt;...&lt;/leap2:postcode&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="roleid"><td colspan="2"><h4>term: roleid</h4></td></tr>
+	<tr><td>definition:</td><td>id associated with a role</td></tr>
+	<tr><td>notes:</td><td>
+<ul>
+<li>As a property of affiliation, this represents the membership number, string, or similar.</li>
+<li>As a property of anything else, this represents an identifier for the portfolio holder in that context.</li>
+</ul>
+	</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/roleid">http://www.cetis.org.uk/leap2/terms/roleid</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#entry">entry</a> </td></tr>
+	<tr><td>data type:</td><td>string</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>append <em>lll: vvv</em> to <a href="#content1">content</a> where
+<ul>
+<li><em>lll</em> is "ID in this role"</li>
+<li><em>vvv</em> is the element text node</li>
+</ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;leap2:roleid&gt;...&lt;/leap2:roleid&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="spatial"><td colspan="2"><h4>term: spatial</h4></td></tr>
+	<tr><td>definition:</td><td>address, location or other spatial characteristics of the subject matter of the item</td></tr>
+	<tr><td>notes:</td><td>May have an XHTML div element for any display, and/or a structured address.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/spatial">http://www.cetis.org.uk/leap2/terms/spatial</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#entry">entry</a> </td></tr>
+	<tr><td>range:</td><td>xhtml:div; <a href="#addressline">addressline</a>; <a href="#postcode">postcode</a>; <a href="#country">country</a> </td></tr>
+	<tr><td>constraints:</td><td>
+	  <ul>
+	  <li>must not have more than one xhtml:div property</li>
+	  <li>must not have more than one <a href="#country">country</a> property</li>
+	  <li>must not have more than one <a href="#postcode">postcode</a> property</li>
+	  <li>must not contain any free text outside the other elements</li>
+	  </ul>
+	</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>append <em>lll: vvv</em> to <a href="#content1">content</a> where
+<ul>
+<li><em>lll</em> is "Location" or similar</li>
+<li><em>vvv</em> is all the text within the element without markup</li>
+</ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;leap2:spatial&gt;...&lt;/leap2:spatial&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td><td>
+<ul>
+<li>Dublin Core: <a href="http://dublincore.org/documents/dcmi-terms/#terms-spatial">spatial</a></li>
+</ul>
+	</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="status"><td colspan="2"><h4>term: status</h4></td></tr>
+	<tr><td>definition:</td><td>stage of progress of an activity or plan</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/status">http://www.cetis.org.uk/leap2/terms/status</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#entry">entry</a> </td></tr>
+	<tr><td>data type:</td><td>(empty)</td></tr>
+	<tr><td>attributes:</td> <td>
+<dl>
+<dt><a href="#stage">stage</a> (mandatory)</dt>
+  <dd>one of &quot;planned&quot;, &quot;progressing&quot;, &quot;completed&quot;, &quot;suspended&quot;</dd>
+<dt><a href="#label">label</a> (optional)</dt>
+  <dd>local name for the stage</dd>
+</dl>
+	</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>append <em>lll: vvv</em> to <a href="#content1">content</a> where
+<ul>
+<li><em>lll</em> is "Status of this" followed by the item type name</li>
+<li><em>vvv</em> is the value of the label attribute if present, otherwise the stage attribute</li>
+</ul>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;leap2:status leap2:stage="..." leap2:label="..." /&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="version"><td colspan="2"><h4>term: version</h4></td></tr>
+	<tr><td>definition:</td><td>version of the Leap specification being used</td></tr>
+	<tr><td>notes:</td><td>The version string is the URI associated with that version.
+<ul>
+<li>For the 2016 version, the URI is <a href="http://www.cetis.org.uk/leap2/a/">http://www.cetis.org.uk/leap2/a/</a></li>
+<li>For the 2010-07 version, the URI is <a href="http://www.leapspecs.org/2010-07/2A/">http://www.leapspecs.org/2010-07/2A/</a></li>
+<li>For the older 2009-03 version, no version string was specified.</li>
+</ul>
+	</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/version">http://www.cetis.org.uk/leap2/terms/version</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#feed">feed</a></td></tr>
+	<tr><td>data type:</td><td>URI</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;leap2:version&gt;...&lt;/leap2:version&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+
+</table>
+
+
+<!-- ########################### categories ############################ -->
+
+<hr />
+
+<h2 style="page-break-before:always" id="categories">Categories</h2>
+
+<hr />
+
+<table class="tableGreenBorder">
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="category"><td colspan="2"><h4>term: category</h4></td></tr>
+	<tr><td>definition:</td><td>category assigned to an item</td></tr>
+	<tr><td>notes:</td><td>Below are set out the <a href="#categoryschemes">category schemes defined within Leap2A</a>.</td></tr>
+	<tr><td>domain:</td> <td><a href="#entry">entry</a> </td></tr>
+	<tr><td>data type:</td><td>(empty)</td></tr>
+	<tr><td>attributes:</td> <td>
+<dl>
+<dt><a href="#term">term</a> (mandatory)</dt>
+  <dd>May be a term chosen from category schemes either from Leap2 (<a href="#categoryschemes">see below</a>) or locally-defined, or may be user-defined, in which case a scheme is not required.</dd>
+<dt><a href="#scheme">scheme</a> (optional)</dt>
+  <dd>Must be used in conjunction with any Leap2 category; any other system-defined category should also have a scheme.</dd>
+<dt><a href="#atomlabel">label</a> (optional)</dt>
+  <dd>Local name for the term. Note that this usage of &quot;label&quot; is native to Atom, not specific to Leap2, therefore has no namespace prefix.</dd>
+</dl>
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+As in Atom:
+<pre>
+&lt;category term="..." scheme="..." label="..." /&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+
+</table>
+
+<!-- ############################## data ############################### -->
+
+<hr />
+
+<h2 style="page-break-before:always" id="data">Data about people and organizations</h2>
+
+<hr />
+
+<p>This section of the specification is flagged as particularly liable to future change.
+If another specification or standard, with a suitable XML implementation,
+and suitable for representing this information, becomes increasingly popular,
+the intention is to deprecate this part of the specification and instead adopt the emerging standard.
+</p>
+
+<table class="tableGreenBorder">
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="persondata"><td colspan="2"><h4>term: persondata</h4></td></tr>
+	<tr><td>definition:</td><td>data relevant to a person</td></tr>
+	<tr><td>notes:</td><td> </td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/persondata">http://www.cetis.org.uk/leap2/terms/persondata</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#person">person</a></td></tr>
+	<tr><td>data type:</td><td>string or URI</td></tr>
+	<tr><td>attributes:</td> <td>
+<dl>
+<dt><a href="#field">field</a> (mandatory)</dt>
+  <dd>see <a href="#datafields">table of fields</a> below</dd>
+<dt><a href="#label">label</a></dt>
+  <dd>mandatory for the &quot;other&quot; field, otherwise optional; holds local label</dd>
+<dt><a href="#service">service</a></dt>
+  <dd>mandatory for the &quot;id&quot; field</dd>
+<dt><a href="#countrycode">countrycode</a></dt>
+  <dd>recommended for the &quot;country&quot; field; this attribute must not appear elsewhere</dd>
+</dl>
+	</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>append <em>lll</em>[ with <em>sss</em>]: <em>vvv</em> to <a href="#content1">content</a> where
+<ul>
+<li><em>lll</em> is the value of the label attribute if present; otherwise the value of the field attribute with any underscores replaced by spaces</li>
+<li><em>sss</em> is the value of the service attribute</li>
+<li><em>vvv</em> is the element text node</li>
+</ul>
+The value of a countrycode attribute should be appended, in parenthesis, to the country name.
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;leap2:persondata leap2:field="..." leap2:service="..."
+leap2:label="..." leap2:countrycode="..."&gt;...&lt;/leap2:persondata&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="orgdata"><td colspan="2"><h4>term: orgdata</h4></td></tr>
+	<tr><td>definition:</td><td>data relevant to a organization</td></tr>
+	<tr><td>notes:</td><td> </td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/orgdata">http://www.cetis.org.uk/leap2/terms/orgdata</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#organization">organization</a></td></tr>
+	<tr><td>data type:</td><td>string or URI</td></tr>
+	<tr><td>attributes:</td> <td>
+<dl>
+<dt><a href="#field">field</a> (mandatory)</dt>
+  <dd>see <a href="#datafields">table of fields</a> below</dd>
+<dt><a href="#label">label</a></dt>
+  <dd>mandatory for the &quot;other&quot; field, otherwise optional; holds local label</dd>
+<dt><a href="#service">service</a></dt>
+  <dd>mandatory for the &quot;id&quot; field</dd>
+<dt><a href="#countrycode">countrycode</a></dt>
+  <dd>recommended for the &quot;country&quot; field; this attribute must not appear elsewhere</dd>
+</dl>
+	</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>append <em>lll</em>[ with <em>sss</em>]: <em>vvv</em> to <a href="#content1">content</a> where
+<ul>
+<li><em>lll</em> is the value of the label attribute if present; otherwise the value of the field attribute with any underscores replaced by spaces</li>
+<li><em>sss</em> is the value of the service attribute</li>
+<li><em>vvv</em> is the element text node</li>
+</ul>
+The value of a countrycode attribute should be appended, in parenthesis, to the country name.
+	</td></tr>
+	<tr class="leap2a"><td>Leap2A implementation:</td><td>
+<pre>
+&lt;leap2:orgdata leap2:field="..." leap2:service="..." 
+leap2:label="..." leap2:countrycode="..."&gt;...&lt;/leap2:orgdata&gt;
+</pre>
+	</td></tr>
+	<tr class="leap2a"><td>links to examples:</td><td></td></tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+</table>
+
+<h3 id="datafields">Fields appearing within persondata and orgdata</h3>
+
+<p>In the following table, the column M gives the multiplicity &mdash; the number of times that a persondata or orgdata instance with this field can appear within a person or organization item.
+</p>
+
+<table class="tableGreenBorder"> 
+
+<tr><td colspan="5"><h3>Fields common to personal data and organizational data</h3></td></tr>
+
+<tr> 
+<th>value of field attribute </th>
+<th>M </th>
+<th>extra attributes </th>
+<th>format </th>
+<th><em>definition</em> and notes </th>
+</tr> 
+
+<tr id="country" style="vertical-align:top"> 
+<td><h4>country</h4></td>
+<td>0..*</td>
+<td><a href="#countrycode">countrycode</a> (optional); <a href="#label">label</a> (optional)</td>
+<td>Text. But, as in addresses, with an optional attribute of leap2:countrycode following SIF(UK): 3-letter <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1</a> code.
+</td>
+<td><em>association with a country</em> This may represent a person's nationality, but as the details of nationality, citizenship etc. are highly complex, it is better thought of generally.
+If an organization gives more than one country, the first one listed should be the one of the primary seat or head office.
+More significant country connections should be listed in the XML before less significant ones.
+The optional label attribute may give a human-readable indication of the nature of the association with the country, e.g. &quot;nationality&quot;, &quot;home country&quot;
+</td></tr> 
+
+<tr id="website" style="vertical-align:top"> 
+<td> 
+<h4>website</h4> 
+</td><td>0..*
+</td><td><a href="#label">label</a> (optional)
+</td><td>URL
+</td><td><em>address of an associated web page</em> The order of these in the XML should reflect the order of importance or significance given to the page by their owner. The optional label attribute may give a human-readable indication of the nature of the website.
+</td></tr> 
+
+<tr id="idfield" style="vertical-align:top"> 
+<td> 
+<h4>id</h4> 
+</td><td>0..*
+</td><td><a href="#service">service</a> (mandatory)
+</td><td>string
+</td><td>Person: a <em>context-free service ID</em> through which other people can access information about or communicate with the holder (including, e.g. IM and VOIP). IDs that are specific to a context should be given in their context, as <a href="#roleid">roleid</a> within e.g. an <a href="#affiliation">affiliation</a> or <a href="#activity">activity</a>. Where possible, the concatenation of the service URL and the id string should be a URL at which information about the person on that service can be read.<br />
+Organization: typically a <em>registration number of the organization with some official body</em>. Order is not significant.
+</td></tr> 
+
+<tr id="email" style="vertical-align:top"> 
+<td> 
+<h4>email</h4> 
+</td><td>0..*</td>
+<td> 
+</td><td>e-mail: <a href="http://tools.ietf.org/html/rfc5322">rfc5322</a> 
+</td><td>If there are multiple e-mail addresses given, the preferred or default one should come first in the XML.
+</td></tr> 
+
+<tr id="workphone" style="vertical-align:top"> 
+<td> 
+<h4>workphone</h4> 
+</td><td>0..*
+</td><td> 
+</td><td>recommended format: full international, starting with + (+44 for UK)
+</td><td>If more than one is given, the first one should be the primary one.
+</td></tr> 
+
+<tr id="minicom" style="vertical-align:top"> 
+<td><h4>minicom</h4></td>
+<td>0..*</td>
+<td> </td>
+<td>recommended format: full international, starting with + (+44 for UK)</td>
+<td>Included because of SIF(UK) having it.</td>
+</tr> 
+
+<tr id="fax" style="vertical-align:top"> 
+<td><h4>fax</h4></td>
+<td>0..*</td>
+<td> </td>
+<td>recommended format: full international, starting with + (+44 for UK)</td>
+<td>Pretty common for businesses.
+</td></tr> 
+
+<tr id="mobile" style="vertical-align:top"> 
+<td><h4>mobile</h4></td>
+<td>0..*</td>
+<td> </td>
+<td>recommended format: full international, starting with + (+44 for UK)</td>
+<td> </td>
+</tr> 
+
+<tr id="other" style="vertical-align:top"> 
+<td><h4>other</h4></td>
+<td>0..*</td>
+<td><a href="#label">label</a> (mandatory)</td>
+<td>label indicates the meaning of the field</td>
+<td>This must not be used for information that could go into another field defined here. Exporting systems may want to add their own extra attributes, in which case they should have a local namespace.</td>
+</tr>
+
+<tr><td colspan="5"><h3>Fields specific to personal data</h3></td></tr>
+
+<tr> 
+<th>value of field attribute</th>
+<th>M </th>
+<th>extra attributes </th>
+<th>format </th>
+<th><em>definition</em> and notes </th>
+</tr> 
+
+<tr id="full_name" style="vertical-align:top"> 
+<td><h4>full_name</h4></td>
+<td>0..1</td>
+<td> </td>
+<td>text</td>
+<td>This is equivalent to a concatenated subset of prefix, legal given names, preferred given name, legal family name, preferred family name, suffix (given and family reversed if family name first)</td>
+</tr> 
+
+<tr id="legal_family_name" style="vertical-align:top"> 
+<td><h4>legal_family_name</h4></td>
+<td>0..1</td>
+<td></td>
+<td>text</td>
+<td><em>component of the person's name that is typically shared with other members of the immediate family, as given on offical documents such as birth certificate, passport, driving licence</em></td>
+</tr> 
+
+<tr id="legal_given_name" style="vertical-align:top"> 
+<td><h4>legal_given_name</h4></td>
+<td>0..*</td>
+<td><a href="#label">label</a> (optional)</td>
+<td>text</td>
+<td><em>components of the person's name that are typically not shared with other members of the immediate family, as given on offical documents such as birth certificate, passport, driving licence</em>. It is not important how the given names are divided, except to provide a default preferred name. The order in the XML should be the same as the order in legal documents.
+The optional label attribute may give a human-readable indication of the name component type.</td>
+</tr> 
+
+<tr id="preferred_family_name" style="vertical-align:top"> 
+<td> 
+<h4>preferred_family_name</h4> 
+</td>
+<td>0..1
+</td>
+<td> 
+</td>
+<td>text
+</td>
+<td>This may be used e.g. if the legal family name is long or has more than one component. If not present, assume legal family name is preferred.
+</td></tr>
+ 
+<tr id="preferred_given_name" style="vertical-align:top"> 
+<td> 
+<h4>preferred_given_name</h4> 
+</td>
+<td>0..1
+</td>
+<td> <a href="#label">label</a> (optional)
+</td>
+<td>text
+</td>
+<td><em>often either one of the legal given names, or a variant, or a nickname</em> Even if this contains spaces, it should be treated as single name. If not present, assume first legal given name is preferred.
+The optional label attribute may give a human-readable indication of the name component type.
+</td></tr> 
+
+<tr id="family_name_first" style="vertical-align:top"> 
+<td> 
+<h4>family_name_first</h4> 
+</td>
+<td>0..1
+</td>
+<td> 
+</td>
+<td>"yes" or "no": default = "no".
+</td>
+<td><em>whether the family name is usually given before the given names</em>. Because the default is "no", this field will not be needed for most European/American and many other names.
+Origin is MIAP. (Does the LRS use this?)
+</td></tr> 
+
+<tr id="name_prefix" style="vertical-align:top"> 
+<td> 
+<h4>name_prefix</h4> 
+</td>
+<td>0..1
+</td>
+<td> 
+</td>
+<td>text
+</td>
+<td><em>component of person's full name that appears before given or family names</em> E.g. honorific &quot;title&quot; - in English, commonly Mrs. Mr. Dr. etc.
+</td></tr> 
+
+<tr id="name_suffix" style="vertical-align:top"> 
+<td> 
+<h4>name_suffix</h4> 
+</td>
+<td>0..1
+</td>
+<td> 
+</td>
+<td>text
+</td>
+<td><em>component of person's full name that appears after given or family names</em> E.g. &quot;Jr&quot;, &quot;Esq.&quot;, &quot;Ph.D.&quot;
+</td></tr> 
+
+<tr id="dob" style="vertical-align:top"> 
+<td> 
+<h4>dob</h4> 
+</td>
+<td>0..1
+</td>
+<td> 
+</td>
+<td><a href="http://www.w3.org/TR/NOTE-datetime">W3C Complete date</a>, e.g. 1989-03-20
+</td>
+<td><em>date of birth</em> If more precise format is used, any time part should be treated as insignificant.
+</td></tr> 
+
+<tr id="gender" style="vertical-align:top"> 
+<td> 
+<h4>gender</h4> 
+</td>
+<td>0..1
+</td>
+<td> 
+</td>
+<td>0=not&nbsp;known, 1=male, 2=female, 9=not&nbsp;specified 
+</td>
+<td>Following UK Learner Records Service: &quot;0 = Not Known.
+The gender of the
+person has not
+been recorded.
+1 = Male
+2 = Female
+9 = Not Specified.
+Unable to be
+classified as either
+male or female.&quot;
+</td></tr> 
+
+<tr id="openid" style="vertical-align:top"> 
+<td> 
+<h4>openid</h4> 
+</td><td>0..*
+</td><td> 
+</td><td> 
+</td><td><em>identifier with the <a href="http://openid.net/">openid service</a></em> This is used across many service providers.
+</td></tr> 
+
+<tr id="homephone" style="vertical-align:top"> 
+<td> 
+<h4>homephone</h4> 
+</td><td>0..*
+</td><td> 
+</td><td>recommended format: full international, starting with + (+44 for UK)
+</td><td>If an exporting system attempts to replace a leading "0" in an unchecked field with "+44", the number should first be checked as a plausible UK number.
+</td></tr> 
+
+<tr><td colspan="5"><h3>Fields specific to organizational data</h3></td></tr>
+
+<tr> 
+<th>value of field attribute </th>
+<th>M </th>
+<th>extra attributes </th>
+<th>format </th>
+<th>definition and notes </th>
+</tr> 
+
+<tr id="legal_org_name"> 
+<td> 
+<h4>legal_org_name</h4> 
+</td><td>0..1
+</td><td> 
+</td><td>text
+</td><td>At least one org_name field must be present.
+</td></tr> 
+<tr id="preferred_org_name"> 
+<td> 
+<h4>preferred_org_name</h4> 
+</td><td>0..1
+</td><td> 
+</td><td>text
+</td><td>If not present, assume legal org name is preferred. This can hold "trading name".
+</td></tr> 
+
+</table> 
+
+<h3 id="Service_abbreviations"> Service abbreviations</h3> 
+<p><em>I'd like to get rid of service abbreviations, if possible. Just use a URI.
+We should maintain a list of sensible URIs for common services.</em>
+</p> 
+
+<!-- ############################# attributes ########################## -->
+
+
+<hr />
+
+<h2 style="page-break-before:always" id="attributes">Attributes</h2>
+
+<hr />
+
+<h3>Attributes defined by Atom</h3>
+<p>These are used without any namespace prefix.
+</p>
+<table class="tableGreenBorder">
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="atomlabel"><td colspan="2"><h4>term: label</h4></td></tr>
+	<tr><td>definition:</td><td>&quot;human-readable label for display in end-user applications&quot;</td></tr>
+	<tr><td>notes:</td><td>See also the Leap2 <a href="#label">label</a> attribute.</td></tr>
+	<tr><td>domain:</td> <td><a href="#category">category</a></td></tr>
+	<tr><td>data type:</td><td>text</td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td>
+	    <td>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.2.2.3">label</a></td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="scheme"><td colspan="2"><h4>term: scheme</h4></td></tr>
+	<tr><td>definition:</td><td>&quot; IRI that identifies a categorization scheme&quot;</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>domain:</td> <td><a href="#category">category</a></td></tr>
+	<tr><td>data type:</td><td>URI</td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td>
+	    <td>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.2.2.2">scheme</a></td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="term"><td colspan="2"><h4>term: term</h4></td></tr>
+	<tr><td>definition:</td><td>&quot;string that identifies the category to which the entry or feed belongs&quot;</td></tr>
+	<tr><td>notes:</td><td></td></tr>
+	<tr><td>domain:</td> <td><a href="#category">category</a></td></tr>
+	<tr><td>data type:</td><td>text</td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td>
+	    <td>Atom: <a href="http://tools.ietf.org/html/rfc4287#section-4.2.2.1">term</a></td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+</table>
+
+<h3>Attributes defined by Leap2A</h3>
+
+<p>These are used with the namespace prefix <code>leap2:</code>
+</p>
+
+<table class="tableGreenBorder">
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="countrycode"><td colspan="2"><h4>term: countrycode</h4></td></tr>
+	<tr><td>definition:</td><td>ISO code for the named country</td></tr>
+	<tr><td>notes:</td><td> </td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/countrycode">http://www.cetis.org.uk/leap2/terms/countrycode</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#country">country</a></td></tr>
+	<tr><td>data type:</td><td>3-letter code from <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3">ISO 3166-1</a></td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>Append value in parenthesis to containing country text.</td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="display_order"><td colspan="2"><h4>term: display_order</h4></td></tr>
+	<tr><td>definition:</td><td>number determining order in which component parts should be displayed</td></tr>
+	<tr><td>notes:</td><td> </td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/display_order">http://www.cetis.org.uk/leap2/terms/display_order</a></td></tr>
+	<tr><td>domain:</td> <td> <a href="#has_part">has_part</a>; <a href="#is_part_of">is_part_of</a> </td></tr>
+	<tr><td>data type:</td><td>integer</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>discard</td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="field"><td colspan="2"><h4>term: field</h4></td></tr>
+	<tr><td>definition:</td><td>(see the definitions of the individual <a href="#datafields">fields</a>)</td></tr>
+	<tr><td>notes:</td><td> </td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/field">http://www.cetis.org.uk/leap2/terms/field</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#persondata">persondata</a> / <a href="#orgdata">orgdata</a></td></tr>
+	<tr><td>data type:</td><td>one of: field names defined <a href="#datafields">in the table</a>. </td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>see <a href="#persondata">persondata</a> and <a href="#orgdata">orgdata</a> </td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="label"><td colspan="2"><h4>term: label</h4></td></tr>
+	<tr><td>definition:</td><td>system-defined label for piece of information</td></tr>
+	<tr><td>notes:</td><td>See also the Atom <a href="#atomlabel">label</a> attribute.</td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/label">http://www.cetis.org.uk/leap2/terms/label</a></td></tr>
+	<tr><td>domain:</td> <td>
+<ul>
+<li><a href="#addressline">addressline</a> </li>
+<li><a href="#date">date</a> </li>
+<li><a href="#orgdata">orgdata</a> </li>
+<li><a href="#persondata">persondata</a> </li>
+<li><a href="#status">status</a> </li>
+</ul>
+	</td></tr>
+	<tr><td>data type:</td><td>text</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>Varies. See the containing (domain) element. </td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="point"><td colspan="2"><h4>term: point</h4></td></tr>
+	<tr><td>definition:</td><td>kind of date</td></tr>
+	<tr><td>notes:</td><td> </td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/point">http://www.cetis.org.uk/leap2/terms/point</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#date">date</a></td></tr>
+	<tr><td>data type:</td><td>one of: &quot;end&quot;; &quot;start&quot;; &quot;target&quot; </td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>see <a href="#date">date</a></td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="service"><td colspan="2"><h4>term: service</h4></td></tr>
+	<tr><td>definition:</td><td>the service for which an identifier is provided</td></tr>
+	<tr><td>notes:</td><td> </td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/service">http://www.cetis.org.uk/leap2/terms/service</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#persondata">persondata</a> / <a href="#orgdata">orgdata</a></td></tr>
+	<tr><td>data type:</td><td>URI</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>see <a href="#persondata">persondata</a> and <a href="#orgdata">orgdata</a> </td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="stage"><td colspan="2"><h4>term: stage</h4></td></tr>
+	<tr><td>definition:</td><td>name of the progress status</td></tr>
+	<tr><td>notes:</td><td> </td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/stage">http://www.cetis.org.uk/leap2/terms/stage</a></td></tr>
+	<tr><td>domain:</td> <td><a href="#status">status</a></td></tr>
+	<tr><td>data type:</td><td>one of: &quot;planned&quot;, &quot;progressing&quot;, &quot;completed&quot;, &quot;suspended&quot;</td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>(see <a href="#status">status</a>)</td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+	<tr id="when_added"><td colspan="2"><h4>term: when_added</h4></td></tr>
+	<tr><td>definition:</td><td>date at which a part was added to the whole that it is part of</td></tr>
+	<tr><td>notes:</td><td> </td></tr>
+	<tr><td>URI:</td><td><a href="http://www.cetis.org.uk/leap2/terms/when_added">http://www.cetis.org.uk/leap2/terms/when_added</a></td></tr>
+	<tr><td>domain:</td> <td>
+<a href="#has_part">has_part</a>;
+<a href="#is_part_of">is_part_of</a>
+</td></tr>
+	<tr><td>data type:</td><td><a href="http://tools.ietf.org/html/rfc3339">RFC 3339</a></td></tr>
+	<tr class="leap2a"><td>to degrade:</td><td>discard</td></tr>
+	<tr class="leap2a"><td>links to further documentation:</td>
+	</tr>
+
+<tr><td style="background-color:#446633;" colspan="2">&nbsp;</td></tr><!-- ############# -->
+
+</table>
+
+<!-- ##################### Leap2A category schemes ##################### -->
+
+
+<hr />
+
+<h2 style="page-break-before:always" id="categoryschemes">Leap2A category schemes</h2>
+
+<hr />
+
+<p>These category schemes are for use with the scheme and term attributes of Leap2A <a href="#category">categories</a>. Categories are intended to give information about the significance of the item that contains them.
+</p>
+
+<p>In the table below, the multiplicity limits how many terms from that particular category scheme may be applied to a single item.
+</p>
+
+<table class="tableGreenBorder">
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+<tr id="audience"><td colspan="3">scheme: audience</td></tr>
+<tr><td>scheme definition:</td><td colspan="2">indication of whether item is private or not</td></tr>
+<tr><td>notes:</td><td colspan="2">This is for ensuring that items can be exported and marked &quot;Private&quot; so as not to be made visible to others in a receiving system.</td></tr>
+<tr><td>scheme URI:</td><td colspan="2">
+<code><a href="http://www.cetis.org.uk/leap2/a/categories/audience#">http://www.cetis.org.uk/leap2/a/categories/audience#</a></code></td></tr>
+<tr><td>domain:</td><td colspan="2"><a href="#entry">entry</a></td></tr>
+<tr><td>multiplicity:</td><td colspan="2">0..1</td></tr>
+<tr><td>default term:</td><td colspan="2">Shareable</td></tr>
+<tr style="vertical-align:top">
+<td rowspan="2">terms:</td>
+<td>Private</td><td>is for viewing by the portfolio holder only</td>
+</tr>
+<tr><td>Shareable</td><td>might be intended for viewing by other people, subject to permissions</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+<tr id="check"><td colspan="3">scheme: check</td></tr>
+<tr><td>scheme definition:</td><td colspan="2">well-defined yes/no indicator</td></tr>
+<tr><td>scheme URI:</td><td colspan="2">
+<code><a href="http://www.cetis.org.uk/leap2/a/categories/check#">http://www.cetis.org.uk/leap2/a/categories/check#</a></code></td></tr>
+<tr><td>domain:</td><td colspan="2"><a href="#entry">entry</a></td></tr>
+<tr><td>multiplicity:</td><td colspan="2">0..1</td></tr>
+<tr><td>default term:</td><td colspan="2">(none)</td></tr>
+<tr style="vertical-align:top">
+<td rowspan="2">terms:</td>
+<td>No</td><td>represents the answer no, or false</td>
+</tr>
+<tr><td>Yes</td><td>represents the answer yes, or true</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+<tr id="common_item"><td colspan="3">scheme: common_item</td></tr>
+<tr><td>scheme definition:</td><td colspan="2">no definition</td></tr>
+<tr><td>notes:</td><td colspan="2">This is a mixed scheme containing diverse categories</td></tr>
+<tr><td>scheme URI:</td><td colspan="2">
+<code><a href="http://www.cetis.org.uk/leap2/a/categories/common_item#">http://www.cetis.org.uk/leap2/a/categories/common_item#</a></code></td></tr>
+<tr><td>domain:</td><td colspan="2"><a href="#entry">entry</a></td></tr>
+<tr><td>multiplicity:</td><td colspan="2">0..*</td></tr>
+<tr><td>default term:</td><td colspan="2">(none)</td></tr>
+<tr style="vertical-align:top">
+<td rowspan="3">terms:</td>
+<td>Intermission</td><td>an <a href="#activity">activity</a> representing a period spent disengaged from an <a href="#activity">activity</a> of which it is a part</td>
+</tr>
+<tr><td>Note</td><td>is an <a href="#entry">entry</a> of no more precisely defined significance</td></tr>
+<tr><td>Personalstatement</td><td>is an <a href="#entry">entry</a> about the portfolio holder</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+<tr id="learning_cycle"><td colspan="3">scheme: learning_cycle</td></tr>
+<tr><td>scheme definition:</td><td colspan="2">categorization along the lines of Kolb's learning cycle</td></tr>
+<tr><td>notes:</td><td colspan="2"></td></tr>
+<tr><td>scheme URI:</td><td colspan="2">
+<code><a href="http://www.cetis.org.uk/leap2/a/categories/learning_cycle#">http://www.cetis.org.uk/leap2/a/categories/learning_cycle#</a></code></td></tr>
+<tr><td>domain:</td><td colspan="2"><a href="#entry">entry</a></td></tr>
+<tr><td>multiplicity:</td><td colspan="2">0..1</td></tr>
+<tr><td>default term:</td><td colspan="2">none</td></tr>
+<tr style="vertical-align:top">
+<td rowspan="4">terms:</td>
+<td>Experiencing</td><td>represents acting, doing, feeling, etc.</td>
+</tr>
+<tr><td>Reflecting</td><td>represents observing, reviewing, watching, etc.</td></tr>
+<tr><td>Conceptualizing</td><td>represents thinking, learning, concluding, theorising, etc.</td></tr>
+<tr><td>Testing</td><td>represents planning, experimenting, trying out, etc.</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+<tr id="life_area"><td colspan="3">scheme: life_area</td></tr>
+<tr><td>scheme definition:</td><td colspan="2">indicates an area or areas of life with which the item is associated</td></tr>
+<tr><td>notes:</td><td colspan="2">The general idea of this scheme draws from ideas in several vocabularies in 
+<a href="http://www.imsglobal.org/profiles/">IMS LIP</a>.</td></tr>
+<tr><td>scheme URI:</td><td colspan="2">
+<code><a href="http://www.cetis.org.uk/leap2/a/categories/life_area#">http://www.cetis.org.uk/leap2/a/categories/life_area#</a></code></td></tr>
+<tr><td>domain:</td><td colspan="2"><a href="#entry">entry</a></td></tr>
+<tr><td>multiplicity:</td><td colspan="2">0..*</td></tr>
+<tr><td>default term:</td><td colspan="2">Unclassified</td></tr>
+<tr style="vertical-align:top">
+<td rowspan="16">terms:</td>
+<td>Development</td><td>personal and/or professional development of the portfolio holder</td>
+</tr>
+<tr><td>Education</td><td>learning or being taught in the course of upbringing for general purposes</td></tr>
+<tr><td>Enterprise</td><td>business or organisational activity which is not ordinary employment or self-employment</td></tr>
+<tr><td>Family</td><td>unpaid care of members of the holder's family, or similar</td></tr>
+<tr><td>Involuntary</td><td>e.g. sickness, hospitalisation, detention</td></tr>
+<tr><td>Leisure</td><td>recreation, hobby, pastime, sport</td></tr>
+<tr><td>National</td><td>national service, or any other compulsory national scheme</td></tr>
+<tr><td>Personal</td><td>done for any personal reasons not covered better by other categories</td></tr>
+<tr><td>Placement</td><td>work placement, internship or apprenticeship</td></tr>
+<tr><td>Politics</td><td>activity etc. with political motivation</td></tr>
+<tr><td>Religion</td><td>activity etc. motivated by religious obligation, custom or conviction</td></tr>
+<tr><td>Training</td><td>development of specific skills / abilities usable in the context of work</td></tr>
+<tr><td>Travel</td><td>travel for its own sake, rather than related to another category</td></tr>
+<tr><td>Unclassified</td><td>belongs to any or none of the other categories</td></tr>
+<tr><td>Voluntary</td><td>unpaid work typically for some cause or charity</td></tr>
+<tr><td>Work</td><td>paid work undertaken normally</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+<tr id="person_type"><td colspan="3">scheme: person_type</td></tr>
+<tr><td>scheme definition:</td><td colspan="2">kind of role the person plays in relationship to the portfolio holder</td></tr>
+<tr><td>notes:</td><td colspan="2">If there are any person items, exactly one of them must refer to the portfolio holder, and must be categorised with the person_type &quot;Self&quot;.</td></tr>
+<tr><td>scheme URI:</td><td colspan="2">
+<code><a href="http://www.cetis.org.uk/leap2/a/categories/person_type#">http://www.cetis.org.uk/leap2/a/categories/person_type#</a></code></td></tr>
+<tr><td>domain:</td><td colspan="2"><a href="#person">person</a></td></tr>
+<tr><td>multiplicity:</td><td colspan="2">0..*</td></tr>
+<tr><td>default term:</td><td colspan="2">none</td></tr>
+<tr style="vertical-align:top">
+<td rowspan="8">terms:</td>
+<td>Assessor</td><td>person who assesses any of the present portfolio information</td>
+</tr>
+<tr><td>Friend</td><td>anyone in a peer group of the portfolio holder</td></tr>
+<tr><td>Guardian</td><td>parent, guardian, carer, etc.</td></tr>
+<tr><td>Mentor</td><td>anyone in a supportive, supervisory or advisory role to the holder</td></tr>
+<tr><td>Other</td><td>person who clearly does not fall into any of the other categories (use label to indicate)</td></tr>
+<tr><td>Referee</td><td>person who can be referred to for confirmation of, or futher detail about, some of the portfolio information</td></tr>
+<tr><td>Self</td><td>the person item is the portfolio holder (cannot be used together with other terms)</td></tr>
+<tr><td>Unclassified</td><td>belonging to any or none of the other categories, but not &quot;Self&quot;</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+<tr id="priority"><td colspan="3">scheme: priority</td></tr>
+<tr><td>scheme definition:</td><td colspan="2">allows items to be ranked</td></tr>
+<tr><td>notes:</td><td colspan="2">If no priority is given for any item, relative priorities cannot be assumed. If a priority is given for at least one comparable item, other comparable items without explicit priority should be assigned priority &quot;3&quot;</td></tr>
+<tr><td>scheme URI:</td><td colspan="2">
+<code><a href="http://www.cetis.org.uk/leap2/a/categories/priority#">http://www.cetis.org.uk/leap2/a/categories/priority#</a></code></td></tr>
+<tr><td>domain:</td><td colspan="2"><a href="#entry">entry</a></td></tr>
+<tr><td>multiplicity:</td><td colspan="2">0..1</td></tr>
+<tr><td>default term:</td><td colspan="2">none</td></tr>
+<tr style="vertical-align:top">
+<td rowspan="5">terms:</td>
+<td>5</td><td>is of the highest priority</td>
+</tr>
+<tr><td>4</td><td></td></tr>
+<tr><td>3</td><td></td></tr>
+<tr><td>2</td><td></td></tr>
+<tr><td>1</td><td>is of the lowest priority</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+<tr id="readiness"><td colspan="3">scheme: readiness</td></tr>
+<tr><td>scheme definition:</td><td colspan="2">whether an item is ready or still being drafted</td></tr>
+<tr><td>notes:</td><td colspan="2">Ready does not necessarily mean that it is in a final form, but that it is no longer in the early stages of creation and can be used as it is, even if still a draft.</td></tr>
+<tr><td>scheme URI:</td><td colspan="2">
+<code><a href="http://www.cetis.org.uk/leap2/a/categories/readiness#">http://www.cetis.org.uk/leap2/a/categories/readiness#</a></code></td></tr>
+<tr><td>domain:</td><td colspan="2"><a href="#entry">entry</a></td></tr>
+<tr><td>multiplicity:</td><td colspan="2">0..1</td></tr>
+<tr><td>default term:</td><td colspan="2">Ready</td></tr>
+<tr style="vertical-align:top">
+<td rowspan="2">terms:</td>
+<td>Ready</td><td>is deemed by the portfolio holder to be ready for its intended use</td>
+</tr>
+<tr><td>Unready</td><td>is currently in the process of creation, or otherwise deemed not ready for intended use</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+<tr id="resource_type"><td colspan="3">scheme: resource_type</td></tr>
+<tr><td>scheme definition:</td><td colspan="2">kind of resource</td></tr>
+<tr><td>notes:</td><td colspan="2">Recommended for <a href="#resource">resource</a> items.</td></tr>
+<tr><td>scheme URI:</td><td colspan="2">
+<code><a href="http://www.cetis.org.uk/leap2/a/categories/resource_type#">http://www.cetis.org.uk/leap2/a/categories/resource_type#</a></code></td></tr>
+<tr><td>domain:</td><td colspan="2"><a href="#resource">resource</a></td></tr>
+<tr><td>multiplicity:</td><td colspan="2">0..1</td></tr>
+<tr><td>default term:</td><td colspan="2">Unclassified</td></tr>
+<tr style="vertical-align:top">
+<td rowspan="8">terms:</td>
+<td>Course</td><td>is a course of education or training</td>
+</tr>
+<tr><td>Human</td><td>could be a person, a team, a company, an organisation, etc.</td></tr>
+<tr><td>Offline</td><td>is a digital resource not available on the web</td></tr>
+<tr><td>Other</td><td>is a resource clearly not falling into any other category</td></tr>
+<tr><td>Physical</td><td>is a physical resource but not a book or printed material</td></tr>
+<tr><td>Printed</td><td>is a book, some printed material, or a copy</td></tr>
+<tr><td>Web</td><td>is a resource with its own URL</td></tr>
+<tr><td>Unclassified</td><td>is any or none of the above kinds</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+<tr id="selection_type"><td colspan="3">scheme: selection_type</td></tr>
+<tr><td>scheme definition:</td><td colspan="2">kind of selection</td></tr>
+<tr><td>notes:</td><td colspan="2">Recommended for <a href="#selection">selection</a> items.</td></tr>
+<tr><td>scheme URI:</td><td colspan="2">
+<code><a href="http://www.cetis.org.uk/leap2/a/categories/selection_type#">http://www.cetis.org.uk/leap2/a/categories/selection_type#</a></code></td></tr>
+<tr><td>domain:</td><td colspan="2"><a href="#selection">selection</a></td></tr>
+<tr><td>multiplicity:</td><td colspan="2">0..1</td></tr>
+<tr><td>default term:</td><td colspan="2">Depends on context. </td></tr>
+<tr style="vertical-align:top">
+<td rowspan="7">terms:</td>
+<td>Abilities</td><td>list of skill, competency or ability definitions</td>
+</tr>
+<tr><td>Blog</td><td>represents a feed, or list of blog entries</td></tr>
+<tr><td>CV</td><td>is a CV or r&eacute;sum&eacute;</td></tr>
+<tr><td>Folder</td><td>represents any set of resources, files or other items</td></tr>
+<tr><td>Grouping</td><td>is a set of entries that are grouped together for reasons not including more specific ones covered by other terms in this scheme</td></tr>
+<tr><td>Webpage</td><td>is something like a web page</td></tr>
+<tr><td>Website</td><td>is a set of internal items like web pages, created within the portfolio information</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+<tr id="SWOT"><td colspan="3">scheme: SWOT</td></tr>
+<tr><td>scheme definition:</td><td colspan="2">basic qualities of a situation</td></tr>
+<tr><td>notes:</td><td colspan="2">The scheme is widely known and used.</td></tr>
+<tr><td>scheme URI:</td><td colspan="2">
+<code><a href="http://www.cetis.org.uk/leap2/a/categories/SWOT#">http://www.cetis.org.uk/leap2/a/categories/SWOT#</a></code></td></tr>
+<tr><td>domain:</td><td colspan="2"><a href="#entry">entry</a></td></tr>
+<tr><td>multiplicity:</td><td colspan="2">0..1</td></tr>
+<tr><td>default term:</td><td colspan="2">none</td></tr>
+<tr style="vertical-align:top">
+<td rowspan="4">terms:</td>
+<td>Strength</td><td>represents a positive or desirable quality</td></tr>
+<tr><td>Weakness</td><td>represents a negative or undesirable quality</td></tr>
+<tr><td>Opportunity</td><td>represents some potential for development</td></tr>
+<tr><td>Threat</td><td>represents a danger to the current situation, or obstacle or block to development</td></tr>
+
+<tr><td style="background-color:#446633;" colspan="3">&nbsp;</td></tr>
+
+</table>
+
+<!-- ############################# Atom ################################ -->
+
+
+<hr />
+
+<h2 style="page-break-before:always" id="implementation">Implementing Leap2A using Atom</h2>
+
+<hr />
+
+<h3>Structure of the package</h3>
+
+<p>A Leap2A package shall be:</p>
+<ul>
+<li>either an XML file representing a single valid Atom feed;</li>
+<li>or a zip archive with one file named <code>leap2a.xml</code> in the root directory, 
+together with any number of files not named <code>leap2a.xml</code> in any directory structure.</li>
+</ul>
+<p>The main XML file is either the one called <code>leap2a.xml</code> 
+or the single file constituting the whole package.</p>
+<p>All files included in a zip archive must be referred to in the main XML file.
+They may either have corresponding <a href="#resource">resource</a> items, 
+linked with an <a href="#enclosure">enclosure</a> property,
+or referred to in any <a href="#entry">entry</a>, 
+also using an <a href="#enclosure">enclosure</a> property.
+</p>
+
+<p>The main XML file in Leap2A shall also be a valid Atom feed.</p>
+
+<h3>Namespaces and non-Leap2A markup</h3>
+
+<p>All terms specific to Leap2A, and used as element or attribute names in the main XML file,
+must use the namespace prefix &quot;<code>leap2:</code>&quot;. 
+Terms used similarly from Dublin Core should use the namespace prefix &quot;<code>dcterms:</code>&quot; to stand for &quot;<code>http://purl.org/dc/terms/</code>&quot;.
+Terms from Atom must not use any namespace prefix.
+</p>
+
+<p>Namespace prefixes used must be declared following XML conventions,
+by adding xmlns attributes inside the feed element.
+</p>
+
+<p>As with Atom, implementing systems are free to add any extra elements and attributes. However, wherever this is done, these elements and attributes must be given a proper namespace that is not <code>leap2:</code>. It is expected that other systems on importing or receiving such extra elements or attributes may ignore and discard them. Extra bespoke elements and attributes must not be used to represent information that could equally well be represented using Leap2A elements and attributes.
+</p>
+
+<h3>Importing Atom feeds</h3>
+
+<p>Most valid Atom feeds will also be valid as Leap2A, 
+except that they will be missing a <a href="#version">version</a> element.
+If it is clear on inspection that the feed does not contain old Leap2A markup,
+it may be imported as if it had the most recent <a href="#version">version</a> element.
+If it has no version element but some Leap2A markup, it should be treated with caution,
+as it could be intended to be represented using the 2009-03 version of Leap2A.
+</p>
+
+
+<hr />
+
+<h2 style="page-break-before:always" id="references">References and notes</h2>
+
+<hr />
+
+<ul>
+<li><a href="http://dublincore.org/documents/dcmi-terms/">DCMI Metadata Terms</a></li>
+<li><a href="http://tools.ietf.org/html/rfc2119">RFC 2119 Key words for use in RFCs to Indicate Requirement Levels</a></li>
+<li><a href="http://tools.ietf.org/html/rfc3339">RFC 3339 Date and Time on the Internet: Timestamps</a></li>
+<li><a href="http://tools.ietf.org/html/rfc4287">RFC 4287 The Atom Syndication Format</a></li>
+<li><a href="http://tools.ietf.org/html/rfc4685">RFC 4685 Atom Threading Extensions</a></li>
+<li><a href="http://tools.ietf.org/html/rfc4946">RFC 4946 Atom License Extension</a></li>
+<li>SIF: see the <a href="http://www.sifinfo.org/us/">US site</a> or the <a href="http://www.sifinfo.org/uk/">UK site</a>.</li>
+
+</ul>
+
+<hr />
+
+</div>
+</div>
+
+</body>
+
+</html>

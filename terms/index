@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+	<meta HTTP-EQUIV="CONTENT-TYPE" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="AUTHOR" content="Simon Grant">
+	<meta name="CREATED" content="20100309;4320000">
+	
+<link href="../wide.css" rel="stylesheet" type="text/css" media="screen" />
+	
+</head>
+
+<body>
+<div id="container">
+
+<div id="header">
+	<h1><a href="../index.html">leap2</a>: learner-ownable information</h1>
+</div>
+
+<div id="content">
+<h1>Namespace</h1>
+<p>The namespace for Leap2 from 2016 onwards is http://www.cetis.org.uk/leap2/terms/ and that lands here on this index page.</p>
+<p>The conventional namespace abbreviation is <b>leap2:</b></p>
+
+<h1>Table of Leap2 terms</h1>
+<p>This page is informative of the terms used in the leap2: namespace.<br />
+Along with leap2: terms, other terms from Atom used for Leap2A are listed.
+</p>
+<p>For documentation on the use of the terms in Leap2A, please click on the link
+in the leftmost column.
+</p>
+
+
+<h2>Terms used in Leap2A with leap2: as namespace (N) or as prefix (P)</h2>
+<ul>
+<li>Terms used with leap2: as a namespace (N) occur as element or attribute names.</li>
+<li>Terms used with leap2: as prefix (P) occur as attribute values or text nodes.</li>
+</ul>
+
+<table>
+	<tbody>
+		<tr>
+			<th>Leap2A<br />link</th>
+			<th>&nbsp;</th>
+			<th>URI<br />link</th>
+			<th>type of term</th>
+			<th>containing element</th>
+			<th>degradation or more<br />general type or relation</th>
+			<th>notes</th>
+		</tr>
+		<tr id="ability">
+			<td><a href="ability">ability</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/ability">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>leap2:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="achievement">
+			<td><a href="achievement">achievement</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/achievement">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>leap2:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="activetime">
+			<td><a href="activetime">activetime</a></td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/activetime">uri</a></td>
+			<td><a href="../a/literals">literal element</a></td>
+			<td>atom:entry </td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="activity">
+			<td><a href="activity">activity</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/activity">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>leap2:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="addressline">
+			<td><a href="../a/literals#addressline">addressline</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/addressline">uri</a></td>
+			<td><a href="../a/literals">literal element</a></td>
+			<td>leap2:spatial</td>
+			<td>append to spatial</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="affiliation">
+			<td><a href="../a/types/affiliation">affiliation</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/affiliation">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>leap2:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="attended_by">
+			<td><a href="../a/relationships#attended_by">attended_by</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/attended_by">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:supported_by</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="attends">
+			<td><a href="../a/relationships#attends">attends</a> </td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/attends">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:supports</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="country">
+			<td><a href="../a/literals#country">country</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/country">uri</a></td>
+			<td><a href="../a/literals">literal element</a></td>
+			<td>leap2:spatial</td>
+			<td>append to spatial</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="countrycode">
+			<td><a href="../a/literals#countrycode">countrycode</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/countrycode">uri</a></td>
+			<td>attribute</td>
+			<td>leap2:country</td>
+			<td>append to spatial</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="date">
+			<td><a href="../a/literals#date">date</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/date">uri</a></td>
+			<td><a href="../a/literals">literal element</a></td>
+			<td>atom:entry </td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="display_order">
+			<td><a href="../a/literals#display_order">display_order</a></td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/display_order">uri</a></td>
+			<td>attribute</td>
+			<td>atom:link</td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="entry">
+			<td><a href="../a/types/entry">entry</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/entry">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>&nbsp;</td>
+			<td>see <a href="#atomentry">Atom</a></td>
+		</tr>
+		<tr id="field">
+			<td><a href="../a/literals#field">field</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/field">uri</a></td>
+			<td>attribute</td>
+			<td><a href="../a/specification#data">leap2:persondata</a>; etc.</td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="has_agenda">
+			<td><a href="../a/relationships#has_agenda">has_agenda</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/has_agenda">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:supported_by</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="has_evidence">
+			<td><a href="../a/relationships#has_evidence">has_evidence</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/has_evidence">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:supported_by</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="has_outcome">
+			<td><a href="../a/relationships#has_outcome">has_outcome</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/has_outcome">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:supports</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="has_part">
+			<td><a href="../a/relationships#has_part">has_part</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/has_part">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:relation</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="has_reply">
+			<td><a href="../a/relationships#has_reply">has reply</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/has_reply">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:relation</td>
+			<td>see <a href="#replies">Atom</a></td>
+		</tr>
+		<tr id="in_reply_to">
+			<td><a href="../a/relationships#in_reply_to">in_reply_to</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/in_reply_to">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:entry </td>
+			<td>leap2:relation</td>
+			<td>see  <a href="#in-reply-to">Atom</a></td>
+		</tr>
+		<tr id="is_agenda_of">
+			<td><a href="../a/relationships#is_agenda_of">is_agenda_of</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/is_agenda_of">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:supports</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="is_evidence_of">
+			<td><a href="../a/relationships#is_evidence_of">is_evidence_of</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/is_evidence_of">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:relation</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="is_outcome_of">
+			<td><a href="../a/relationships#is_outcome_of">is_outcome_of</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/is_outcome_of">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:supported_by</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="is_part_of">
+			<td><a href="../a/relationships#is_part_of">is_part_of</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/is_part_of">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:relation</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="label">
+			<td><a href="../a/literals#label">label</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/label">uri</a></td>
+			<td>attribute</td>
+			<td><a href="../a/specification#data">leap2:persondata</a>; etc.</td>
+			<td>append to content</td>
+			<td>see <a href="#atomlabel">Atom</a></td>
+		</tr>
+		<tr id="meeting">
+			<td><a href="../a/types/meeting">meeting</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/meeting">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>leap2:activity</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="myrole">
+			<td><a href="../a/literals#myrole">myrole</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/myrole">uri</a></td>
+			<td><a href="../a/literals">literal element</a></td>
+			<td>atom:entry </td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="organization">
+			<td><a href="../a/types/organization">organization</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/organization">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>leap2:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="orgdata">
+			<td><a href="../a/specification#orgdata">orgdata</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/orgdata">uri</a></td>
+			<td>blank node </td>
+			<td>atom:entry(organization)</td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="person">
+			<td><a href="../a/types/person">person</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/person">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>leap2:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="persondata">
+			<td><a href="../a/specification#persondata">persondata</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/persondata">uri</a></td>
+			<td>blank node </td>
+			<td>atom:entry(person) </td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="plan">
+			<td><a href="../a/types/plan">plan</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/plan">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>leap2:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="point">
+			<td>point</td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/point">uri</a></td>
+			<td>attribute</td>
+			<td><a href="../a/literals#date">leap2:date</a></td>
+			<td>append to date label</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="postcode">
+			<td><a href="../a/literals#postcode">postcode</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/postcode">uri</a></td>
+			<td><a href="../a/literals">literal element</a></td>
+			<td>leap2:spatial </td>
+			<td>append to spatial</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="publication">
+			<td><a href="../a/types/publication">publication</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/publication">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>leap2:resource</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="reflected_on_by">
+			<td><a href="../a/relationships#reflected_on_by">reflected_on_by</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/reflected_on_by">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:relation</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="reflects_on">
+			<td><a href="../a/relationships#reflects_on">reflects_on</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/reflects_on">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:relation</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="relation">
+			<td><a href="../a/relationships#relation">relation</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/relation">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>append link to content</td>
+			<td>see <a href="#related">Atom</a></td>
+		</tr>
+		<tr id="resource">
+			<td><a href="../a/types/resource">resource</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/resource">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>leap2:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="roleid">
+			<td><a href="../a/literals#roleid">roleid</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/roleid">uri</a></td>
+			<td><a href="../a/literals">literal element</a></td>
+			<td>atom:entry </td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="selection">
+			<td><a href="../a/types/selection">selection</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/selection">uri</a></td>
+			<td><a href="../a/types">item type</a></td>
+			<td>rdf:type</td>
+			<td>leap2:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="service">
+			<td><a href="../a/literals#service">service</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/service">uri</a></td>
+			<td>attribute</td>
+			<td><a href="../a/specification#data">leap2:persondata</a>; etc.</td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="spatial">
+			<td><a href="../a/literals#spatial">spatial</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/spatial">uri</a></td>
+			<td><a href="../a/literals">literal element</a></td>
+			<td>atom:entry </td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="stage">
+			<td>stage</td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/stage">uri</a></td>
+			<td>attribute</td>
+			<td><a href="../a/literals#status">leap2:status</a></td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="status">
+			<td><a href="../a/literals#status">status</a> </td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/status">uri</a></td>
+			<td><a href="../a/literals">literal element</a></td>
+			<td>atom:entry </td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="supported_by">
+			<td><a href="../a/relationships#supported_by">supported_by</a></td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/supported_by">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:relation</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="supports">
+			<td><a href="../a/relationships#supports">supports</a> </td>
+			<td>P</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/supports">uri</a></td>
+			<td><a href="../a/relationships">relationship</a></td>
+			<td>atom:link</td>
+			<td>leap2:relation</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="version">
+			<td><a href="../a/literals#version">version</a></td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/version">uri</a></td>
+			<td><a href="../a/literals">literal element</a></td>
+			<td>atom:feed</td>
+			<td>append to atom:subtitle</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="when_added">
+			<td><a href="../a/literals#when_added">when_added</a></td>
+			<td>N</td>
+			<td><a href="http://www.cetis.org.uk/leap2/terms/when_added">uri</a></td>
+			<td>attribute</td>
+			<td>atom:link (part)</td>
+			<td>append to content</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Terms from Atom and other specifications</h2>
+<p>These terms are used in Leap2A and understood as within the source spec.</p>
+
+<table>
+	<tbody>
+		<tr>
+			<th>Leap2A</th>
+			<th>type of term</th>
+			<th>source </th>
+			<th>containing element</th>
+			<th>notes</th>
+		</tr>
+		<tr id="">
+			<td><a href="../a/relationships#alternate">alternate</a> </td>
+			<td>relationship</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#page-22">atom</a></td>
+			<td>atom:link</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/relationships#author">author</a> </td>
+			<td>blank node</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.1">atom</a></td>
+			<td>atom:feed,entry </td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/categories">category</a></td>
+			<td>element</a></td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.2">atom</a></td>
+			<td>atom:entry </td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/literals#content_or_description">content</a></td>
+			<td>element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.1.3">atom</a></td>
+			<td>atom:entry </td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/relationships#contributor">contributor</a> </td>
+			<td>blank node</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.3">atom</a></td>
+			<td>atom:feed,entry </td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td>email</td>
+			<td>literal element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-3.2.3">atom</a></td>
+			<td>atom:author,contributor</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/relationships#enclosure">enclosure</a> </td>
+			<td>relationship</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#page-22">atom</a></td>
+			<td>atom:link</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="atomentry">
+			<td><a href="../a/types/entry">entry</a></td>
+			<td>element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.1.2">atom</a></td>
+			<td>atom:feed</td>
+			<td>see <a href="#entry">leap2</a></td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/introduction#feed">feed</a></td>
+			<td>element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.1.1">atom</a></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="in-reply-to">
+			<td><a href="../a/relationships#in_reply_to">in-reply-to</a></td>
+			<td>relationship</td>
+			<td><a href="http://tools.ietf.org/html/rfc4685#section-3">thr</a></td>
+			<td>atom:entry</td>
+			<td>see <a href="#in_reply_to">leap2</a></td>
+		</tr>
+		<tr id="replies">
+		<tr id="">
+			<td><a href="../a/relationships#license">license</a> </td>
+			<td>relationship</td>
+			<td><a href="http://tools.ietf.org/html/rfc4946">atom</a></td>
+			<td>atom:link</td>
+			<td>&nbsp;</td>
+		</tr>
+			<td><a href="../a/relationships#has_reply">replies</a></td>
+			<td>relationship</td>
+			<td><a href="http://tools.ietf.org/html/rfc4685#section-4">atom</a></td>
+			<td>atom:link</td>
+			<td>see <a href="#has_reply">leap2</a></td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/literals#id">id</a></td>
+			<td>literal element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.6">atom</a></td>
+			<td>atom:feed,entry </td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/literals#official_publication_date">issued</a></td>
+			<td>literal element</td>
+			<td><a href="http://dublincore.org/documents/dcmi-terms/#terms-issued">dcterms</a></td>
+			<td>atom:entry(<a href="#publication">publication</a>)</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="atomlabel">
+			<td><a href="../a/literals#label">label</a> </td>
+			<td>attribute</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.2.3">atom</a></td>
+			<td>atom:category</td>
+			<td>see <a href="#label">leap2</a></td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/relationships">link</a></td>
+			<td>element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">atom</a></td>
+			<td>atom:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td>name</td>
+			<td>literal element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-3.2.1">atom</a></td>
+			<td>atom:author,contributor</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/literals#published">published</a> </td>
+			<td>literal element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.9">atom</a></td>
+			<td>atom:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="related">
+			<td><a href="../a/relationships#relation">related</a></td>
+			<td>relationship</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#page-22">atom</a></td>
+			<td>atom:link</td>
+			<td>see <a href="#relation">leap2</a></td>
+		</tr>
+		<tr id="">
+			<td>resource</td>
+			<td>attribute</td>
+			<td><a href="http://www.w3.org/TR/rdf-schema/">rdf</a></td>
+			<td>rdf:type</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/literals#rights">rights</a></td>
+			<td>literal element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.10">atom</a></td>
+			<td>atom:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td>scheme</td>
+			<td>attribute</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.2">atom</a></td>
+			<td><a href="../a/categories">atom:category</a></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/relationships#selfid">self</a> </td>
+			<td>relationship</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#page-22">atom</a></td>
+			<td>atom:link</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/literals#summary">summary</a> </td>
+			<td>literal element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.13">atom</a></td>
+			<td>atom:entry </td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td>term</td>
+			<td>attribute</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.2.1">atom</a></td>
+			<td><a href="../a/categories">atom:category</a></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/literals#title">title</a> </td>
+			<td>literal element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.14">atom</a></td>
+			<td>atom:feed,entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/literals#content_or_description">type</a></td>
+			<td>attribute</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-3.1.1">atom</a></td>
+			<td>atom:content,summary,title</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/relationships">type</a></td>
+			<td>attribute</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.7.3">atom</a></td>
+			<td>atom:link</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/types">type</a></td>
+			<td>element</td>
+			<td><a href="http://www.w3.org/TR/rdf-schema/#ch_type">rdf</a></td>
+			<td>atom:entry</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td><a href="../a/literals#updated">updated</a> </td>
+			<td>literal element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.15">atom</a></td>
+			<td>atom:feed,entry </td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr id="">
+			<td>uri</td>
+			<td>element</td>
+			<td><a href="http://tools.ietf.org/html/rfc4287#section-3.2.2">atom</a></td>
+			<td>atom:author,contributor</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<h3>Glossary for types of term in Leap2A</h3>
+<dl>
+<dt>attribute</dt>
+  <dd>An attribute appears within its containing element, and can take values particular to that attribute selected from:
+  <ul>
+  <li>an integer</li>
+  <li>a term from a vocabulary</li>
+  <li>a date in ISO format</li>
+  <li>a URI or CURIE</li>
+  <li>a system-generated label</li>
+  </ul>
+  Attributes are generally documented along with the elements that contain them.<br />
+  Several are documented alongside literals as <a href="../a/literals#Extra_attributes">extra attributes</a>.<br />
+  leap2: is used as a namespace.
+  </dd>
+<dt>blank node</dt>
+  <dd>A blank node is an element containing other elements, but no text nodes, and it is not referred to.<br />
+  leap2: is used as a namespace.
+  </dd>
+<dt>item type</dt>
+  <dd>A item type is represented as a URI or CURIE in the rdf:resource attribute of rdf:type<br />
+  Item types are listed in <a href="../a/types">the types page</a>.<br />
+  leap2: is used as a prefix.
+  </dd>
+<dt>literal element</dt>
+  <dd>A literal element appears within its containing element, and has a textual value for display.<br />
+  It may also have attributes.
+  Most literal elements are listed in <a href="../a/literals">the literals page</a>.<br />
+  leap2: is used as a namespace.
+  </dd>
+<dt>relationship</dt>
+  <dd>A relationship is normally represented as a URI or CURIE in the rel attribute of atom:link<br />
+  Relationships are listed in <a href="../a/relationships">the relationships page</a>.<br />
+  leap2: is used as a prefix.
+  </dd>
+</dl>
+<h2>See also</h2>
+<ul>
+<li><a href="../a/specification">the Leap2A specification</a></li>
+<li><a href="../a/">the main Leap2A documentation</a></li>
+</ul>
+</div>
+</div>
+
+</body>
+
+</html>

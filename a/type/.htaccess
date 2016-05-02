@@ -1,0 +1,3 @@
+DefaultType text/html
+Options +MultiViews
+DirectoryIndex index index.html

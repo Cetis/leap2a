@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>entry type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>entry type</h1>
+</div>
+
+<div id="content">
+<h1>Entry</h1>
+<p><em>One of the <a href="../types">Leap2A item types</a></em></p>
+<pre><br />&lt;rdf:type rdf:resource="leap2:entry" /&gt; or
+&lt;rdf:type rdf:resource="<a href="http://www.cetis.org.uk/leap2/terms/entry" rel="nofollow">http://www.cetis.org.uk/leap2/terms/entry</a>" /&gt;   </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>Any work that is not properly represented as one of the more specific types; anything treated simply as a piece of writing or expression, together with metadata about authoring / creation.</td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td>
+<ul>
+<li>A log or blog entry</li>
+<li>A comment on someone else's entry</li>
+<li>A personal statement</li>
+<li>A reflection</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Literals used:</td>
+<td>(see Leap<a href="../types">2A/types</a>)</td>
+</tr>
+<tr>
+<td>Relationships:</td>
+<td>
+<ul>
+<li><a href="../relationships#has_reply">has reply</a> → <strong>entry</strong></li>
+<li><a href="../relationships#in_reply_to">in reply to</a> → <strong>entry</strong></li>
+<li><a href="../relationships#is_evidence_of">is evidence of</a> → items that can have evidence</li>
+<li><a href="../relationships#reflects_on">reflects on</a> → items that can be reflected on</li>
+<li><a href="../relationships#supports">supports</a> → <a href="../type/plan">plan</a></li>
+<li><a href="../relationships#supported_by">supported by</a> → <a href="../type/plan">plan</a> (as the plan's goal)</li>
+<li>(see also the relationships given for any item under Leap<a href="../types">2A/types</a>)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td>
+<ul>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/learning_cycle">learning cycle</a></li>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/SWOT">SWOT</a></li>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/life_area">life area</a></li>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/common_item">common item</a> Note and Personalstatement</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Can degrade to:</td>
+<td>(cannot degrade: this is the most basic type)</td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>
+<p>This is listed first as it is the basic type and cannot be degraded. Many miscellaneous things may be represented as entries, including reflexions and assertions. Note that, because entry is the default type, some entries may be without their own content. Receiving systems need to be able to handle these.</p>
+<p>Any entry without an explicit type should be interpreted as of this type: it is the default type. Thus, when importing a plain Atom blog feed, all the entries should be handled as this type.</p>
+<p>See the Leap<a href="../types">2A/types</a> page for characteristics of any item, including entries.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /> See also <a href="http://wiki.cetis.ac.uk/LEAP_entry" rel="nofollow">earlier ideas on entry</a></p>
+
+</div>
+</div>
+</body>
+</html>

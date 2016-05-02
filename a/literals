@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leap2A core specification - draft of 2011</title>
+<!-- ********* change this back to full URL ********* -->
+<link href="../wide.css" rel="stylesheet" type="text/css" media="screen" />
+<style>
+hr {border:1px #82ba52 solid; height:5px; color:#82ba52; background-color:#82ba52}
+ul {padding-left:1.5em}
+.tableGreenBorder {
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+}
+.tableGreenBorder th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+}
+.tableGreenBorder tr.leap2a td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #f0ffe5;
+}
+.tableGreenBorder td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+}
+@media print
+{
+body {font-family:sans-serif; font-size:smaller}
+h2 {page-break-before:always}
+table {border:1px solid black; border-collapse:collapse}
+th, td {padding:0.5em; border:1px solid black; border-collapse:collapse}
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+
+<div id="header">
+<table width="100%">
+<tbody>
+<tr>
+<td>
+<h1>
+<a href="../index.html"><img style="border:0" src="../images/logo_200px.png" width="200" height="65" alt="Leap2" /></a>
+</h1>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="content">
+<h1>Literals</h1>
+<p>This page specifies those sub-elements and attributes of the feed, or of item entries, adopted or defined for this specification, where literal values are required.</p>
+
+<h2 id="Atom_literals">Atom literals</h2>
+<h3 id="author">author</h3>
+<pre>&lt;author&gt;    &lt;name&gt;John Doe&lt;/name&gt;  &lt;/author&gt;  </pre>
+<p>(Example taken from the Atom documentation.)<br />Atom requires every entry to have an <a href="http://tools.ietf.org/html/rfc4287#section-4.2.1" target="_blank" rel="nofollow">author</a>. If the author is not defined for a particular entry, it is inherited from the feed author, where it must be defined if any entries do not have authors defined within them. The <a href="http://tools.ietf.org/html/rfc4287#section-4.2.1" target="_blank" rel="nofollow">atom:author</a> element is an <a href="http://tools.ietf.org/html/rfc4287#section-3.2" target="_blank" rel="nofollow">atom person construct</a> that must have a name, and can have an e-mail address and can have a URI. The name only version, as illustrated here, could be seen as similar to other literals, though unlike other literals, it has structure.</p>
+<p>For the fuller, relationship version, see <a href="relationships#Author" title="relationships">Author</a> as a relationship to a separate person entry defined for that person (which can contain <a href="#persondata" title="personal data">persondata</a>).</p>
+<p>For a definition of what authorship entails, see <a href="http://www.icmje.org/ethical_1author.html" target="_blank" rel="nofollow">[1]</a>.</p>
+<p><em>See also<a href="specification#author">
+the relevant section of the core specification</a></em></p>
+
+<span id="content_or_description">&nbsp;</span>
+<h3 id="description">content or description</h3>
+<p>This is usually thought of as content, but often represents a description.</p>
+<pre>&lt;content&gt;This is some really simple content, implicitly of type text.&lt;/content&gt;  </pre>
+<p>The element is taken directly from <a href="http://tools.ietf.org/html/rfc4287#section-4.1.3" target="_blank" rel="nofollow">atom:content</a>. For items of <a href="types" title="types">type</a> other than entry, the content can be thought of as a description, in the sense of <a href="http://dublincore.org/documents/dcmi-terms/#terms-description" target="_blank" rel="nofollow">dc:description</a>.</p>
+<p>In Atom, content has a type, (see <a href="http://tools.ietf.org/html/rfc4287#section-4.1.3.1" target="_blank" rel="nofollow">atom:type</a>) which defaults to text, but can also be html or xhtml. For Leap2A, we <strong>strongly</strong> prefer xhtml over html. Please <strong>do not</strong> use html content unless you cannot use xhtml, and if this is the case, ask for help with changing to xhtml as soon as possible. You may find <a href="http://en.wikipedia.org/wiki/HTML_Tidy" target="_blank" rel="nofollow">HTML Tidy</a> to be a useful resource, for example to clean up user-entered html.</p>
+<p>Care is needed in following the Atom specification.</p>
+<ul>
+<li>If you really have to use the html content type, any &lt; and &gt; signs from html markup must be escaped as &amp;lt; and &amp;gt;. But please try hard not to do this. </li>
+<li>If the type is xhtml, markup should not be escaped. There should be a single div element immediately inside the content (to be discarded on import) so that the whole content section is structured as follows: </li>
+</ul>
+<pre>&lt;content type="xhtml"&gt;
+&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;p&gt;The actual xhtml content goes here, with &amp;lt; and &amp;gt; brackets 
+&lt;em&gt;unescaped&lt;/em&gt; in their normal places: 
+xhtml elements do not need namespace prefixes, as the namespace is
+declared in the containing div element.&lt;/p&gt;
+&lt;/div&gt;  &lt;/content&gt;  </pre>
+<p>The Atom spec has <a href="http://tools.ietf.org/html/rfc4287#section-3.1.1.3" target="_blank" rel="nofollow">more useful detail in their documentation</a> about how to do xhtml text elements: the above is not the only method.</p>
+<p>Content of Leap<a href="resource" title="resource">2A/resource</a> items should be descriptions of the resource, not the resource itself. An attached digital resource should be linked with an atom:link rel="enclosure". See the Leap<a href="resource" title="resource">2A/resource</a> page for further details.</p>
+<p>See also the documentation on <a href="files" title="files">files</a>, which further reinforces this point.</p>
+<h4>Deprecated for export: content src attribute, atomOutOfLineContent</h4>
+<p>Though Atom provides for content of an entry to be represented by a URI given in the src attribute of the content, (atomOutOfLineContent, documented in section <a href="http://tools.ietf.org/html/rfc4287#section-4.1.3" target="_blank" rel="nofollow">Section 4.1.3</a>) this should not be done when exporting Leap2A.</p>
+<p>However, systems importing Leap2A are advised to process atomOutOfLineContent, and treat it as if the src URI were instead given as the href URI of a link rel="enclosure".</p>
+<p><a href="http://tools.ietf.org/html/rfc4287#page-15" target="_blank" rel="nofollow">Section 4.1.3.2</a> of the Atom spec specifies that the value of the src attribute "MUST be an IRI reference <a href="http://tools.ietf.org/html/rfc3987" target="_blank" rel="nofollow">RFC3987</a>". Also implied by this is that src values must be URL encoded following <a href="http://tools.ietf.org/html/rfc1738" target="_blank" rel="nofollow">RFC1738</a> and <a href="http://tools.ietf.org/html/rfc3986#section-2.1" target="_blank" rel="nofollow">RFC3986</a>. '%20' for URL encoding spaces must be used, not '+'. Note also that <a href="http://tools.ietf.org/html/rfc4287#section-4.1.2" target="_blank" rel="nofollow">section 4.1.2</a> of the Atom spec specifies that in cases where the content is empty, a "summary" element must be provided.</p>
+<h4>Attributes href and src within xhtml content</h4>
+<p><em>Added 2009-12-02.</em></p>
+<p>Item content in general could have elements such as "a" and "img" with src or href attributes. Where these attribute values are absolute URIs, universally readable, and not part of the exporting portfolio system, there is no issue: the links need no special processing, simply being exported and imported as is. However, there are two cases where processing must happen on export and import.</p>
+<ol>
+<li>Where the src or href attributes point to files that are included in the exported zip archive, exporting systems must give the attribute values as relative URLs pointing to the files in question in the zip archive. Importing systems will have to change these relative URLs so that they point to the files wherever they are eventually stored by the importing system. </li>
+<li>Where an href attribute effectively points to another item within the portfolio information exported, the URL will have to be changed to point to that item. In the export, this will be using a CURIE such as "portfolio:item_352", and this href will need to be changed on import so that it points to the portfolio item in the importing system. </li>
+</ol>
+<p>On the other hand, when exporting "snippets" of Leap2A, it could be that the files concerned are left on the original server, and not included with the export. In this case, there is no relative URL that could be used, and they have to be exported as absolute URLs. It is up to the importing system, in negotiation with the exporting system, to ensure that adequate arrangements are in place to allow reading of any needed files on the original server.</p>
+<p><em>See also<a href="specification#content1">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="contributor">contributor</h3>
+<pre>&lt;contributor&gt;     &lt;name&gt;Sam Ruby&lt;/name&gt;  &lt;/contributor&gt;  </pre>
+<p>(Example taken from the Atom documentation.)<br />The <a href="http://tools.ietf.org/html/rfc4287#section-4.2.3" target="_blank" rel="nofollow">atom:contributor</a> element is an <a href="http://tools.ietf.org/html/rfc4287#section-3.2" target="_blank" rel="nofollow">atom person construct</a> that must have a name, and can have an e-mail address and can have a URI. The name only version, as illustrated here, could be seen as similar to other literals, though unlike other literals, it has structure.</p>
+<p>For the fuller, relationship version, see <a href="relationships#contributor" title="relationships">contributor</a> as a relationship to a separate person entry defined for that person (which can contain <a href="#persondata" title="personal data">persondata</a>).</p>
+<p>A contributor is essentially anyone who has contributed to something who does not qualify as an <a href="#author">#author</a>.</p>
+<p><em>See also<a href="specification#contributorAtom">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="id">id</h3>
+<p><a href="http://tools.ietf.org/html/rfc4287#section-4.2.6" target="_blank" rel="nofollow">Atom requires</a> the containing feed element, and each item entry element, to have an ID. The feed element ID, and suggested rules for constructing them, are discussed in the <a href="elements" title="elements">elements page</a>. This section relates to id elements for entry items.</p>
+<p>For IDs to function effectively, they must be</p>
+<ul>
+<li>unique within the feed </li>
+<li>without white space </li>
+<li>consistent throughout a single portfolio file </li>
+<li>contain only characters accepted within URIs. </li>
+</ul>
+<p>In addition to that, the <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7" target="_blank" rel="nofollow">Atom link spec</a> points out that the href attribute of link elements, which is used to refer to IDs, must be an IRI (internationalised version of URI). Hence having IDs as plain strings only works when there are no links, and the option of having IDs as plain strings has therefore been removed.</p>
+<p>There are two approaches to constructing IDs as URIs:</p>
+<ol>
+<li>using full URIs </li>
+<li>using <a href="elements#Use_of_CURIEs" target="_blank" title="elements">CURIEs</a> </li>
+</ol>
+<p>Whichever approach is used, it must be used consistently within a single Leap2A feed. It is not allowed to mix full URIs and CURIEs, as this may make import implementation more difficult. Thus, the string used for any ID must be exactly the same throughout the feed.</p>
+<p><em>See also<a href="specification#idterm">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="published">published</h3>
+<pre>&lt;published&gt;2003-12-13T08:29:29-04:00&lt;/published&gt;  </pre>
+<p>(example <a href="http://tools.ietf.org/html/rfc4287#page-4" target="_blank" rel="nofollow">taken from the Atom documentation</a>). These date-times must conform to <a href="http://tools.ietf.org/html/rfc3339" target="_blank" rel="nofollow">rfc3339</a>. This corresponds to <a href="http://dublincore.org/documents/dcmi-terms/#terms-created" target="_blank" rel="nofollow">dc:created</a>, (<a href="http://purl.org/dc/terms/created" rel="nofollow">URI</a>) If known, this should be the initial date of creation of the record itself. It is not to be used for any times or events referred to by, or relevant to the subject of the entry.</p>
+<p>The text node must conform to <a href="http://tools.ietf.org/html/rfc3339" target="_blank" rel="nofollow">rfc3339</a> (complete with date-time zone indicator, either numeric or "Z" for UTC (=GMT)).</p>
+<p><em>See also<a href="specification#published">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="rights">rights</h3>
+<pre>&lt;rights&gt;Copyright (c) 2003, Mark Pilgrim&lt;/rights&gt;  </pre>
+<p>Example taken from <a href="http://tools.ietf.org/html/rfc4287#section-4.2.10" target="_blank" rel="nofollow">atom:rights documentation</a>. This is optional, and can be applied to individual entries or to the feed as a whole. Atom clearly specifies that this is for human-readable information only. For machine-processable information, use <a href="relationships#license" title="relationships">atom:licence for Leap2A</a>, also documented at <a href="http://tools.ietf.org/html/rfc4946" target="_blank" rel="nofollow">rfc4946</a>.</p>
+<p><em>See also<a href="specification#rights">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="summary">summary</h3>
+<p>This field from Atom, <a href="http://tools.ietf.org/html/rfc4287#section-4.2.13" target="_blank" rel="nofollow">atom:summary</a>, may be used to give a short text summary of the content, as envisaged in the Atom specification. It is particularly useful, and specified here, for giving a short (summary-like) description of an attached file, for <a href="types#resource" title="types">resources</a>.</p>
+<p>In Atom, a summary is a <a href="http://tools.ietf.org/html/rfc4287#section-3.1" target="_blank" rel="nofollow">text construct</a>, but for Leap2A, it is recommended to keep its type as plain text, not html or xhtml. However, systems importing Atom feeds must note these other possibilities.</p>
+<p>For Leap<a href="publication" title="publication">2A/publications</a>, if an abstract is published, that should be placed in the summary element.</p>
+<p><em>See also<a href="specification#summary">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="title">title</h3>
+<pre>&lt;title&gt;A self-explanatory portfolio item&lt;/title&gt;  </pre>
+<p>This is mandatory in Atom for every entry, and described in <a href="http://tools.ietf.org/html/rfc4287#section-4.2.14" target="_blank" rel="nofollow">the Atom documentation</a>.</p>
+<p>In Leap2A, it is not expected that the atom:type of the title is anything other than text. However, importers should note that in Atom, title is a <a href="http://tools.ietf.org/html/rfc4287#section-3.1" target="_blank" rel="nofollow">text construct</a>, and Atom also allows title to have a type of html or xhtml.</p>
+<p><em>See also<a href="specification#title">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="updated">updated</h3>
+<pre>&lt;updated&gt;2005-07-31T12:29:29Z&lt;/updated&gt;  </pre>
+<p>(example <a href="http://tools.ietf.org/html/rfc4287#page-4" target="_blank" rel="nofollow">taken from the Atom documentation</a>).</p>
+<p>&lt;updated&gt; corresponds to <a href="http://dublincore.org/documents/dcmi-terms/#terms-modified" target="_blank" rel="nofollow">dc:modified</a>, (<a href="http://purl.org/dc/terms/modified" target="_blank" rel="nofollow">URI</a>). Because records can be transferred, the date of creation of the record may be earlier than the date of its creation on its present system. If this can be represented in a portfolio system, it is recommended that it should be. The text node must conform to <a href="http://tools.ietf.org/html/rfc3339" target="_blank" rel="nofollow">rfc3339</a> (complete with date-time zone indicator, either numeric or "Z" for UTC (=GMT)).</p>
+<p>This is to be used in the same sense as Atom, to indicate the latest update of the record itself, not to any times or events referred to by, or relevant to the subject of the entry.</p>
+<p><em>See also<a href="specification#updated">
+the relevant section of the core specification</a></em></p>
+
+<h2 id="leap2a_literals">Leap2A literals</h2>
+<p>For leap2:date fields, <a href="http://www.w3.org/TR/NOTE-datetime" target="_blank" rel="nofollow">W3C date time formats</a> should be used, which is a broader superset of <a href="http://tools.ietf.org/html/rfc3339" target="_blank" rel="nofollow">rfc3339</a> - everything that is valid <a href="http://tools.ietf.org/html/rfc3339" target="_blank" rel="nofollow">rfc3339</a> is also valid W3C. It would be useful if import procedures could handle all of these, including year alone and year and month, because dates that are remembered and recorded often do not have times attached, and sometimes even the date is forgotten. Your system must handle <a href="http://tools.ietf.org/html/rfc3339" target="_blank" rel="nofollow">rfc3339</a> dates; if your system cannot handle all the other W3C formats properly, this should be documented.</p>
+<h3 id="activetime">activetime</h3>
+<p>This is the time actually spent on an activity, for assessment, credit, time accounting or just personal record purposes.</p>
+<pre>&lt;leap2:activetime&gt;PT8H30M&lt;/leap2:activetime&gt;  </pre>
+<p>represents eight and a half hours actually spent engaged with that activity. The text node (i.e. the part between the start and end tags) is formatted according to the <a href="http://en.wikipedia.org/wiki/ISO_8601#Durations" target="_blank" rel="nofollow">duration part of the ISO 8601 standard</a>, with designators. In education, most time spent is accounted in hours, and in business, hours and often minutes as well. Years, months and days would not normally be expected. Periods of employment will normally not be represented in this form, but with start and end dates: there is no need to use activetime, as it can be calculated from the start and end dates.</p>
+<p>See also <a href="http://www.ostyn.com/standards/scorm/samples/ISOTimeForSCORM.htm" target="_blank" rel="nofollow">this page by the late Claude Ostyn</a>.</p>
+<p><em>See also<a href="specification#activetime">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="addressline">addressline</h3>
+<p>This is only used in Leap2A as a sub-element of <a href="#spatial">spatial</a>. Each addressline holds one line of an address. The order of the lines in the address, as properly formulated for postal delivery, should be the same as the order in which they are given in the Leap2A XML.</p>
+<p>Addressline takes an optional attribute, <a href="#label">label</a>, which may be used to specify what kind of entity is represented on that address line, or indeed the label of that line in the exporting system, if any.</p>
+<p>Separating the address lines, rather than merging them into one block, maintains the non-significance of carriage return characters, as well as enabling labels.</p>
+<p><em>See also<a href="specification#addressline">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="country">country</h3>
+<p>This is used as a sub-element of <a href="#spatial">spatial</a>. The value is a text string representing the name of a country, in a plain text form suitable for use in an address. Any language or recognisable abbreviation may be used. Having the country as normal text means that ignoring the markup within leap2:spatial, and putting each field on its own line, should result in a viable postal address label.</p>
+<p>Country takes one optional attribute, <a href="#countrycode">countrycode</a>.</p>
+<p>Country information is also represented as a field in <a href="#persondata" title="personal data">persondata</a> and <a href="#orgdata" title="organizational data">orgdata</a> elements. However, the semantics are different.</p>
+<h3>Potential future development of spatial</h3>
+<p>One clear possibility for the future, not currently specified, but flagged as a future possibility, is that the whole of the spatial element would be given as xhtml, and the structured elements would be identified through RDFa within the xhtml, rather than separately.</p>
+<p><em>See also<a href="specification#country">
+the relevant section of the core specification</a></em></p>
+
+<span id="date">&nbsp;</span>
+<span id="point">&nbsp;</span>
+<span id="end">&nbsp;</span>
+<span id="start">&nbsp;</span>
+<span id="target">&nbsp;</span>
+ <h3>date</h3>
+<p>Time information connected with the subject matter of the records, as opposed to temporal metadata about the records themselves, is represented with a leap2:date element, and if not empty (see <a href="#Clarification_2009-07-14">below</a>), must use one of the <a href="http://www.w3.org/TR/NOTE-datetime" target="_blank" rel="nofollow">W3C date time formats</a> (which includes rfc3339).</p>
+<p>The leap2:date element takes one mandatory attribute, point, and one optional attribute, label.</p>
+<h4>point</h4>
+<p>The leap2:point attribute of the date element has three possible values:</p>
+<h5>end</h5>
+<p>represents the envisaged, planned, or actual finish date. While in the future, this may be changed freely, following the user's planning process. Example:</p>
+<pre>&lt;leap2:date leap2:point="end" leap2:label="Christmas 2009"&gt;2009-12-25&lt;/leap2:date&gt;  </pre>
+<h5>start</h5>
+<p>represents the envisaged, planned, or actual starting date. Example:</p>
+<pre>&lt;leap2:date leap2:point="start"&gt;2009-03-19&lt;/leap2:date&gt;  </pre>
+<h5>target</h5>
+<p>if present, may represent a firmer end point, whether determined by the user or set externally. Example:</p>
+<pre>&lt;leap2:date leap2:point="target"&gt;2010-01-07T17:00:00+00:00&lt;/leap2:date&gt;  </pre>
+<h4 id="Notes_on_dates">Notes on dates</h4>
+<p>The text of the optional label attribute, if present, may indicate the user's preferred representation of the date or time, and may be formal or informal in nature.</p>
+<ul>
+<li>Importing systems should be able to draw any necessary distinction based on which fields are actually given. </li>
+<li>Where an activity only has a single date recorded in your system, with no time specified - e.g., when it is a one-day activity - it should be exported with both start and end dates given as that same date. </li>
+<li>For plans, use target for the target date of completion, and end for the actual date of achievement of the goal, when it has happened. </li>
+<li>For dates of publication, it depends on the way in which the publication is recorded.      
+<ul>
+<li>If the record is merely a wrapper for the actual publication, included as content either in line or out of line, use the atom:published element. </li>
+<li>If the record has other content, and is about the publication, or describes the publication, rather than simply <em>being</em> the publication, give the date of publication (if required) as a plain text part of the content. </li>
+</ul>
+</li>
+</ul>
+<p>There is a closely related term <a href="http://dublincore.org/documents/dcmi-terms/#terms-temporal" target="_blank" rel="nofollow">temporal coverage</a> in Dublin Core.</p>
+<h5>Clarification 2009-07-14</h5>
+<p>If any chronological display and management is to be supported, or to enable effective planning and scheduling, these leap2:date fields need to be represented machine-processably, containing dates, in a W3C-DTF format conformant to the ISO standard, as the element content. However, some systems may represent dates only as text fields. These systems may export empty leap2:date elements, but if the element content is absent, the label attribute is mandatory. Systems importing information with blank dates may e.g. set a date field to be unknown, or may downgrade the imported item to an entry. Either way, importing systems may append the content of the date label attribute to the item content.</p>
+<pre>&lt;leap2:date leap2:point="start" leap2:label="Summer 1999"&gt;&lt;/leap2:date&gt;  </pre>
+<pre>&lt;leap2:date leap2:point="end" leap2:label="Summer 1999"&gt;&lt;/leap2:date&gt;  </pre>
+<p>could be given for something that happened some time over the summer of 1999.</p>
+<p><em>See also<a href="specification#date">
+the relevant section of the core specification</a></em></p>
+
+<h2 id="myrole">myrole</h2>
+<pre>&lt;leap2:myrole&gt;Apprentice&lt;/leap2:myrole&gt;  </pre>
+<p>This element gives human readable information about the role that the portfolio holder plays or has played in the context of the item in which it appears.</p>
+<ul>
+<li>In <a href="affiliation" title="affiliation">affiliation</a> it represents the membership role, such as "Fellow".      
+<ul>
+<li>This could be generalised to any <a href="activity" title="activity">activity</a> (including <a href="meeting" title="meeting">meeting</a>), e.g. in a conference it could be "delegate", "attendee", "speaker" or "organiser", or in employment, similarly to the vCard role. </li>
+</ul>
+</li>
+<li>In <a href="publication" title="publication">publication</a> it represents the role the holder played in the creation of the publication. This need not be a short simple phrase – it could be a longer explanation.      
+<ul>
+<li>This could be generalised to any <a href="resource" title="resource">resource</a>. </li>
+</ul>
+</li>
+</ul>
+<p>If an importing system has no place for an explicit role, the information might be appended to the content (description) as "My role: ..."</p>
+<p>leap2:myrole elements should <strong>not</strong> be used inside organization elements, as this would risk having two ways of recording roles and related IDs. Instead, if no affiliation (or other suitable) element to represent the relationship exists, create one specially for the purpose of holding the role details, even if that relationship is not one normally thought of as affiliation (e.g. client).</p>
+<p><em>See also<a href="specification#myrole">
+the relevant section of the core specification</a></em></p>
+
+<span id="official_publication_date">&nbsp;</span>
+<h3 id="issued">official publication date or date issued</h3>
+<p>Only for items of type <a href="publication" title="publication">publication</a>, use <a href="http://dublincore.org/documents/dcmi-terms/#terms-issued" target="_blank" rel="nofollow">dcterms:issued</a> for the official publication date. Again, as with leap2:date, use a <a href="http://www.w3.org/TR/NOTE-datetime" target="_blank" rel="nofollow">W3C date time format</a>.</p>
+<p><em>See also<a href="specification#issued">
+the relevant section of the core specification</a></em></p>
+
+<span id="orgdata">&nbsp;</span>
+<h3 id="persondata">Personal and organisational data</h3>
+<p>Due to limitations of specifications existing at the time, it was decided to specify personal and organisational data within Leap2A, because they are so widely used, for example in CVs and other presentations.</p>
+<p>The use of these is fully specified in 
+<a href="specification.html#data">the relevant section of the core specification</a>.</p>
+
+<h3 id="postcode">postcode</h3>
+<p>This is only used in Leap2A as a sub-element of <a href="#spatial">spatial</a>. This can be in any recognised format that is appropriate to the country.<br /><em>For further information, see <a href="http://en.wikipedia.org/wiki/Postal_code" target="_blank" rel="nofollow">Wikipedia "Postal code"</a>.</em></p>
+<p><em>See also<a href="specification#postcode">
+the relevant section of the core specification</a></em></p>
+
+<h2 id="roleid">roleid</h2>
+<pre>&lt;leap2:roleid&gt;B61034&lt;/leap2:roleid&gt;  </pre>
+<p>In the context of an <a href="affiliation" title="affiliation">affiliation</a>, the roleid gives, e.g., the membership number.</p>
+<p>In the context of an <a href="activity" title="activity">activity</a> or something else, it could also give a staff number, or student number, or any ID limited to a particular context. Essentially, it gives an ID for the portfolio holder in the context of the item in which it occurs. The expectation is that, normally, if leap2:roleid is present, it will be represented alongside leap2:myrole within the same item, to make it explicit what role the id is for.</p>
+<p>Lifelong IDs, or service IDs not limited by context or affiliation should rather be given as <a href="#persondata">persondata</a> id elements within a person entry.</p>
+<p>As with myrole, for the same reasons, leap2:roleid elements should <strong>not</strong> appear inside organization elements.</p>
+<p><em>See also<a href="specification#roleid">
+the relevant section of the core specification</a></em></p>
+
+<h2 id="spatial">spatial</h2>
+<p>Where there is an unstructured description of the location, it must be surrounded, in just the same way for content of type xhtml, with a div element.</p>
+<pre>&lt;leap2:spatial&gt;
+&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;      
+&lt;p&gt;In the headteacher's &lt;a href="http://www.example.sch.uk/siteplan.html"&gt;office&lt;/a&gt;&lt;/p&gt;<br />  &lt;/div&gt;
+&lt;/leap2:spatial&gt;  </pre>
+<p>Dublin Core's <a href="http://dublincore.org/documents/dcmi-terms/#terms-spatial" target="_blank" rel="nofollow">dc:spatial</a> (<a href="http://purl.org/dc/terms/spatial" target="_blank" rel="nofollow">URI</a>), defines a location class as the range of the spatial property, but does not specify any data type for the location class.</p>
+<p>As well as unstructured description, a leap2:spatial element may contain one structured address as follows. For example:</p>
+<pre>&lt;leap2:spatial&gt;
+&lt;leap2:addressline&gt;University of Bolton&lt;/leap2:addressline&gt;
+&lt;leap2:addressline&gt;Deane Road&lt;/leap2:addressline&gt;
+&lt;leap2:addressline leap2:label="Town"&gt;Bolton&lt;/leap2:addressline&gt;
+&lt;leap2:postcode&gt;BL3 5AB&lt;/leap2:postcode&gt;
+&lt;leap2:country leap2:countrycode="GBR"&gt;UK&lt;/leap2:country&gt;
+&lt;/leap2:spatial&gt;
+</pre>
+<p>The spatial element may contain:</p>
+<ul>
+<li>any number of <a href="#addressline">addressline</a> elements (normally fewer than 6);</li>
+<li>zero or one <a href="#postcode">postcode</a> elements; and</li>
+<li>zero or one <a href="#country">country</a> elements.</li>
+</ul>
+<p>There can be any number of spatial elements within any item entry, particularly as needed to represent multiple addresses. A single leap2:spatial element may contain both xhtml (formatted but not otherwise recognisably structured) and structured address elements. However, not more than one structured address may appear in one spatial element. That is, there must be at most one postcode and at most one country, and the set of addresslines must sequentially represent just one address.</p>
+<p>Where more than one address is given, they must be in separate spatial elements, and the unstructured parts may be used to indicate in a human-readable way what each address differently signifies.</p>
+<p>Using these elements within leap2:spatial allows varying degrees of precision when specifying the location of, e.g., meetings or other activities. For instance, just the leap2:country could be specified, which would enable software to group activities or meetings by country. If addresslines are used, it is recommended that the result of stripping out the markup within the structured address elements, putting each sub-element on its own line, should result in a usable postal address.</p>
+<p><em>See also<a href="specification#spatial">
+the relevant section of the core specification</a></em></p>
+
+<span id="stage">&nbsp;</span>
+<span id="planned">&nbsp;</span>
+<span id="progressing">&nbsp;</span>
+<span id="completed">&nbsp;</span>
+<span id="suspended">&nbsp;</span>  
+<h2 id="status">status</h2>
+<pre>&lt;leap2:status leap2:stage="planned" leap2:label="Desired" /&gt;  </pre>
+<p>gives an example. Status could also be called "progress".</p>
+<p>Some kind of status or progress indicator is essential to the interpretation of activities and plans. One single set of values serve for activities, plans, and anything else that can use these.</p>
+<p>A value given to the stage other than "completed" will not necessarily continue to be correct as time passes. The stage value should be correct as at the last revision date of the entry, and should be interpreted as such, rather than as reflecting the situation at the time of reading.</p>
+<p>The status element takes one mandatory attribute, stage (below, exclusively for this element), and one optional attribute, <a href="#label">label</a>, which may be used to give the corresponding term as used in the interface of the exporting system. Systems may have different labels for the same stage, applied to different item types.</p>
+<h3>stage</h3>
+<p>The stage attribute value must be one of the four principle names only, as here below.</p>
+<h4>planned</h4>
+<p>This means that the item has not started and has not been done. It does not distinguish whether something is tentatively or firmly planned, on the grounds that there is no clear-cut dividing line. Other plausible labels include "desired", "intended", "tentative".</p>
+<h4>progressing</h4>
+<p>This means that the activity or plan has started, and is still active, but has not finished. Other plausible labels include "in progress", "current".</p>
+<h4>completed</h4>
+<p>This means that the item has been completed or achieved. Other plausible labels include "achieved", "succeeded".</p>
+<h4>suspended</h4>
+<p>This means that the item is not currently active, having been started, and then stopped, but not properly completed. It is ambivalent about whether it may or may not resume, on the grounds that this can rarely be known for certain. Other plausible labels include "withdrawn", "dismissed", "abandoned", "interrupted", "stopped".</p>
+<p><em>See also<a href="specification#status">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="structured_content">Structured content</h3>
+<p>The above point can be generalised and extended. There are certain uses of content that are designed both to be read by other people and to refer to other items in the same portfolio information. In particular, these may include CVs, views or "webfolios". In these cases, it is useful to be able to indicate from within the content what the relationship are of that item to other items, either just to link to them, or to embed something within a viewed page.</p>
+<p>The specification for how to do this is given in a separate page on <a href="http://wiki.leapspecs.org/2A/structured_content">structured content</a>.</p>
+
+<h2 id="version">version</h2>
+<p>Version applies only to the feed, not to item entries. The version should be consistent throughout the feed. The string for the 2010-07 version is</p>
+<pre>&lt;leap2:version&gt;http://www.leapspecs.org/2010-07/2A/&lt;/leap2:version&gt;  </pre>
+<p>This is only mandatory where Leap2A elements or attributes are actually used, not for plain Atom feeds used to carry portfolio information. The 2009-03 version could be represented as</p>
+<pre>&lt;leap2:version&gt;http://wiki.cetis.ac.uk/2009-03/Leap2A_specification&lt;/leap2:version&gt;  </pre>
+<p>Because the version element was not specified for the 2009-03 version, any feed with Leap2A constructs in it, but without a leap2:version element, should be processed in a way that is able to deal with any of the 2009-03 constructs. You should <strong>NOT</strong> now use</p>
+<pre>&lt;leap2:version&gt;http://wiki.leapspecs.org/2A/&lt;/leap2:version&gt;  </pre>
+<p>unless or until the spec is further developed, and you want to include those developments that are not included in the 2010-07 version.</p>
+<p><em>See also<a href="specification#version">
+the relevant section of the core specification</a></em></p>
+
+<h2 id="common_attributes">Common attributes</h2>
+<p>These attributes below are shared between two or more elements. Attributes that belong only to one element are described under that element.</p>
+<h3 id="countrycode">countrycode</h3>
+<p>This is an optional attribute of <a href="#country">country</a>, which could be used for automatic validation of the postcode. Is is also allowed alongside the country field of <a href="#persondata" title="personal data">persondata</a> and <a href="#orgdata" title="organizational data">orgdata</a>.</p>
+<p>The attribute value must be a 3-letter codes from ISO 3166-1.</p>
+<p><em>It is relatively straightforward to translate between 2-letter and 3-letter codes. There are useful articles on <a href="http://en.wikipedia.org/wiki/ISO_3166" target="_blank" rel="nofollow">Wikipedia about ISO 3166</a>. The following perl one-liner (split over two lines to fit) gives you a list of two and three letter codes for each country:</em></p>
+<pre>perl -MLocale::Country -le 'print join("\n", map { country2code($_) . "\t" . 
+country2code($_, LOCALE_CODE_ALPHA_3) . "\t" . $_ } all_country_names())'</pre>
+<p><em>See also<a href="specification#countrycode">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="display_order">display order</h3>
+<p>This is an optional attribute for <a href="relationships#Whole-part" title="relationships">parts</a>. It represents the intended order of display in an ordered list.</p>
+<p>The attribute value should be an integer, but they need not necessarily be successive integers. An item with a lower display order should be displayed before or above an item with a higher display order.</p>
+<p><em>See also<a href="specification#display_order">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="field">field</h3>
+<p>This is the mandatory attribute of <a href="#persondata" title="personal data">persondata</a> and <a href="#orgdata" title="organizational data">orgdata</a> that identifies the nature of the data.</p>
+<p>The attribute value must either be taken from the list of <a href="personal_data#Persondata_fields" title="personal data">fields for persondata</a> or the list of <a href="#Orgdata_fields" title="organizational data">fields for orgdata</a> or be a URI.</p>
+<p><em>See also<a href="specification#field">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="label">label</h3>
+<p>This is an optional attribute for the Leap2A elements</p>
+<ul>
+<li><a href="#addressline">addressline</a>, </li>
+<li><a href="#date">date</a>, </li>
+<li><a href="#orgdata" title="organizational data">orgdata</a>, </li>
+<li><a href="#persondata" title="personal data">persondata</a> and </li>
+<li><a href="#status">status</a>. </li>
+</ul>
+<p>The attribute value should normally be a system-generated string representing the label for a particular field as given in the user's interface. In this way, it adds useful context, and can be used by systems to guide re-importing what they have exported. However, there are other situations, including user-generated categories, for which the holder may create the label, and systems cannot use the label to guide re-import.</p>
+<p>The <a href="http://tools.ietf.org/html/rfc4287#section-4.2.2" target="_blank" rel="nofollow">atom:category</a> element has the equivalent attribute, also "label", in the atom: namespace, so no namespace abbreviation is given with label used within a category element in Leap2A.</p>
+<p>Apart from this category case, all other cases use the leap2: namespace, as leap2:label.</p>
+<p><em>See also<a href="specification#label">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="service">service</h3>
+<p>This is an attribute of <a href="#persondata" title="personal data">persondata</a> and <a href="#orgdata" title="organizational data">orgdata</a> that identifies a related service for that piece of data. The service attribute is mandatory where the leap2:field="id".</p>
+<p>The attribute value must either be one of the service abbreviations <a href="personal_data#Service_abbreviations" title="personal data">for persondata</a> or <a href="#Service_abbreviations" title="organizational data">for orgdata</a> or be a URL for another service (not bound to a particular context).</p>
+<p>Where it is desired to record an identifier with an organisation where either the holder is a member, or the identifier is relevant only to a particular activity recorded in the portfolio, this should be recorded using a Leap<a href="affiliation" title="affiliation">2A/affiliation</a> or Leap<a href="activity" title="activity">2A/activity</a> accordingly, not within persondata. Services recorded in persondata are often communication services, or long lasting services available in several contexts.</p>
+<p><em>See also<a href="specification#service">
+the relevant section of the core specification</a></em></p>
+
+<h3 id="when_added">when added</h3>
+<p>This is an optional attribute for <a href="relationships#Whole-part" title="relationships">parts</a>. It represents the time at which the item was added to the particular list. If desired, this can be used as the basis of an ordering for display.</p>
+<p>The attribute value should be a date-time string in the same format as <a href="#updated">updated</a>, namely <a href="http://tools.ietf.org/html/rfc3339" target="_blank" rel="nofollow">rfc3339</a>.</p>
+<p><em>See also<a href="specification#when_added">
+the relevant section of the core specification</a></em></p>
+
+<h2 id="Namespaces">Namespaces</h2>
+<p>A suitable namespace must be declared, to use the above representations, and this form is recommended:</p>
+<pre>xmlns:leap2="http://terms.leapspecs.org/"  </pre>
+<p>When the namespace and field name are concatenated, it should give a helpful URL of an informative page.</p>
+<p>The default namespace is expected to be the Atom one</p>
+<pre>xmlns="http://www.w3.org/2005/Atom"  </pre>
+<p> </p>
+
+<hr />
+
+</div>
+</div>
+
+</body>
+
+</html>

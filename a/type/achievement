@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>achievement type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>achievement type</h1>
+</div>
+
+<div id="content">
+<h1>Achievement</h1>
+<p><em>One of the <a href="../types" title="2A/types">Leap2A item types</a></em></p>
+<pre>&lt;rdf:type rdf:resource="leap2:achievement" /&gt; or
+&lt;rdf:type rdf:resource="<a href="http://www.cetis.org.uk/leap2/terms/achievement" rel="nofollow">http://www.cetis.org.uk/leap2/terms/achievement</a>" /&gt;   </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>Describes a state of the world that has been brought about at least partly by the agency of the portfolio holder</td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td>
+<ul>
+<li>Qualification, with date of award</li>
+<li>Passing a test, with date passed</li>
+<li>Winning a competition or race</li>
+<li>Achieving a previously set target</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Literals used:</td>
+<td>
+<ul>
+<li><a href="../literals#date" title="2A/literals">date</a> <a href="../literals#point" title="2A/literals">point</a>="<a href="../literals#end" title="2A/literals">end</a>" = the actual date at which the achievement was accomplished</li>
+<li><a href="../literals#date" title="2A/literals">date</a> <a href="../literals#point" title="2A/literals">point</a>="<a href="../literals#target" title="2A/literals">target</a>" = the date planned for completion, if wanted for comparison</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Relationships used:</td>
+<td>
+<ul>
+<li><a href="../relationships#has_evidence" title="2A/relationships">has evidence</a> → evidential items</li>
+<li><a href="../relationships#is_evidence_of" title="2A/relationships">is evidence of</a> → items that can have evidence</li>
+<li><a href="../relationships#reflected_on_by" title="2A/relationships">reflected on by</a> → <a href="../type/entry" title="2A/entry">entry</a></li>
+<li><a href="../relationships#is_outcome_of" title="2A/relationships">is outcome of</a> → <a href="../type/activity" title="2A/activity">activity</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td>
+<ul>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/life_area" title="2A/categories/life area">life area</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Can degrade to:<br /> / inherits from:</td>
+<td><a href="http://wiki.cetis.org.uk/leap2/a/type/entry" title="2A/entry">entry</a></td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>An achievement records actual results rather than what was planned for or aimed at as a goal.
+<p>It is less clear whether this should include licences, and if so, what the dates should be. A possibility is to have the start and end dates as the start and end of the licence.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /> See also <a href="http://wiki.cetis.ac.uk/LEAP_achievement" rel="nofollow">earlier ideas on achievement</a></p>
+
+</div>
+</div>
+</body>
+</html>

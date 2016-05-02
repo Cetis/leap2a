@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leap2A for e-portfolio portability</title>
+<link href="../default.css" rel="stylesheet" type="text/css" media="screen" />
+  </head>
+  <body>
+<div id="container">
+
+<div id="header">
+	<h1><a href="../index.html">leap2</a>: learner-ownable information</h1>
+</div>
+
+<div id="content">
+
+<h1>
+    <img style="border:0" src="../images/logo_200px.png" width="200" height="65" alt="Leap2A" />
+</h1>
+
+<p>This is an index page for Leap2A material.
+</p>
+
+<p>The current version of the specification</p>
+<ul>
+<li>has the namespace string http://www.leapspecs.org/2010-07/2A/</li>
+<li>has here <a href="specification.html">a definitive core specification</a> on one page</li>
+<!-- li>and, <strong>with erroneous links</strong>, <a href="Leap2A_core-specification.pdf">a PDF version here</a></li -->
+</ul>
+
+<p>Also, some other pages have been salvaged:</p>
+<ul>
+<li><a href="types">types</a></li>
+<li><a href="relationships">relationships</a></li>
+<li><a href="literals">literals</a></li>
+</ul>
+
+<dl>
+<dt>Examples</dt>
+<dd>Some <a href="examples/">examples of Leap2A</a>.</dd>
+<dt>Validation</dt>
+<dd>There is no current render/validation service.
+</dd>
+<dt>Index of terms</dt>
+<dd>The <a href="../terms/index">terms for Leap2A and other specs</a> has had to move.</dd>
+<dt>Licence</dt>
+<dd>There is <a href="../licence/index.html">material on the licence for this version</a>.</dd>
+</dl>
+
+</div>
+</div>
+
+  </body>
+</html>
+

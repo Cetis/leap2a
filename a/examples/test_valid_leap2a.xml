@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:leap2="http://terms.leapspecs.org/"
+     xmlns:categories="http://wiki.cetis.ac.uk/2009-03/Leap2A_categories/"
+     xmlns:portfolio="http://www.example.ac.uk/pfs/export_262144/">
+<leap2:version>http://wiki.leapspecs.org/2A/</leap2:version>
+<id>http://www.example.ac.uk/pfs/export_262144/</id>
+<title>A few small related items</title>
+<author> 
+  <name>Theophilus Thistledown</name>
+  <uri>portfolio:people/0001</uri>
+</author>
+<updated>2009-03-15T14:33:12Z</updated>
+  <entry>
+    <title>Interoperability activity</title>
+    <id>portfolio:activity/0123</id>
+    <updated>2008-01-08T14:12:12Z</updated>
+    <summary>Interoperability trials had issues</summary>
+    <content type="text">We sat down and passed unlikely pieces of XML between us.
+    Could the text be broken over some lines or not?
+    </content>
+    <link rel="leap2:reflected_on_by" href="portfolio:reflexion/3210" />
+    <rdf:type rdf:resource="leap2:activity" />
+  </entry>
+  <entry>
+    <title>What interoperability?</title>
+    <id>portfolio:reflexion/3210</id>
+    <updated>2008-01-12T11:03:55Z</updated>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p><em style="color:red">Wow!</em> What an activity this was!</p>
+        <p>We tried to start making things interoperable, and would you have guessed the issues that came up?</p>
+      </div>
+    </content>
+    <rdf:type rdf:resource="leap2:entry" />
+    <link rel="leap2:reflects_on" href="portfolio:activity/0123" />
+  </entry>
+  <entry>
+    <title>Change of Semester Meeting</title>
+    <id>portfolio:meeting/1512</id>
+    <published>2007-10-16T12:59:30Z</published>
+    <updated>2007-11-19T01:00:00Z</updated>
+    <content type="text">Please take a little time to give the School some feedback on the maths modules you took in the Autumn Semester. 
+    This can be done on-line via the link "Evaluation of Modules" on the School SSCC web page.</content>
+    <link rel="leap2:has_agenda" href="portfolio:meeting/3347" />
+    <link rel="leap2:has_agenda" href="portfolio:meeting/3366" />
+    <link rel="leap2:attended_by" href="portfolio:people/0001" />
+    <link rel="leap2:attended_by" href="portfolio:people/0226" />
+    <rdf:type rdf:resource="leap2:meeting" />
+    <leap2:date leap2:point="start">2009-02-06T10:00:00Z</leap2:date>
+    <leap2:date leap2:point="end">2009-02-06T11:00:00Z"</leap2:date>
+    <leap2:spatial>Maths Room C307</leap2:spatial>
+  </entry>
+  <entry>
+    <title>Agenda 1</title>
+    <id>portfolio:meeting/3347</id>
+    <updated>2007-11-19T01:00:00Z</updated>
+    <content type="text">
+      Feedback of Autumn Semester examination results
+    </content>
+    <link rel="leap2:is_agenda_of" href="portfolio:meeting/1512" />
+    <rdf:type rdf:resource="leap2:entry" />
+  </entry>
+  <entry>
+    <title>Agenda 2</title>
+    <id>portfolio:meeting/3366</id>
+    <updated>2007-11-19T01:00:00Z</updated>
+    <content type="text">
+      Medical letters, Extenuating Circumstances Forms and related evidence
+    </content>
+    <link rel="leap2:is_agenda_of" href="portfolio:meeting/1512" />
+    <rdf:type rdf:resource="leap2:entry" />
+  </entry>
+  <entry>
+    <title>Theophilus Thistledown</title>
+    <id>portfolio:people/0001</id>
+    <updated>2006-09-30T00:00:00Z</updated>
+    <content type="text">This is me, the subject and holder of this portfolio information.</content>
+    <link rel="leap2:attends" href="portfolio:meeting/1512" />
+    <category scheme="categories:person_type#" term="Self" />
+    <rdf:type rdf:resource="leap2:person" />
+  </entry>
+  <entry>
+    <title>Dr Litton</title>
+    <id>portfolio:people/0226</id>
+    <updated>2006-10-16T00:00:00Z</updated>
+    <content type="text">This is Dr Litton, my personal tutor.</content>
+    <link rel="leap2:attends" href="portfolio:meeting/1512" />
+    <category scheme="categories:person_type#" term="Mentor" />
+    <rdf:type rdf:resource="leap2:person" />
+  </entry>
+<entry>
+  <title>PhD study</title>
+  <id>http://e-p.example.ac.uk/user5210/activity3210</id>
+  <updated>2008-01-12T11:03:55Z</updated>
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>This PhD was really interesting...</p>
+    </div>
+  </content>
+  <leap2:date leap2:point="start">2003-09-01</leap2:date>
+  <leap2:date leap2:point="end">2010-06-30</leap2:date>
+  <rdf:type rdf:resource="leap2:activity" />
+  <link rel="leap2:has_part" href="http://e-p.example.ac.uk/user5210/activity3219" />
+</entry>
+<entry>
+  <title>Maternity leave</title>
+  <id>http://e-p.example.ac.uk/user5210/activity3219</id>
+  <updated>2008-01-12T11:03:55Z</updated>
+  <content type="text">This was applied for and granted in the usual way.
+  </content>
+  <leap2:date leap2:point="start">2006-05-01</leap2:date>
+  <leap2:date leap2:point="end">2007-10-31</leap2:date>
+  <category scheme="categories:common_item#" term="Intermission" />
+  <rdf:type rdf:resource="leap2:activity" />
+  <link rel="leap2:is_part_of" href="http://e-p.example.ac.uk/user5210/activity3210" />
+</entry>
+</feed>
+

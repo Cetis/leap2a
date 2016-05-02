@@ -1,0 +1,161 @@
+<h1>Concepts</h1>
+<p>If you know Atom, then a good introduction to Leap2A concepts is to first consider how Atom elements are used in Leap2A.</p>
+<h2>Table of Atom elements</h2>
+<p>These are all the elements given in the specification for the <a href="http://tools.ietf.org/html/rfc4287">Atom Syndication Format</a>, in the order given there, plus one from the <a href="http://tools.ietf.org/html/rfc4685">Atom Threading Extensions</a>.</p>
+<table border="1" cellspacing="0">
+<tbody>
+<tr>
+<th>Atom element</th> <th>Usage here</th> <th>Notes</th>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-3.2.1">atom:name</a></td>
+<td>same</td>
+<td>The author's name.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-3.2.2">atom:uri</a></td>
+<td>variant</td>
+<td>As well as the Atom usage as a global URI for the person (or their main blog feed), this may also be an internal reference to an entry representing a person. See <a href="http://www.leapspecs.org/2A/relationships#author">author as relationship</a>.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-3.2.3">atom:email</a></td>
+<td>not specified</td>
+<td>The author's e-mail address may be included here, as specified in Atom. But preferred is to put author's e-mail address in a separate entry element of <a href="http://www.leapspecs.org/2A/types/person">type person</a>: e-mail is one of the many <a href="http://www.leapspecs.org/2011/2A/specification#datafields">data fields</a>.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.1.1">atom:feed</a></td>
+<td>variant</td>
+<td>The feed element is essentially a wrapper for the entries, which are portfolio items. See <a href="introduction#feed">the feed section in the introductory page</a>.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.1.2">atom:entry</a></td>
+<td>variant</td>
+<td>Entries represent each portfolio item, not just ones like blog entries. Contains sub-elements as in Atom,
+but also with <a href="http://www.leapspecs.org/2011/2A/specification">extra elements added for Leap2A</a>.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.1.3">atom:content</a></td>
+<td>variant</td>
+<td>Where present, represents the main information content of the item, which may be a description. See <a href="http://www.leapspecs.org/2A/literals#content_or_description">content or description</a>.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.1">atom:author</a></td>
+<td>same</td>
+<td>See <a href="http://www.leapspecs.org/2A/literals#author">author as literal</a> and <a href="http://www.leapspecs.org/2A/relationships#author">author as relationship</a>. Note that this is the author of the entry, not the author of any attached or referenced resource.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.2">atom:category</a></td>
+<td>similar</td>
+<td>Specific ways of using category schemes, terms and entries are recommended. See <a href="http://www.leapspecs.org/2A/categories">categories</a>.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.3">atom:contributor</a></td>
+<td>similar</td>
+<td>May be used to list anyone who has contributed entries to the Leap2A feed. Not for use in identifying contributors to attached resources or publications.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.4">atom:generator</a></td>
+<td>not specified</td>
+<td>Could be used later to indicate the generating system. However this could also be obvious from the feed id.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.5">atom:icon</a></td>
+<td>not specified</td>
+<td>Not really appropriate, as the feed itself is not envisaged as directly presented.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.6">atom:id</a></td>
+<td>similar</td>
+<td>Mandatory: see <a href="http://www.leapspecs.org/2A/literals#id">id</a>. 
+Specific ways of <a href="#IDs">constructing ids</a> are recommended below.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.7">atom:link</a></td>
+<td>similar</td>
+<td>A vocabulary is specified for rel attributes. See <a href="http://www.leapspecs.org/2A/relationships">relationships</a> including ones from Atom.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.8">atom:logo</a></td>
+<td>not specified</td>
+<td>As icon.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.9">atom:published</a></td>
+<td>similar</td>
+<td>Used for date of creation, not necessarily of publication. See <a href="http://www.leapspecs.org/2A/literals#published">published</a>.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.10">atom:rights</a></td>
+<td>same</td>
+<td>Used for human-readable information only: for machine-processable information, use link rel="license"</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.11">atom:source</a></td>
+<td>not specified</td>
+<td>This specification is not actually about syndication, so there is unlikely to be a further source.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.12">atom:subtitle</a></td>
+<td>not specified</td>
+<td>This may be useful, for representing information about the exported "feed".</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.13">atom:summary</a></td>
+<td>similar</td>
+<td>See <a href="http://www.leapspecs.org/2A/literals#summary">summary</a>.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.14">atom:title</a></td>
+<td>same</td>
+<td>Mandatory (and must not be empty) for every entry.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4287#section-4.2.15">atom:updated</a></td>
+<td>same</td>
+<td>See <a href="http://www.leapspecs.org/2A/literals#updated">updated</a>.</td>
+</tr>
+<tr>
+<td><a href="http://tools.ietf.org/html/rfc4685#section-3">thr:in-reply-to</a></td>
+<td>same</td>
+<td>See <a href="http://www.leapspecs.org/2A/relationships#in_reply_to">in reply to</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3>Non-Atom elements</h3>
+<p>For non-Atom elements, please see the <a href="http://www.leapspecs.org/2011/2A/specification">core specification document</a> and/or the <a href="http://terms.leapspecs.org/">terms page</a>.</p>
+<h3 id="IDs"><span id="Constructing_IDs">Constructing IDs</span></h3>
+<p>See also the <a href="http://www.leapspecs.org/2A/literals#id">literal id</a> section.</p>
+<p>As mentioned above, it makes sense (though is not essential) to have IDs generated in a systematic way. There are two natural approaches to this, but whatever approach is taken, it is essential that the same form is used in id elements and in links.</p>
+<a id="Unique_export"></a> {slide=Unique export}
+<p>The simplest approach is to have a unique id for each export, and to use this as the base for contained item IDs. The export ID URL could include in its path components such as</p>
+<ul>
+<li>the domain of the organisation which runs the portfolio system</li>
+<li>a name associated with the e-portfolio system</li>
+<li>the date (and possibly time) of export</li>
+<li>the user id - however if there are security worries about this, it may be better simply to have a serial number of export on that day.</li>
+<li>an internal system identifier for the root of the information being exported</li>
+<li>some sequence number, if needed.</li>
+</ul>
+<p>Not all of these are necessary, but just enough to make each export absolutely unique. Then, added to the end, there could be a component that, for example, identifies the (internal) type of record and its sequence number in this export. Exporting systems are free to use extensions that reflect the internal structure of their records. This have the added advantage that the ids can be used as a way of directing items to their proper place when communicating between different instances of the same software.</p>
+{/slide} <a id="Persistent_item_URIs"></a> {slide=Persistent item URIs}
+<p>The other natural approach is to establish a persistent internal identifier for each item recorded in the system, unique for that user, or perhaps unique across the system. The IDs for items would not then be extensions of the ID for the overall feed, but the overall feed can still have similar components as above. This has advantages and disadvantages.</p>
+<dl> <dt>Advantages</dt> <dd>This would make it easier for systems that consume such information delivered by web services to keep a track of when information should overwrite what has been consumed before. However there is little point in this for a single once-for-all transfer of information. It also is in keeping with <a href="http://tools.ietf.org/html/rfc4287#section-4.2.6" title="http://tools.ietf.org/html/rfc4287#section-4.2.6" rel="nofollow">the Atom spec</a>.</dd> <dt>Disadvantages</dt> <dd>More care would be needed on security, as the persistent identifiers may allow others to start piecing together a picture of some of the information or its relationships.</dd> </dl>
+{/slide} <a id="Use_of_CURIEs"></a><a id="CURIEs"></a>
+<h3>Use of CURIEs</h3>
+<p>See <a href="http://www.w3.org/TR/curie/">this W3C page about CURIEs</a>. Using CURIEs looks similar to using namespace abbreviations, but is technically different.</p>
+<p>CURIEs are useful for representing URIs within attributes used in <a href="http://www.leapspecs.org/2A/types">types</a>, <a href="http://www.leapspecs.org/2A/relationships">relationships</a>, and <a href="http://www.leapspecs.org/2A/categories">categories</a>.</p>
+<p>The use of CURIEs makes the XML much easier for human reading and checking, though it might impose a small extra machine processing overhead. We have now agreed that we will allow the use CURIEs as an alternative to writing out full URLs. If you use CURIEs, appropriate namespaces will have to be declared.</p>
+<p>One can use</p>
+<pre>    xmlns:leap2="http://terms.leapspecs.org/"   </pre>
+<p>For common categories, one can use</p>
+<pre>    xmlns:categories="http://wiki.leapspecs.org/2A/categories/"   </pre>
+<p>Locally defined category schemes need to have a namespace chosen by the system administrators. It is recommended that the schemes namespace URL should give useful information about the scheme, and when concatenated with any term name, should point to useful information about that term.</p>
+<p>For further details, see the relevant pages.</p>
+<p>This specification requires the "unsafe" form, which causes fewer parsing problems for the moment, as they looks like regular URIs. For example</p>
+<pre>&lt;rdf:type rdf:resource="leap2:entry" /&gt;  </pre>
+<p>"Safe" CURIEs have square brackets round them, for example</p>
+<pre>&lt;rdf:type rdf:resource="[leap2:entry]" /&gt;  </pre>
+<p>Any abbreviation can be used that is not able to be confused with others, but it is recommended to use agreed conventional ones.</p>
+<p>Another use of CURIEs to improve readability is with the id URIs of each element, reused in href attributes of links. For example, one could define</p>
+<pre>    xmlns:portfolio="http://www.example.ac.uk/portfolio_system/export/user1089/2008-07-17/"   </pre>
+<p>if that was the chosen root of the URI for the ids of all the entries. Every exporting portfolio system needs to devise a URI system which ensures that each entry has a unique URI. This may build on a unique dated URI for the export as a whole, or may be unique for each record of a particular user of a particular system.</p>

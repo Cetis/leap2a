@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>selection type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>selection type</h1>
+</div>
+
+<div id="content">
+<h1>Selection</h1>
+<p><em>One of the <a href="../types" title="2A/types">Leap2A item types</a></em></p>
+<pre>&lt;rdf:type rdf:resource="leap2:selection" /&gt; or
+&lt;rdf:type rdf:resource="<a href="http://www.cetis.org.uk/leap2/terms/selection" rel="nofollow">http://www.cetis.org.uk/leap2/terms/selection</a>" /&gt;  </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>a set of related portfolio items or external resources, typically selected by the portfolio holder for a particular purpose and for display to a particular audience</td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td></td>
+</tr>
+<tr>
+<td>Literals used:</td>
+<td>
+<ul>
+<li><a href="../literals#summary" title="2A/literals">summary</a> = optional summary of the content, or of the parts of the selection</li>
+<li><a href="../literals#content_or_description" title="2A/literals">content</a> may be required or not, depending on <a href="../categories/selection_type" title="2A/categories/selection type">selection type</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Relationships used:</td>
+<td>
+<ul>
+<li><a href="../relationships#has_part" title="2A/relationships">has part</a> → any</li>
+<li><a href="../relationships#is_part_of" title="2A/relationships">is part of</a> → selection</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td>
+<ul>
+<li><a href="../categories/selection_type" title="2A/categories/selection type">selection type</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Can degrade to:<br /> / inherits from:</td>
+<td><a href="../type/entry" title="2A/entry">entry</a></td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>
+<p>This type could also be called collection or presentation, all of which are central in portfolio thinking, as portfolio items are typically collected, then selected for use in presentations. Selections exist only in virtue of what is in them, so there should be no ambiguity in giving the relationship as <a href="../relationships#has_part" title="2A/relationships">has part</a>. The whole-part relationship should be used only for immediate parts. If A is part of B, and B is part of C, A should <em>not</em> also be given as part of C. A summary of this type of entry may refer more specifically to the rationale for the selection, but the content or description, if any, will be taken to refer to all of the parts as well as possibly the selection itself, as with a blog collection or feed. If the selection as such has no content, it may be presented by an entry, which may or may not be part of the selection.<br /> <br /> Note also that the selection type is not the only way of representing hierarchical structure or nesting. The types <a href="../type/activity" title="2A/activity">2A/activity</a> and <a href="../type/plan" title="2A/plan">2A/plan</a> can also contain parts of the same type, and if there is a hierarchical structure to be represented that naturally fits the activity or plan type, that is strongly preferred to using the selection type.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /> See also <a href="http://wiki.cetis.ac.uk/LEAP_selection" rel="nofollow">earlier ideas on selection</a></p>
+`
+</div>
+</div>
+</body>
+</html>

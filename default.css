@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	color:#000;
+	background-color:#72AA42;
+}
+
+#container {
+	width:700px;
+	margin: 0 auto;
+	background-color:#FFF;
+	border:1px solid #5E918A;
+}
+
+#header {
+	padding:20px;
+	border-bottom:1px solid #5E918A;
+}
+
+#content {
+	padding:20px;
+}
+
+#footer {
+	width:700px;
+	margin: 0 auto;
+	text-align:center;
+}
+
+.cetis_logo {
+	
+	padding: 10px;
+}
+
+#header .h1 {
+	font-size:16px;
+	font-weight:bold;
+	padding:0;
+}
+
+#content table {
+  border:1px solid black;
+  border-collapse:collapse;
+}
+
+#content table tr td {
+  border:1px solid black;
+  padding:5px;
+}
+
+#content table tr th {
+  border:1px solid black;
+  padding:5px;
+}
+
+.onform {
+  background-color:white;
+}
+
+hr {border:1px #82ba52 solid; height:5px; color:#82ba52; background-color:#82ba52}
+ul {padding-left:1.5em}
+.tableGreenBorder {
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+}
+.tableGreenBorder th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+}
+.tableGreenBorder tr.leap2a td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #f0ffe5;
+}
+.tableGreenBorder td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+}
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>plan type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>plan type</h1>
+</div>
+
+<div id="content">
+<h1>Plan</h1>
+<p><em>One of the <a href="../types">Leap2A item types</a></em></p>
+<pre>&lt;rdf:type rdf:resource="leap2:plan" /&gt; or
+&lt;rdf:type rdf:resource="<a href="http://www.cetis.org.uk/leap2/terms/plan" rel="nofollow">http://www.cetis.org.uk/leap2/terms/plan</a>" /&gt;   </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>A considered plan intended to achieve one of the portfolio holder's goals or purposes, typically involving several actions or lesser goals</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td></td>
+</tr>
+<tr>
+<td>Literals used:</td>
+<td>
+<ul>
+<li><a href="../literals#date">date</a> <a href="../literals#point">point</a>="<a href="../literals#start">start</a>" = scheduled or actual starting date of this plan</li>
+<li><a href="../literals#date">date</a> <a href="../literals#point">point</a>="<a href="../literals#end">end</a>" = scheduled or actual end date of this plan</li>
+<li><a href="../literals#date">date</a> <a href="../literals#point">point</a>="<a href="../literals#target">target</a>" = date by which goal should have been attained</li>
+<li><a href="../literals#status">status</a> = planned, progressing or completed</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Relationships used:</td>
+<td>
+<ul>
+<li><a href="../relationships#has_part">has part</a> → <strong>plan</strong> or <a href="../type/activity">activity</a></li>
+<li><a href="../relationships#is_part_of">is part of</a> → <strong>plan</strong></li>
+<li><a href="../relationships#supported_by">supported by</a> → <a href="../type/entry">entry</a></li>
+<li><a href="../relationships#supports">supports</a> → <a href="../type/entry">entry</a>, which is the goal of this plan</li>
+<li><a href="../relationships#reflected_on_by">reflected on by</a> → <a href="../type/entry">entry</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td>
+<ul>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/priority">priority</a></li>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/life_area">life area</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Can degrade to:<br /> / inherits from:</td>
+<td><a href="../type/selection">selection</a></td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>A normal action plan has a target date in the future, and is probably linked to a goal, which may have the same target date.
+<p>The plan describes the way to achieve the desired situation. It answers the question "how are you going to achieve this goal?" There may be a plain piece of text describing the plan, or how the parts of the plan are articulated (the content of the plan), and there may be linked activities or goals (or possibly entries) as parts. Plans typically have a target date: the date on which the goal is meant to be achieved.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</body>
+</html>

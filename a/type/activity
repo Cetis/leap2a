@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>activity type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>activity type</h1>
+</div>
+
+<div id="content">
+<h1>Activity</h1>
+<p><em>One of the <a href="../types">Leap2A item types</a></em></p>
+<pre>&lt;rdf:type rdf:resource="leap2:activity" /&gt; or
+&lt;rdf:type rdf:resource="<a href="http://www.cetis.org.uk/leap2/terms/activity" rel="nofollow">http://www.cetis.org.uk/leap2/terms/activity</a>" /&gt;   </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>Refers to any activity, experience, occupation, that takes any time and involves the portfolio holder in any way: future, present or past, continuous, interrupted or recurrent; it can comprise a group of lesser activities</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td></td>
+</tr>
+<tr>
+<td>Literals used:</td>
+<td>
+<ul>
+<li><a href="../literals#date">date</a> <a href="../literals#point">point</a>="<a href="../literals#start">start</a>" = date activity started or is planned to start</li>
+<li><a href="../literals#date">date</a> <a href="../literals#point">point</a>="<a href="../literals#end">end</a>" = date activity ended or is planned to end</li>
+<li><a href="../literals#date">date</a> <a href="../literals#point">point</a>="<a href="../literals#target">target</a>" = date by which activity should be completed</li>
+<li><a href="../literals#activetime">activetime</a> = time actually spent engaged with activity</li>
+<li><a href="../literals#spatial">spatial</a> = place or location or address of activity</li>
+<li><a href="../literals#status">status</a> = planned, progressing or completed</li>
+<li><strong>deprecated</strong>: <em><a href="../personal_data#id">persondata id</a> = id with supporting organization</em> (instead, use <a href="../literals#roleid">roleid</a> usually in <a href="../type/affiliation">affiliation</a>)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Relationships used:</td>
+<td>
+<ul>
+<li><a href="../relationships#has_evidence">has evidence</a> → evidential items</li>
+<li><a href="../relationships#reflected_on_by">reflected on by</a> → <a href="../type/entry">entry</a></li>
+<li><a href="../relationships#has_part">has part</a> → <strong>activity</strong></li>
+<li><a href="../relationships#is_part_of">is part of</a> → <strong>activity</strong></li>
+<li><a href="../relationships#supported_by">supported by</a> → <a href="../type/organization">organization</a> or <a href="../type/resource">resource</a></li>
+<li><a href="../relationships#has_outcome">has outcome</a> → <a href="../type/achievement">achievement</a> or <a href="../type/resource">resource</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td>
+<ul>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/priority">priority</a></li>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/life_area">life area</a></li>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/common_item#Intermission">common item: Intermission</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Can degrade to:<br /> / inherits from:</td>
+<td><a href="../type/entry">entry</a></td>
+</tr>
+<tr>
+<td>Sub-types:</td>
+<td>
+<ul>
+<li><a href="../type/meeting">meeting</a></li>
+<li><a href="../type/affiliation">affiliation</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>
+<p>Start and end dates are central to activity records. In the case of an activity, the start and end are the overall dates or times. Even if an activity does not have explicit start and end dates represented, being an activity type will clearly indicate that the item is to be treated as an activity. Particularly if dates are missing, the <a href="../literals#status">status</a> will say whether it is future, present or past.</p>
+<p><a href="../literals#myrole">myrole</a> and <a href="../literals#roleid">roleid</a> could potentially be used here, but no one has yet indicated that they have such plans.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br /> See also <a href="http://wiki.cetis.ac.uk/LEAP_activity" rel="nofollow">earlier ideas on activity</a></p>
+
+</div>
+</div>
+</body>
+</html>

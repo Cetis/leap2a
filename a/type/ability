@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ability type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>Ability type</h1>
+</div>
+
+<div id="content">
+
+<h1>Ability</h1>
+<p><em>One of the <a href="../types">Leap2A item types</a></em></p>
+<pre>&lt;rdf:type rdf:resource="leap2:ability" /&gt; or
+&lt;rdf:type rdf:resource="<a href="http://www.cetis.org.uk/leap2/terms/ability" rel="nofollow">http://www.cetis.org.uk/leap2/terms/ability</a>" /&gt;   </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>EITHER: a general and impersonal definition of some area of knowledge, skill, competence or similar personal attribute, able to be used by anyone as a reference for a claim to possess the ability, or for a goal to achieve the ability, or as an intermediary for exploring pathways in education, employment or life<br />
+<p>OR: information about a self-defined and self-claimed ability</p>
+</td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td></td>
+</tr>
+<tr>
+<td>Literals used:</td>
+<td></td>
+</tr>
+<tr>
+<td>Relationships used:</td>
+<td>
+<ul>
+<li><a href="../relationships#has_part">has part</a> → <strong>ability</strong></li>
+<li><a href="../relationships#is_part_of">is part of</a> → <strong>ability</strong></li>
+<li><a href="../relationships#has_evidence">has evidence</a> → evidential items</li>
+<li><a href="../relationships#reflected_on_by">reflected on by</a> → <a href="entry">entry</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td></td>
+</tr>
+<tr>
+<td>Can degrade to:<br /> / inherits from:</td>
+<td><a href="entry">entry</a></td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>
+<p>The main challenge with abilities is that they can be described in different levels of detail. Exactly the same applies to what are normally called "intended learning outcomes" and "competencies", which are essentially similar. The detail and definition of a description of ability can range all the way from the most vague, e.g.</p>
+<ul>
+<li>car driving</li>
+<li>listening</li>
+</ul>
+<p>through something more detailed, like</p>
+<ul>
+<li>ability to drive an automatic transmission car in conditions of light traffic</li>
+<li>ability to give listening-based counselling to teenagers</li>
+</ul>
+<p>to something defined by its method of assessment</p>
+<ul>
+<li>car driving to the standard required by the UK driving test</li>
+<li>counselling ability as defined by AQA Level 3 Certificate in Counselling, with optional units "Helping Children and Young People" and "Counselling in Organisations"</li>
+</ul>
+<p>Ideally, abilities are handled as follows, which is the first case:</p>
+<ul>
+<li>impersonal definitions of ability are defined outside the portfolio, typically in a skills or competency framework</li>
+<li>they can also be defined inside the portfolio, as long as they are authored <strong>not</strong> by the portfolio holder</li>
+<li>the portfolio contains claims (which are entries) to abilities and plans to attain abilities</li>
+<li>evidence of any kind can be linked either to a claim, in its support, or directly to the ability, as more general evidence</li>
+</ul>
+<p>However, this first case does not make sense for abilities that are defined, claimed and evidenced by the holder. So we distinguish a second, self-defined case, where the ability entry contains the name (or very short definition) of the ability as the title, and the description of the ability, along with any claim or description of evidence, in the content. In this second case, the ability must be authored by the holder, which it will be by default if no author element is present.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</body>
+</html>

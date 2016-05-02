@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>organization type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>organization type</h1>
+</div>
+
+<div id="content">
+<h1>Organization</h1>
+<p><em>One of the <a href="../types">Leap2A item types</a></em></p>
+<pre>&lt;rdf:type rdf:resource="leap2:organization" /&gt; or
+&lt;rdf:type rdf:resource="<a href="http://www.cetis.org.uk/leap2/terms/organization" rel="nofollow">http://www.cetis.org.uk/leap2/terms/organization</a>" /&gt;   </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>Any commercial, social or political entity of interest to the portfolio holder, beyond an individual person, which may act as an agent, including a group of people acting together, or represented together as a unit.</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td></td>
+</tr>
+<tr>
+<td>Literals used:</td>
+<td>
+<ul>
+<li><a href="../core-specification#orgdata">orgdata</a> = contact information and other data about the organization</li>
+<li><a href="../literals#spatial">spatial</a> = postal addresses, or text description of the spatial/geographical scope of the organization</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Relationships used:</td>
+<td>
+<ul>
+<li><a href="../relationships#supports">supports</a> → <a href="../type/activity">activity</a> or <a href="../type/affiliation">affiliation</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td>(none yet defined)</td>
+</tr>
+<tr>
+<td>Can degrade to:<br /> / inherits from:</td>
+<td><a href="../type/entry">entry</a></td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>
+<p>The "activity" supported by an organization can be simply a record of membership or affiliation. At present, this is not given a separate type in Leap2A. Organizations can have units as their parts, but we will try to avoid the idea that a person can be literally "part of" an organization. Systems may or may not hold information about organizations separately. Often, names of educational institutions or employers will be given simply as names, and recorded as part of the title or content of activities.</p>
+<p><a href="../literals#myrole">myrole</a> and <a href="../literals#roleid">roleid</a> should <strong>not</strong> be used here, but instead a Leap<a href="../type/affiliation">2A/affiliation</a> or Leap<a href="../type/activity">2A/activity</a> item must be used, and if none would otherwise be present, one must be created specially to hold the role or id information.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2>See also:</h2>
+<ul>
+	<li><a href="../core-specification#organization">the relevant section of the core specification</a></li>
+	<li><a href="http://wiki.cetis.ac.uk/LEAP_organization">earlier ideas on organization</a></li>
+	<li><a href="http://wiki.cetis.org.uk/leap2/a/organization">The wiki page for later developments</a></li>
+</ul>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leap2A core specification - draft of 2011</title>
+<!-- ********* change this back to full URL ********* -->
+<link href="../wide.css" rel="stylesheet" type="text/css" media="screen" />
+<style>
+hr {border:1px #82ba52 solid; height:5px; color:#82ba52; background-color:#82ba52}
+ul {padding-left:1.5em}
+.tableGreenBorder {
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+}
+.tableGreenBorder th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+}
+.tableGreenBorder tr.leap2a td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #f0ffe5;
+}
+.tableGreenBorder td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+}
+@media print
+{
+body {font-family:sans-serif; font-size:smaller}
+h2 {page-break-before:always}
+table {border:1px solid black; border-collapse:collapse}
+th, td {padding:0.5em; border:1px solid black; border-collapse:collapse}
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+
+<div id="header">
+<table width="100%">
+<tbody>
+<tr>
+<td>
+<h1>
+<a href="../index.html"><img style="border:0" src="../images/logo_200px.png" width="200" height="65" alt="Leap2" /></a>
+</h1>
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="content">
+<h1>Relationships</h1>
+<p>This page specifies relationships between portfolio items, or entries. These are mostly implemented with the use of the atom:link element.</p>
+<h2>Introduction</h2>
+<p>Relationships between items are normally represented using <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7" target="Atom">atom:link</a> sub-elements of relevant atom:entry elements. There are three exceptions.</p>
+<ul>
+<li>The <a href="http://tools.ietf.org/html/rfc4685#section-3" target="Atom">Atom Threading Extensions</a> specifies a non-link relationship for <a href="#in_reply_to">in reply to</a>.</li>
+<li>An authorship relationship can be given through an atom:author element containing a uri linking to the author entry. See <a href="#author">author</a>.</li>
+<li>The contribution relationship is similar, through atom:contributor. See <a href="#contributor">contributor</a>.</li>
+</ul>
+<p>For relationships using atom:link</p>
+<ul>
+<li>the rel attribute is a URI referring to the relationship type. URIs for the relationships are defined here in this <a href="relationships">relationships</a> page. For readability, it is preferable to place the rel attribute before the href attribute.</li>
+<li>the href attribute refers to the related resource. Atom specifies that this must be an <a href="http://tools.ietf.org/html/rfc3987" target="_blank">IRI</a>, but for this specification it should normally be an http URL pointing to the id of the entry within the current set of portfolio information.</li>
+<li>relationships should wherever possible have link elements at both of the items at the ends of the relationship. That is equivalent to saying that relationships should be given for each portfolio item represented in the portfolio information.</li>
+<li>relationships may also be defined to resources not present in the portfolio information transferred.</li>
+</ul>
+<h2>Atom relationships</h2>
+
+<h3 id="author"><span id="contributor"></span>author, contributor</h3> 
+<p>Atom envisages author and contributor elements as Atom person constructs, like this:</p>
+<pre>&lt;author&gt;
+  &lt;name&gt;Mark Pilgrim&lt;/name&gt;
+  &lt;uri&gt;http://example.org/&lt;/uri&gt;
+  &lt;email&gt;f8dy@example.com&lt;/email&gt;
+&lt;/author&gt;
+</pre>
+<p>An author must be identifiable for every entry; contributors are optional.  If the author is not defined for a particular entry, it is inherited from the feed author,  where it has to be defined if there are any entries without an author element.  The <a href="http://tools.ietf.org/html/rfc4287#section-4.2.1" target="Atom">atom:author</a> and  <a href="http://tools.ietf.org/html/rfc4287#section-4.2.3" target="Atom">atom:contributor</a> elements are  an <a href="http://tools.ietf.org/html/rfc4287#section-3.2" target="Atom">atom person constructs</a> that must have a name,  can have an e-mail address and can have a URI.  For Leap2A purposes, if there is a separate person entry defined for that person,  the URI of the author or contributor element referring to that person should be the (internal) URI of that person entry. E.g.</p>
+<pre>&lt;uri&gt;portfolio:person_2&lt;/uri&gt;
+</pre>
+<p>If there is no person entry, the URI may be a personal URI in the sense envisaged in FOAF, etc., as in the Atom example.</p>
+<p>When the URI element of the author or contributor is used in Leap2A,  it is equivalent to having an authorship or contributor relationship  between the item and the person item representing the author or contributor. Were it not for Atom having this construct, we would have defined relationships within Leap2A. If there is no URI, the authors or contributors could be considered more <a href="literals">as literals</a>.</p>
+<p>For a definition of what authorship and contributorship entail, see <a href="http://www.icmje.org/ethical_1author.html" target="_blank">http://www.icmje.org/ethical_1author.html</a>.</p>
+
+<h3 id="selfid">self</h3>
+
+<p>Atom recommends this for <a href="http://tools.ietf.org/html/rfc4287#section-4.1.1" target="Atom">the Atom feed element</a>,  defining it as "the preferred URI for retrieving Atom Feed Documents representing this Atom feed." For Leap2A, if there is a URI that can deliver this feed (or, later, an updated version with similar content) then it is recommended to have this URI in the self link element for the feed. However, as this is not always the case, having a &lt;code&gt;link rel="self"&lt;/code&gt; remains optional for a Leap2A feed.</p>
+<p>Within an atom:entry, it is allowed though not explicitly recommended in the Atom documentation. In Leap2A, the URI of a <a href="type/resource">Leap2A/resource</a> or <a href="type/publication">Leap2A/publication</a> on the Web should be given with link rel="self". <a href="http://tools.ietf.org/html/rfc4287#page-22" target="Atom">Atom documents</a>:</p>
+<blockquote>The value "self" signifies that the IRI in the value of the href attribute identifies a resource equivalent to the containing element.</blockquote>
+
+<h3 id="relation">relation</h3>
+
+<h4>= atom related</h4>
+<p><strong>NOTE:</strong> the concept of this relationship is referred to as "relation",  following the Dublin Core <a href="http://dublincore.org/documents/dcmi-terms/#terms-relation" target="_blank">dcterms:relation</a> (<a href="http://purl.org/dc/terms/relation" target="_blank">URI</a>]), but <a href="http://tools.ietf.org/html/rfc4287#page-22" target="Atom">in the rel attribute of atom:link</a> (and thus in actual Leap2A XML) <strong>it is written as rel="related"</strong>.</p>
+<pre>&lt;link rel="related" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#relation">relation</a><br /> This is the basic default relationship, and is non-directional, simply asserting that a relationship exists. Use this if nothing can be reliably represented about the nature of the relationship.</p>
+<p>This is the relationship to be used between non-resource and resource items  in cases where a resource iten is "attached" without any more specific role or meaning. The resource item entry is then linked to the actual attached file with an Atom link rel="<a href="#enclosure">enclosure</a>".</p>
+<p>For discussion of the terminology used, please see <a href="https://www.jiscmail.ac.uk/cgi-bin/webadmin?A2=PORTFOLIO-INTEROPERABILITY-WORK;zdInDA;20090907192740%2B1200" target="_blank">this e-mail topic</a></p>
+
+<h3 id="enclosure">enclosure</h3>
+
+<p>This is <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7.2" target="Atom">specified in Atom</a> as a related resource. In Leap2A its use is restricted to linking entries directly with attached files, as described in <a href="files">Leap2A/files</a>, <a href="type/resource">Leap2A/resource</a>, and <a href="literals#content_or_description">content</a>. When using "enclosure" in Leap2A, the type and length attributes of the link are recommended but not mandatory.</p>
+
+<h3 id="alternate">alternate</h3>
+
+<p>This is <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7.2" target="Atom">specified in Atom</a>, specifically to be used to  identify a file or other resource that provides an alternate, equivalent,  representation of the content of an entry. Its use is discouraged in Leap2A, except to provide translated entries of any kind, in which case <a href="http://tools.ietf.org/html/rfc4287#section-4.2.7.2" target="Atom">the hreflang attribute</a> should be used.</p>
+
+<h3 id="license">license</h3>
+ 
+<p>See</p>
+<ul>
+<li> <a href="http://tools.ietf.org/html/rfc4946" target="Atom">Atom License Extension</a> rfc 4946          
+<ul>
+<li>"The IRI specified by the link's href attribute SHOULD be dereferenceable to return a representation of the license.  The license representation MAY be machine readable."</li>
+</ul>
+</li>
+<li><a href="http://wiki.creativecommons.org/Atom" target="_blank">Creative Commons licences in Atom</a>, which gives the example:</li>
+</ul>
+<pre>&lt;feed xmlns="http://www.w3.org/2005/Atom"&gt;
+  .
+  .
+  &lt;link rel="license" type="application/rdf+xml" href="http://creativecommons.org/licenses/by-nc/2.5/rdf" /&gt;
+  &lt;entry&gt;
+    .
+    .
+    &lt;link rel="license" type="text/html" href="http://creativecommons.org/licenses/by/2.5/" /&gt;
+  &lt;/entry&gt;
+&lt;/feed&gt;
+</pre>
+<p>If anyone decides to implement this within Leap2A,  they are requested to inform and consult the rest of the Leap2A community, so that common practice can be established. The license link is for machine-processable information only – for human-readable information, use <a href="literals#rights" target="_blank">the rights literal</a>.</p>
+
+<h3 id="reflection"></h3>
+<h2>Reflection</h2>
+<p>These relationships were considered to be needed to clarify which entries or other types of record  express reflections on which other ones. Typically they are used to connect two things where the user interface invites the user to enter their reflections on something.</p>
+
+<h3 id="reflects_on">reflects on</h3>
+
+<pre>&lt;link rel="leap2:reflects_on" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/reflects_on" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#reflected_on_by">reflected on by</a></p>
+
+<h3 id="reflected_on_by">reflected on by</h3>
+
+<pre>&lt;link rel="leap2:reflected_on_by" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/reflected_on_by" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#reflects_on">reflects on</a></p>
+
+<h2 id="whole-part">Whole-part</h2>
+<p>The relationships here are very general purpose, and include two closely related concepts. One is structural or inherent whole-part relations, generally between items of the same type,  and the other is the relation between a selection (collection, presentation, etc.) and its components. This includes relating blog feeds and CVs to the entries that make them up. CVs are in essence a selection of other information.</p>
+<p>The basic relationships, "has part" and "is part of", work for unordered selections. Where ordering is needed, for example to represent the order of entries in a blog, either or both of two extra new attributes are added.</p>
+<ul>
+<li><a href="literals#display_order">leap2:display_order</a> must have an integer value, but these values do not have to be consecutive.</li>
+<li><a href="literals#when_added">leap2:when_added</a> must have a <a href="literals#date">date</a> value in the same format, with the same restrictions, as for the <a href="literals#published">published</a> and <a href="literals#updated">updated</a> elements.</li>
+</ul>
+<p>Display order and when added must be represented identically at both ends of the relationship.</p>
+<p>In terms of the paper, <a href="http://infolab.stanford.edu/~stefan/daml/order.html" target="_blank">Representing Order in RDF</a>, this approach would appear to be closest to the "ternary" option.</p>
+<p>In a multi-level whole-part hierarchy, part relationships must only be represented between adjacent levels: the whole-part relationship is only immediate, not transitive. Thus, if A has part B, and B has part C, A must NOT have part C.  The necessity for this is even clearer where the relationship has ordering attributes.</p>
+
+<h3 id="has_part">has part</h3>
+
+<pre>&lt;link rel="leap2:has_part" href="..." /&gt;; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/has_part" href="..." /&gt;
+</pre>
+<p>or, to indicate an ordered part:</p>
+<pre>&lt;link rel="leap2:has_part" leap2:display_order="2" leap2:when_added="2009-02-27T07:19:30+00:00" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#is_part_of">is part of</a><br /> Optional attributes: display_order; when_added </p>
+
+<h3 id="is_part_of">is part of</h3>
+
+<pre>&lt;link rel="leap2:is_part_of" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/is_part_of" href="..." /&gt;
+</pre>
+<p>or, to indicate being an ordered part of something:</p>
+<pre>&lt;link rel="leap2:is_part_of" leap2:display_order="2" leap2:when_added="2009-02-27T07:19:30+00:00" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#has_part">has part</a><br /> Optional attributes: display_order; when_added </p>
+
+<h2>Support and evidence</h2>
+<p>These two concepts are sometimes, but not always, linked.</p>
+<p>Supports and supported by are general contributory or causal relationships, which other more specific ones can degrade into.</p>
+<p>The concept of evidence is well understood within PDP and portfolio practice.  No particular quality or type of evidence is implied. Evidence includes entries describing or explaining what evidence there is.</p>
+
+<h3 id="supports">supports</h3>
+
+<pre>&lt;link rel="leap2:supports" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/supports" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#supported by">supported by</a><br /> Note: an <a href="type/organization">organization</a> supports any <a href="type/activity">activities</a> that belong to them. </p>
+
+<h3 id="supported_by">supported by</h3>
+
+<pre>&lt;link rel="leap2:supported_by" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/supported_by" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#supports">supports</a></p>
+
+<h3 id="has_evidence">has evidence</h3>
+
+<pre>&lt;link rel="leap2:has_evidence" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/has_evidence" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#is evidence of">is evidence of</a></p> 
+
+<h3 id="is_evidence_of">is evidence of</h3>
+
+<pre>&lt;link rel="leap2:is_evidence_of" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/is_evidence_of" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#has evidence">has evidence</a></p> 
+
+<h2>For meetings</h2>
+<p>These relationships are specifically designed for <a href="type/meeting">meetings</a>, but could be used elsewhere. Any item can be an agenda item, or an entry can give a listed agenda for a meeting. Outcomes can be specific entries with the outcomes (or minutes) written down, or they can be other items, particularly <a href="type/plan">plans</a>, or potentially <a href="type/achievement">achievements</a>.</p>
+
+<h3 id="has_agenda">has agenda</h3>
+
+<pre>&lt;link rel="leap2:has_agenda" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/has_agenda" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#is agenda of">is agenda of</a><br /> Can degrade to <a href="#supported_by">supported by</a>.</p>
+
+<h3 id="is_agenda_of">is agenda of</h3>
+
+<pre>&lt;link rel="leap2:is_agenda_of" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/is_agenda_of" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#has agenda">has agenda</a><br /> Can degrade to <a href="#supports">supports</a>.</p>
+
+<h3 id="has_outcome">has outcome</h3>
+
+<pre>&lt;link rel="leap2:has_outcome" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/has_outcome" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#is outcome of">is outcome of</a><br /> Can degrade to <a href="#supports">supports</a>.</p>
+
+<h3 id="is_outcome_of">is outcome of</h3>
+
+<pre>&lt;link rel="leap2:is_outcome_of" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/is_outcome_of" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#has outcome">has outcome</a><br /> Can degrade to <a href="#supported_by">supported by</a>.</p>
+
+<h3 id="attended_by">attended by</h3>
+
+<pre>&lt;link rel="leap2:attended_by" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/attended_by" href="..." /&gt;
+</pre>
+<p>Inverse:<a href="#attends">attends</a><br /> Can degrade to <a href="#supported_by">supported by</a>. <br /> For relating meetings to people who attend them.</p>
+
+<h3 id="attends">attends</h3>
+
+<pre>&lt;link rel="leap2:attends" href="..." /&gt; or &lt;link rel="http://www.cetis.org.uk/leap2/terms/attends" href="..." /&gt;
+</pre>
+<p>Inverse:<a href="#attended_by">attended by</a><br /> Can degrade to <a href="#supports">supports</a>.<br /> For relating people to meetings they attend.</p>
+
+
+<h2 id="Threads">Threads</h2>
+<p>These are supported natively by <a href="http://tools.ietf.org/html/rfc4685" target="Atom">Atom Threading Extensions</a>. </p>
+
+<h3 id="has_reply">has reply</h3>
+
+<pre>&lt;link rel="replies" href="..." /&gt;
+</pre>
+<p>Inverse: <a href="#in reply to">in reply to</a><br /> Can degrade to <a href="#supports">supports</a>. <br /> This has a similar intent as in <a href="http://tools.ietf.org/html/rfc4685#section-4" target="Atom">the Atom documentation</a>, but rather than linking to another feed that contains several replies, as Atom does, here we specify one href in each link pointing directly to a single other entry, and multiple link elements if there is more than one reply. Atom has "replies" in the plural, but here it is understood as a singular "reply", so that it can be an inverse relationship to "in reply to". Other attributes of link are not expected.</p>
+
+<h3 id="in_reply_to">in reply to</h3>
+
+<pre>&lt;thr:in-reply-to ref="..." ... /&gt;
+</pre>
+<p>Note the hyphens in the Atom Threading version of this. If this is used, the following namespace should be defined in the first element of the document:</p>
+<pre>xmlns:thr="http://purl.org/syndication/thread/1.0" 
+</pre>
+<p>(see , <a href="http://tools.ietf.org/html/rfc4685#section-3" target="Atom">Section 3 of the Threading documentation</a>)<br /> Inverse: <a href="#has_reply">has reply</a><br /> Can degrade to <a href="#supported_by">supported by</a>.<br /> This is used as a direct sub-element of an entry. Note particularly that it is the "ref" attribute, not the "href" attribute, that should be used,  to stay as close as possible to the original specification.</p>
+
+<h2>Attachments</h2>
+<p><em>See <a href="files">Leap2A/files</a> for general guidance on how to handle files in Leap2A.</em></p>
+<p>Leap2A reserves Atom's link rel="<a href="#enclosure">enclosure</a>" just for linking Leap2A items (Atom entries) to attached files, that in Leap2A are in the zip archive. In the case where the attachment is significant in its own right, or significant to more than one entry,  or has a meaningful title or description, the file should be wrapped in a <a href="type/resource">resource</a> entry. The link rel="enclosure" must <em>not</em> be used for the link from the non-resource entry to the resource entry. as that would be against the Atom usage.</p>
+<p>There are several legitimate relationships between non-resource entries and resource entries,  but if nothing more specific is appropriate, these relationships can be represented with a link rel="related".</p>
+<h2>Use of CURIEs</h2>
+<p>To <a href="concepts#CURIEs">use CURIEs</a> with Leap2A relationships, you should have the leap2 namespace defined something like this</p>
+<pre>xmlns:leap2="http://www.cetis.org.uk/leap2/terms/" 
+</pre>
+<p>in the opening element of the XML. Then, for example, instead of the entry example, you would use</p>
+<pre>&lt;link rel="leap2:supports" href="..." /&gt;
+</pre>
+<p>in place of</p>
+<pre>&lt;link rel="http://www.cetis.org.uk/leap2/terms/supports" href="..." /&gt;
+</pre>
+
+<hr />
+
+</div>
+</div>
+
+</body>
+
+</html>

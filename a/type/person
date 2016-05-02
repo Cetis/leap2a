@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>person type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+<div id="container">
+<div id="header">
+    <h1>person type</h1>
+</div>
+
+<div id="content">
+<h1>Person</h1>
+<p><em>One of the <a href="../types" title="2A/types">Leap2A item types</a></em></p>
+<pre>&lt;rdf:type rdf:resource="leap2:person" /&gt; or 
+&lt;rdf:type rdf:resource="<a href="http://www.cetis.org.uk/leap2/terms/person">http://www.cetis.org.uk/leap2/terms/person</a>" /&gt;   </pre>
+<table class="tableGreenBorder">
+<tbody>
+<tr>
+<td>Definition:</td>
+<td>Information about the portfolio holder, or referring to another individual person of relevance to the portfolio holder</td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td></td>
+</tr>
+<tr>
+<td>Literals used:</td>
+<td>
+<ul>
+<li><a href="../2A/specification#persondata">persondata</a> = various CV-related and contact information.</li>
+<li><a href="../literals#spatial">spatial</a> = postal addresses</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Relationships used:</td>
+<td>
+<ul>
+<li><a href="../relationships#attends">attends</a> → <a href="../type/meeting">meeting</a></li>
+<li><a href="../relationships#author" title="2A/relationships">author</a> ← <a href="../type/entry" title="2A/entry">entry</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Categories:</td>
+<td>
+<ul>
+<li><a href="http://wiki.cetis.org.uk/leap2/a/categories/person_type">person type</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Can degrade to:<br /> / inherits from:</td>
+<td><a href="../type/entry">entry</a></td>
+</tr>
+<tr>
+<td>Notes:</td>
+<td>This is where all the personal information for the portfolio holder, including <a href="../literals#spatial">addresses</a>, will go.
+<p>Also, all other relevant people can be listed with as much or as little personal information as appropriate. A person as defined here can be the <a href="../relationships#author">author</a> of any <a href="../type/entry">entry</a>. If there is more than one person defined in a Leap2A export, it is essential that the feed author is linked to the person entry for the portfolio holder.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See also:</p>
+<ul>
+<li><a href="http://wiki.cetis.ac.uk/LEAP_person" rel="nofollow">earlier ideas on person</a></li>
+<li><a href="../2A/specification#person">the core specification</a></li>
+</ul>
+
+</div>
+</div>
+</body>
+</html>

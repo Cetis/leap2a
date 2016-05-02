@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:leap2="http://terms.leapspecs.org/"
+    xmlns:categories="http://wiki.leapspecs.org/2A/categories/"
+    xmlns:portfolio="http://hackday.mahara.lo/export/leap/3/1287249372/"
+    xmlns:mahara="http://wiki.mahara.org/Developer_Area/Import%2F%2FExport/LEAP_Extensions#"
+>
+    <leap2:version>http://www.leapspecs.org/2010-07/2A/</leap2:version>
+    <id>http://hackday.mahara.lo/export/3/1287249372</id>
+    <title>Mahara LEAP2A Export for Hans Müster, 2010/10/16 19:16</title>
+    <updated>2010-10-16T19:16:12+02:00</updated>
+    <generator uri="http://mahara.org/" version="2008122400">Mahara</generator>
+    <author>
+        <name>Hans Müster</name>
+        <email>hans.muster@example.com</email>
+        <uri>portfolio:artefactinternal</uri>
+    </author>
+
+
+    <entry>
+        <title>View one</title>
+        <id>portfolio:view3</id>
+
+        <updated>2010-10-07T22:38:54+02:00</updated>
+        <published>2010-10-07T22:34:44+02:00</published>
+        <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>A simple view</p></div></div></summary>
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><div class="column columns3" style="width:31%;">
+    <div class="column-content">
+        <div class="blockinstance bt-textbox">
+        <div class="blockinstance-header">
+            <h4>Welcome</h4>
+        </div>
+        <div class="blockinstance-content">
+            <p>A small view of my own.</p>
+        </div>
+    </div>
+    <div class="blockinstance bt-externalfeed">
+        <div class="blockinstance-header">
+            <h4>L//P AG</h4>
+        </div>
+        <div class="blockinstance-content">
+            <div>
+    
+    <div>
+    <a href="http://feeds.liip.ch/liip_blog"><img src="http://hackday.mahara.lo/theme/raw/static/images/rss.gif" alt="rss.gif" /></a>
+    <a href="http://blog.liip.ch/">
+    Liip Blog
+    </a>
+    </div>
+    <div>This is the Blog of Liip AG, Zurich/Fribourg/Berne</div>
+    <div>
+                    <ol><li>
+                <a href="http://blog.liip.ch/archive/2010/10/06/how-team-fri-bar-does-scrum-at-liip-part-2.html">
+                How team Fri-Bar does Scrum at Liip - Part 2
+                </a>
+                </li>
+                            <li>
+                <a href="http://blog.liip.ch/archive/2010/10/04/how-team-fri-bar-does-scrum-at-liip-part-1.html">
+                How team Fri-Bar does Scrum at Liip - Part 1
+                </a>
+                </li>
+                            <li>
+                <a href="http://blog.liip.ch/archive/2010/09/30/reduced-redundancy-storage-support-for-s3fs.html">
+                Reduced Redundancy Storage support for s3fs
+                </a>
+                </li>
+                            <li>
+                <a href="http://blog.liip.ch/archive/2010/09/28/leap2a-upgrade-for-mahara.html">
+                LEAP2A upgrade for Mahara
+                </a>
+                </li>
+                            <li>
+                <a href="http://blog.liip.ch/archive/2010/09/22/podcast-symfony-cmf-explained.html">
+                Podcast - Symfony CMF Explained
+                </a>
+                </li>
+                            <li>
+                <a href="http://blog.liip.ch/archive/2010/09/20/froscamp-2010-is-over.html">
+                FrOSCamp 2010 is over
+                </a>
+                </li>
+                            <li>
+                <a href="http://blog.liip.ch/archive/2010/09/16/vanilla-is-a-niwea.html">
+                Vanilla is a NIWEA
+                </a>
+                </li>
+                            <li>
+                <a href="http://blog.liip.ch/archive/2010/09/14/72h-ch-2010-edition.html">
+                72h.ch - 2010 edition
+                </a>
+                </li>
+                            <li>
+                <a href="http://blog.liip.ch/archive/2010/08/24/liip-at-froscamp.html">
+                Liip at FrOSCamp
+                </a>
+                </li>
+                            <li>
+                <a href="http://blog.liip.ch/archive/2010/07/22/the-tagi-ipad-app-done-in-niwea-aka-html5-css.html">
+                The Tagi iPad App done in NIWEA aka html5/CSS
+                </a>
+                </li>
+            
+            </ol></div>
+    <div>
+    Last updated on 16 October 2010,  7:16 PM
+    </div>
+</div>
+
+        </div>
+    </div>
+ 
+    </div>
+</div>
+
+
+<div class="column columns3" style="width:31%;">
+    <div class="column-content">
+        <div class="blockinstance bt-externalvideo">
+        <div class="blockinstance-header">
+            <h4>External Video</h4>
+        </div>
+        <div class="blockinstance-content">
+            <div class="mediaplayer-container center"><div class="mediaplayer"><object width="425" height="350" type="application/x-shockwave-flash" data="http://www.youtube.com/v/Y32NoAgN9Ik"><param name="movie" value="http://www.youtube.com/v/Y32NoAgN9Ik"></param><!--[if IE]><embed src="http://www.youtube.com/v/Y32NoAgN9Ik"type="application/x-shockwave-flash"wmode="transparent" width="425" height="350" /><![endif]--></object></div></div>
+        </div>
+    </div>
+ 
+    </div>
+</div>
+
+
+<div class="column columns3" style="width:31%;">
+    <div class="column-content">
+        <div class="blockinstance bt-textbox">
+        <div class="blockinstance-header">
+            <h4>Accented characters</h4>
+        </div>
+        <div class="blockinstance-content">
+            <p>Testing some accented characters here (input through WYSIWYG editor):</p>
+<p>e acute: é<br />a grave: à<br />a diaresis: ä<br />e grave; è<br />u diaresis: ü<br />o diaresis: ö<br />n tilde: ñ</p>
+        </div>
+    </div>
+    <div class="blockinstance bt-textbox">
+        <div class="blockinstance-header">
+            <h4>école mañana läuten bête Höhe</h4>
+        </div>
+        <div class="blockinstance-content">
+            <p>accented characters in the title</p>
+        </div>
+    </div>
+ 
+    </div>
+</div>
+
+
+</div></div></content>
+        <rdf:type rdf:resource="leap2:selection"/>
+
+
+
+        <category term="Webpage" scheme="categories:selection_type#"/>
+
+
+
+
+        <mahara:view mahara:layout="33,33,33" mahara:type="portfolio" mahara:ownerformat="6">
+            <mahara:column>
+                <mahara:blockinstance mahara:blocktype="textbox" mahara:blocktitle="Welcome">
+                    <mahara:text>[&quot;&lt;p&gt;A small view of my own.&lt;\/p&gt;&quot;]</mahara:text>
+
+                </mahara:blockinstance>
+                <mahara:blockinstance mahara:blocktype="externalfeed" mahara:blocktitle="L//P AG">
+                    <mahara:url>[&quot;http:\/\/feeds.liip.ch\/liip_blog&quot;]</mahara:url>
+                    <mahara:full>[0]</mahara:full>
+
+                </mahara:blockinstance>
+
+            </mahara:column>
+            <mahara:column>
+                <mahara:blockinstance mahara:blocktype="externalvideo" mahara:blocktitle="External Video">
+                    <mahara:videoid>[&quot;http:\/\/www.youtube.com\/watch?v=Y32NoAgN9Ik&quot;]</mahara:videoid>
+                    <mahara:width>[&quot;250&quot;]</mahara:width>
+                    <mahara:height>[&quot;250&quot;]</mahara:height>
+
+                </mahara:blockinstance>
+
+            </mahara:column>
+            <mahara:column>
+                <mahara:blockinstance mahara:blocktype="textbox" mahara:blocktitle="Accented characters">
+                    <mahara:text>[&quot;&lt;p&gt;Testing some accented characters here (input through WYSIWYG editor):&lt;\/p&gt;\r\n&lt;p&gt;e acute: &amp;eacute;&lt;br \/&gt;a grave: &amp;agrave;&lt;br \/&gt;a diaresis: &amp;auml;&lt;br \/&gt;e grave; &amp;egrave;&lt;br \/&gt;u diaresis: &amp;uuml;&lt;br \/&gt;o diaresis: &amp;ouml;&lt;br \/&gt;n tilde: &amp;ntilde;&lt;\/p&gt;&quot;]</mahara:text>
+
+                </mahara:blockinstance>
+                <mahara:blockinstance mahara:blocktype="textbox" mahara:blocktitle="école mañana läuten bête Höhe">
+                    <mahara:text>[&quot;&lt;p&gt;accented characters in the title&lt;\/p&gt;&quot;]</mahara:text>
+
+                </mahara:blockinstance>
+
+            </mahara:column>
+
+        </mahara:view>
+    </entry>
+
+    <entry>
+        <title>Resumé</title>
+        <id>portfolio:view4</id>
+
+        <updated>2010-10-07T22:44:41+02:00</updated>
+        <published>2010-10-07T22:43:19+02:00</published>
+        <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>My resumé</p></div></div></summary>
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><div class="column columns3" style="width:31%;">
+    <div class="column-content">
+        <div class="blockinstance bt-textbox">
+        <div class="blockinstance-header">
+            <h4>About me</h4>
+        </div>
+        <div class="blockinstance-content">
+            <p>This is some text about me.</p>
+        </div>
+    </div>
+    <div class="blockinstance bt-entireresume">
+        <div class="blockinstance-header">
+            <h4>My Resumé</h4>
+        </div>
+        <div class="blockinstance-content">
+            
+
+<h3>Interests</h3>
+<p>Photography, Art, Sports</p>
+
+<h3>Contact Information</h3>
+<table class="resumecontactinfo"><colgroup width="50%" span="2"></colgroup><tr><th>Postal Address</th>
+        <td>Musterstrasse 1</td>
+    </tr><tr><th>Town</th>
+        <td>Muster</td>
+    </tr><tr><th>City/Region</th>
+        <td>Musterkanton</td>
+    </tr><tr><th>Country</th>
+        <td>Switzerland</td>
+    </tr><tr><th>Home Phone</th>
+        <td>123456789</td>
+    </tr></table><h3>Personal Information</h3>
+<table class="resumepersonalinfo"><colgroup width="50%" span="2"></colgroup><tr><th>Date of birth</th>
+        <td> 2 October 1978</td>
+    </tr><tr><th>Place of birth</th>
+        <td>Zürich</td>
+    </tr><tr><th>Citizenship</th>
+        <td>Swiss</td>
+    </tr><tr><th>Visa Status</th>
+        <td></td>
+    </tr><tr><th>Gender</th>
+        <td>Male</td>
+    </tr><tr><th>Marital Status</th>
+        <td>unmarried</td>
+    </tr></table><h2>History</h2>
+
+<h3>Employment History</h3>
+<table class="tablerenderer resumefive resumecomposite"><colgroup width="25%" span="2"></colgroup><thead><tr><th class="resumedate">Start date</th>
+            <th class="resumedate">End date</th>
+            <th>Position</th>
+            
+        </tr></thead><tbody><tr class="r0"><td>1.1.2003</td>
+            <td>31.12.2007</td>
+            <td><div class="jstitle">Teacher: Kantonsschule Zürich</div>
+            <div class="jsdescription">Physics teacher</div></td>
+        </tr><tr class="r1"><td>1.1.2008</td>
+            <td></td>
+            <td><div class="jstitle">Teacher: Sekundarschule Hinterfultigen</div>
+            <div class="jsdescription">Physics teacher</div></td>
+        </tr></tbody></table><h3>Education History</h3>
+<table class="tablerenderer resumefive resumecomposite"><colgroup width="25%" span="2"></colgroup><thead><tr><th class="resumedate">Start date</th>
+            <th class="resumedate">End date</th>
+            <th>Qualification</th>
+            
+        </tr></thead><tbody><tr class="r0"><td>15.09.1998</td>
+            <td>31.06.2002</td>
+            <td><div class="jstitle">Teacher (Diploma)  at Pädagogische Hochschule Bern</div><div class="jsdescription"></div></td>
+        </tr></tbody></table><h2>Certifications, Accreditations, and Awards</h2>
+<table class="tablerenderer resumefour resumecomposite"><colgroup width="25%" span="1"></colgroup><thead><tr><th class="resumedate">Date</th>
+            <th>Title</th>
+            
+        </tr></thead><tbody><tr class="r0"><td>31.06.2002</td>
+            <td><div class="jstitle">Teacher diploma</div><div class="jsdescription"></div></td>
+        </tr></tbody></table><h2>Books and Publications</h2>
+<table class="tablerenderer resumefour resumecomposite"><colgroup width="25%" span="1"></colgroup><thead><tr><th class="resumedate">Date</th>
+            <th>Title</th>
+            
+        </tr></thead><tbody><tr class="r0"><td>31.10.2002</td>
+            <td><div class="jstitle">How to teach physics</div><div class="jsdescription"></div></td>
+        </tr></tbody></table><h2>Professional Memberships</h2>
+<table class="tablerenderer resumefive resumecomposite"><colgroup width="25%" span="2"></colgroup><thead><tr><th class="resumedate">Start date</th>
+            <th class="resumedate">End date</th>
+            <th>Title</th>
+            
+        </tr></thead><tbody><tr class="r0"><td>1.07.2002</td>
+            <td></td>
+            <td><div class="jstitle">Swiss teacher association</div><div class="jsdescription"></div></td>
+        </tr></tbody></table></div>
+    </div>
+ 
+    </div>
+</div>
+
+
+<div class="column columns3" style="width:31%;">
+    <div class="column-content">
+      
+    </div>
+</div>
+
+
+<div class="column columns3" style="width:31%;">
+    <div class="column-content">
+      
+    </div>
+</div>
+
+
+</div></div></content>
+        <rdf:type rdf:resource="leap2:selection"/>
+
+        <link rel="leap2:has_part" href="portfolio:artefact40"/>
+        <link rel="leap2:has_part" href="portfolio:artefact39"/>
+        <link rel="leap2:has_part" href="portfolio:artefact38"/>
+        <link rel="leap2:has_part" href="portfolio:artefact37"/>
+        <link rel="leap2:has_part" href="portfolio:artefact36"/>
+        <link rel="leap2:has_part" href="portfolio:artefact35"/>
+        <link rel="leap2:has_part" href="portfolio:artefact34"/>
+        <link rel="leap2:has_part" href="portfolio:artefact33"/>
+        <link rel="leap2:has_part" href="portfolio:artefact32"/>
+        <link rel="leap2:has_part" href="portfolio:artefact31"/>
+        <link rel="leap2:has_part" href="portfolio:artefact30"/>
+        <link rel="leap2:has_part" href="portfolio:artefact29"/>
+        <link rel="leap2:has_part" href="portfolio:artefact28"/>
+        <link rel="leap2:has_part" href="portfolio:artefact27"/>
+
+
+        <category term="Webpage" scheme="categories:selection_type#"/>
+
+
+
+
+        <mahara:view mahara:layout="33,33,33" mahara:type="portfolio" mahara:ownerformat="6">
+            <mahara:column>
+                <mahara:blockinstance mahara:blocktype="textbox" mahara:blocktitle="About me">
+                    <mahara:text>[&quot;&lt;p&gt;This is some text about me.&lt;\/p&gt;&quot;]</mahara:text>
+
+                </mahara:blockinstance>
+                <mahara:blockinstance mahara:blocktype="entireresume" mahara:blocktitle="My Resumé">
+
+                </mahara:blockinstance>
+
+            </mahara:column>
+            <mahara:column>
+
+            </mahara:column>
+            <mahara:column>
+
+            </mahara:column>
+
+        </mahara:view>
+    </entry>
+
+    <entry>
+        <title>Profile view</title>
+        <id>portfolio:view5</id>
+
+        <updated>2010-10-07T22:49:34+02:00</updated>
+        <published>2010-10-07T22:49:34+02:00</published>
+
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><div class="column columns2" style="width:48%;">
+    <div class="column-content">
+        <div class="blockinstance bt-profileinfo">
+        <div class="blockinstance-header">
+            <h4>About Me</h4>
+        </div>
+        <div class="blockinstance-content">
+            <div class="fr"><img src="http://hackday.mahara.lo/thumb.php?type=profileiconbyid&amp;id=46&amp;maxwidth=80" alt="" /></div>
+<p></p><p>My name is Hans and I am just a virtual testing entity.</p>
+
+<div class="cb"></div>
+
+        </div>
+    </div>
+    <div class="blockinstance bt-myviews">
+        <div class="blockinstance-header">
+            <h4>My Views</h4>
+        </div>
+        <div class="blockinstance-content">
+                <table><tr><td class="r0">
+                <h4><a href="http://hackday.mahara.lo/view/view.php?id=3">View one</a></h4>
+                                  <div>A simple view</div>
+                
+                
+                
+            </td>
+        </tr><tr><td class="r1">
+                <h4><a href="http://hackday.mahara.lo/view/view.php?id=4">Resumé</a></h4>
+                                  <div>My resumé</div>
+                
+                
+                                  <div>
+                    <strong>Artefacts:</strong>
+                    <a rel="leap2:has_part" href="portfolio:artefact36" class="link-artefacts">Academic Goals</a>, <a rel="leap2:has_part" href="portfolio:artefact39" class="link-artefacts">Academic Skills</a>, <a rel="leap2:has_part" href="portfolio:artefact33" class="link-artefacts">Books and Publications</a>, <a rel="leap2:has_part" href="portfolio:artefact37" class="link-artefacts">Career Goals</a>, <a rel="leap2:has_part" href="portfolio:artefact32" class="link-artefacts">Certifications, Accreditati...</a>, <a rel="leap2:has_part" href="portfolio:artefact27" class="link-artefacts">Contact Information</a>, <a rel="leap2:has_part" href="portfolio:artefact31" class="link-artefacts">Education History</a>, <a rel="leap2:has_part" href="portfolio:artefact30" class="link-artefacts">Employment History</a>, <a rel="leap2:has_part" href="portfolio:artefact28" class="link-artefacts">Interests</a>, <a rel="leap2:has_part" href="portfolio:artefact35" class="link-artefacts">Personal Goals</a>, <a rel="leap2:has_part" href="portfolio:artefact29" class="link-artefacts">Personal Information</a>, <a rel="leap2:has_part" href="portfolio:artefact38" class="link-artefacts">Personal Skills</a>, <a rel="leap2:has_part" href="portfolio:artefact34" class="link-artefacts">Professional Memberships</a>, <a rel="leap2:has_part" href="portfolio:artefact40" class="link-artefacts">Work Skills</a>
+                  </div>
+                
+            </td>
+        </tr></table></div>
+    </div>
+    <div class="blockinstance bt-mygroups">
+        <div class="blockinstance-header">
+            <h4>My Groups</h4>
+        </div>
+        <div class="blockinstance-content">
+            <table class="fullwidth"><tr><td class="r0">
+            <h4><a href="http://hackday.mahara.lo/group/view.php?id=1">Mahara fans</a> - Admin</h4>
+                            Mahara fans of the world unite!
+            
+        </td>
+    </tr></table></div>
+    </div>
+ 
+    </div>
+</div>
+
+
+<div class="column columns2" style="width:48%;">
+    <div class="column-content">
+        <div class="blockinstance bt-myfriends">
+        <div class="blockinstance-header">
+            <h4>My Friends</h4>
+        </div>
+        <div class="blockinstance-content">
+            <div class="friends">
+            <div class="message">Try <a href="http://hackday.mahara.lo/user/find.php">searching for new friends</a> to grow your network!</div>
+    
+
+</div>
+
+        </div>
+    </div>
+    <div class="blockinstance bt-wall">
+        <div class="blockinstance-header">
+            <h4>Wall</h4>
+        </div>
+        <div class="blockinstance-content">
+            <div class="description">Maximum 1500 characters per post. You can format your post using BBCode. <a href="">Learn more</a></div><div></div><div class="makeprivate">Make your post private? </div><div></div><div>
+    
+                        <div class="wallpost">
+                <div class="userinfo"><img src="http://hackday.mahara.lo/thumb.php?type=profileicon&amp;maxwidth=25&amp;maxheight=25&amp;id=3" alt="Profile Icon" /><div class="userinforight"><strong><a href="http://hackday.mahara.lo/user/view.php?id=3">Hans</a></strong><span class="postedon"> - 07 October 2010, 10:49 PM</span></div>
+                </div>
+                <div class="text"><p>Yay, there is even a wall like on facebook!</p>
+</div>
+                <div class="controls">
+                            [ <a href="http://hackday.mahara.lo/blocktype/wall/deletepost.php?postid=1&amp;return=profile">delete post</a> ]
+        
+                </div>
+            </div>
+        
+                    <div class="right"><strong><a href="http://hackday.mahara.lo/blocktype/wall/wall.php?id=16">View whole wall »</a></strong></div>
+        
+    
+</div>
+
+        </div>
+    </div>
+ 
+    </div>
+</div>
+
+
+</div></div></content>
+        <rdf:type rdf:resource="leap2:selection"/>
+
+        <link rel="leap2:has_part" href="portfolio:artefact15"/>
+        <link rel="leap2:has_part" href="portfolio:artefact46"/>
+
+
+        <category term="Webpage" scheme="categories:selection_type#"/>
+
+
+
+
+        <mahara:view mahara:layout="50,50" mahara:type="profile" mahara:ownerformat="6">
+            <mahara:column>
+                <mahara:blockinstance mahara:blocktype="profileinfo" mahara:blocktitle="About Me">
+                    <mahara:fields>[[&quot;introduction&quot;]]</mahara:fields>
+                    <mahara:artefactid>[&quot;portfolio:artefact46&quot;]</mahara:artefactid>
+
+                </mahara:blockinstance>
+                <mahara:blockinstance mahara:blocktype="myviews" mahara:blocktitle="My Views">
+
+                </mahara:blockinstance>
+                <mahara:blockinstance mahara:blocktype="mygroups" mahara:blocktitle="My Groups">
+
+                </mahara:blockinstance>
+
+            </mahara:column>
+            <mahara:column>
+                <mahara:blockinstance mahara:blocktype="myfriends" mahara:blocktitle="My Friends">
+
+                </mahara:blockinstance>
+                <mahara:blockinstance mahara:blocktype="wall" mahara:blocktitle="Wall">
+
+                </mahara:blockinstance>
+
+            </mahara:column>
+
+        </mahara:view>
+    </entry>
+
+    <entry>
+        <title>Hans Muster&#039;s Blog</title>
+        <id>portfolio:artefact12</id>
+
+        <updated>2010-10-07T22:20:59+02:00</updated>
+        <published>2010-10-07T22:20:59+02:00</published>
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:selection"/>
+        <mahara:artefactplugin mahara:type="blog" mahara:plugin="blog"/>
+        <link rel="leap2:has_part" href="portfolio:artefact44"/>
+
+
+        <category term="Blog" scheme="categories:selection_type#"/>
+
+
+    </entry>
+
+
+    <entry>
+        <title>Occupation</title>
+        <id>portfolio:artefact25</id>
+
+        <updated>2010-10-07T22:24:11+02:00</updated>
+        <published>2010-10-07T22:24:11+02:00</published>
+
+        <content>Teacher</content>
+        <rdf:type rdf:resource="leap2:entry"/>
+        <mahara:artefactplugin mahara:type="occupation" mahara:plugin="internal"/>
+
+
+
+
+    </entry>
+
+
+    <entry>
+        <title>Industry</title>
+        <id>portfolio:artefact26</id>
+
+        <updated>2010-10-07T22:24:11+02:00</updated>
+        <published>2010-10-07T22:24:11+02:00</published>
+
+        <content>Education</content>
+        <rdf:type rdf:resource="leap2:entry"/>
+        <mahara:artefactplugin mahara:type="industry" mahara:plugin="internal"/>
+
+
+
+
+    </entry>
+
+
+    <entry>
+        <title>Interests</title>
+        <id>portfolio:artefact28</id>
+
+        <updated>2010-10-07T22:25:36+02:00</updated>
+        <published>2010-10-07T22:25:36+02:00</published>
+
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>Photography, Art, Sports</p></div></div></content>
+        <rdf:type rdf:resource="leap2:entry"/>
+        <mahara:artefactplugin mahara:type="interest" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:view4"/>
+
+
+
+
+    </entry>
+
+
+    <entry>
+        <title>Employment History</title>
+        <id>portfolio:artefact30</id>
+
+        <updated>2010-10-07T22:28:16+02:00</updated>
+        <published>2010-10-07T22:27:38+02:00</published>
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:selection"/>
+        <mahara:artefactplugin mahara:type="employmenthistory" mahara:plugin="resume"/>
+        <link rel="leap2:has_part" href="portfolio:resumecomposite-30-child-1" leap2:display_order="1"/>
+        <link rel="leap2:has_part" href="portfolio:resumecomposite-30-child-2" leap2:display_order="2"/>
+
+
+        <category term="Grouping" scheme="categories:selection_type#"/>
+
+
+    </entry>
+
+
+    <entry>
+        <title>Teacher</title>
+        <id>portfolio:resumecomposite-30-child-1</id>
+
+        <updated>2010-10-07T22:28:16+02:00</updated>
+
+
+        <content>Physics teacher</content>
+        <rdf:type rdf:resource="leap2:activity"/>
+        <mahara:artefactplugin mahara:type="pseudo:employmenthistory" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:artefact30" leap2:display_order="1"/>
+        <link rel="leap2:supported_by" href="portfolio:resumesibling-30-sibling-1-rel-supports"/>
+
+
+        <category term="Work" scheme="categories:life_area#"/>
+
+
+
+
+
+        <leap2:date leap2:point="start" leap2:label="1.1.2003"></leap2:date>
+
+        <leap2:date leap2:point="end" leap2:label="31.12.2007"></leap2:date>
+
+    </entry>
+
+    <entry>
+        <title>Kantonsschule Zürich</title>
+        <id>portfolio:resumesibling-30-sibling-1-rel-supports</id>
+
+        <updated>2010-10-07T22:28:16+02:00</updated>
+
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:organization"/>
+        <mahara:artefactplugin mahara:type="pseudo:employmenthistory" mahara:plugin="resume"/>
+        <link rel="leap2:supports" href="portfolio:resumecomposite-30-child-1"/>
+
+
+
+
+
+
+
+
+
+    </entry>
+
+    <entry>
+        <title>Teacher</title>
+        <id>portfolio:resumecomposite-30-child-2</id>
+
+        <updated>2010-10-07T22:28:16+02:00</updated>
+
+
+        <content>Physics teacher</content>
+        <rdf:type rdf:resource="leap2:activity"/>
+        <mahara:artefactplugin mahara:type="pseudo:employmenthistory" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:artefact30" leap2:display_order="2"/>
+        <link rel="leap2:supported_by" href="portfolio:resumesibling-30-sibling-2-rel-supports"/>
+
+
+        <category term="Work" scheme="categories:life_area#"/>
+
+
+
+
+
+        <leap2:date leap2:point="start" leap2:label="1.1.2008"></leap2:date>
+
+
+    </entry>
+
+    <entry>
+        <title>Sekundarschule Hinterfultigen</title>
+        <id>portfolio:resumesibling-30-sibling-2-rel-supports</id>
+
+        <updated>2010-10-07T22:28:16+02:00</updated>
+
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:organization"/>
+        <mahara:artefactplugin mahara:type="pseudo:employmenthistory" mahara:plugin="resume"/>
+        <link rel="leap2:supports" href="portfolio:resumecomposite-30-child-2"/>
+
+
+
+
+
+
+
+
+
+    </entry>
+
+    <entry>
+        <title>Education History</title>
+        <id>portfolio:artefact31</id>
+
+        <updated>2010-10-07T22:29:59+02:00</updated>
+        <published>2010-10-07T22:29:59+02:00</published>
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:selection"/>
+        <mahara:artefactplugin mahara:type="educationhistory" mahara:plugin="resume"/>
+        <link rel="leap2:has_part" href="portfolio:resumecomposite-31-child-1" leap2:display_order="1"/>
+
+
+        <category term="Grouping" scheme="categories:selection_type#"/>
+
+
+    </entry>
+
+
+    <entry>
+        <title>Teacher</title>
+        <id>portfolio:resumecomposite-31-child-1</id>
+
+        <updated>2010-10-07T22:29:59+02:00</updated>
+
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:activity"/>
+        <mahara:artefactplugin mahara:type="pseudo:educationhistory" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:artefact31" leap2:display_order="1"/>
+        <link rel="leap2:supported_by" href="portfolio:resumesibling-31-sibling-1-rel-supports"/>
+        <link rel="leap2:supports" href="portfolio:resumesibling-31-sibling-1-rel-supported_by"/>
+
+
+        <category term="Education" scheme="categories:life_area#"/>
+
+
+
+
+
+        <leap2:date leap2:point="start" leap2:label="15.09.1998"></leap2:date>
+
+        <leap2:date leap2:point="end" leap2:label="31.06.2002"></leap2:date>
+
+    </entry>
+
+    <entry>
+        <title>Pädagogische Hochschule Bern</title>
+        <id>portfolio:resumesibling-31-sibling-1-rel-supports</id>
+
+        <updated>2010-10-07T22:29:59+02:00</updated>
+
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:organization"/>
+        <mahara:artefactplugin mahara:type="pseudo:educationhistory" mahara:plugin="resume"/>
+        <link rel="leap2:supports" href="portfolio:resumecomposite-31-child-1"/>
+
+
+
+
+
+
+
+
+
+    </entry>
+
+    <entry>
+        <title>Diploma</title>
+        <id>portfolio:resumesibling-31-sibling-1-rel-supported_by</id>
+
+        <updated>2010-10-07T22:29:59+02:00</updated>
+
+
+        <content>Teacher</content>
+        <rdf:type rdf:resource="leap2:achievement"/>
+        <mahara:artefactplugin mahara:type="pseudo:educationhistory" mahara:plugin="resume"/>
+        <link rel="leap2:supported_by" href="portfolio:resumecomposite-31-child-1"/>
+
+
+
+
+
+
+
+
+
+    </entry>
+
+    <entry>
+        <title>Certifications, Accreditations, and Awards</title>
+        <id>portfolio:artefact32</id>
+
+        <updated>2010-10-07T22:30:23+02:00</updated>
+        <published>2010-10-07T22:30:23+02:00</published>
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:selection"/>
+        <mahara:artefactplugin mahara:type="certification" mahara:plugin="resume"/>
+        <link rel="leap2:has_part" href="portfolio:resumecomposite-32-child-1" leap2:display_order="1"/>
+
+
+        <category term="Grouping" scheme="categories:selection_type#"/>
+
+
+    </entry>
+
+
+    <entry>
+        <title>Teacher diploma</title>
+        <id>portfolio:resumecomposite-32-child-1</id>
+
+        <updated>2010-10-07T22:30:23+02:00</updated>
+
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:achievement"/>
+        <mahara:artefactplugin mahara:type="pseudo:certification" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:artefact32" leap2:display_order="1"/>
+
+
+
+
+
+
+
+
+        <leap2:date leap2:point="end" leap2:label="31.06.2002"></leap2:date>
+
+    </entry>
+
+    <entry>
+        <title>Books and Publications</title>
+        <id>portfolio:artefact33</id>
+
+        <updated>2010-10-07T22:30:55+02:00</updated>
+        <published>2010-10-07T22:30:55+02:00</published>
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:selection"/>
+        <mahara:artefactplugin mahara:type="book" mahara:plugin="resume"/>
+        <link rel="leap2:has_part" href="portfolio:resumecomposite-33-child-1" leap2:display_order="1"/>
+
+
+        <category term="Grouping" scheme="categories:selection_type#"/>
+
+
+    </entry>
+
+
+    <entry>
+        <title>How to teach physics</title>
+        <id>portfolio:resumecomposite-33-child-1</id>
+
+        <updated>2010-10-07T22:30:55+02:00</updated>
+
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:publication"/>
+        <mahara:artefactplugin mahara:type="pseudo:book" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:artefact33" leap2:display_order="1"/>
+
+
+        <category term="Printed" scheme="categories:resource_type#"/>
+
+
+
+
+         <leap2:myrole>Author</leap2:myrole>
+
+
+        <leap2:date leap2:point="end" leap2:label="31.10.2002"></leap2:date>
+
+    </entry>
+
+    <entry>
+        <title>Professional Memberships</title>
+        <id>portfolio:artefact34</id>
+
+        <updated>2010-10-07T22:31:21+02:00</updated>
+        <published>2010-10-07T22:31:21+02:00</published>
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:selection"/>
+        <mahara:artefactplugin mahara:type="membership" mahara:plugin="resume"/>
+        <link rel="leap2:has_part" href="portfolio:resumecomposite-34-child-1" leap2:display_order="1"/>
+
+
+        <category term="Grouping" scheme="categories:selection_type#"/>
+
+
+    </entry>
+
+
+    <entry>
+        <title>Swiss teacher association</title>
+        <id>portfolio:resumecomposite-34-child-1</id>
+
+        <updated>2010-10-07T22:31:21+02:00</updated>
+
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:affiliation"/>
+        <mahara:artefactplugin mahara:type="pseudo:membership" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:artefact34" leap2:display_order="1"/>
+
+
+
+
+
+
+
+        <leap2:date leap2:point="start" leap2:label="1.07.2002"></leap2:date>
+
+
+    </entry>
+
+    <entry>
+        <title>Personal Goals</title>
+        <id>portfolio:artefact35</id>
+
+        <updated>2010-10-07T22:32:52+02:00</updated>
+        <published>2010-10-07T22:32:52+02:00</published>
+
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>Continuously improving my knowledge.</p>
+<p>Good work/life balance</p></div></div></content>
+        <rdf:type rdf:resource="leap2:entry"/>
+        <mahara:artefactplugin mahara:type="personalgoal" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:view4"/>
+
+
+
+
+    </entry>
+
+
+    <entry>
+        <title>Academic Goals</title>
+        <id>portfolio:artefact36</id>
+
+        <updated>2010-10-07T22:32:53+02:00</updated>
+        <published>2010-10-07T22:32:53+02:00</published>
+
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>PhD in physics</p></div></div></content>
+        <rdf:type rdf:resource="leap2:entry"/>
+        <mahara:artefactplugin mahara:type="academicgoal" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:view4"/>
+
+
+
+
+    </entry>
+
+
+    <entry>
+        <title>Career Goals</title>
+        <id>portfolio:artefact37</id>
+
+        <updated>2010-10-07T22:32:53+02:00</updated>
+        <published>2010-10-07T22:32:53+02:00</published>
+
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>Director of an educational institution</p></div></div></content>
+        <rdf:type rdf:resource="leap2:entry"/>
+        <mahara:artefactplugin mahara:type="careergoal" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:view4"/>
+
+
+
+
+    </entry>
+
+
+    <entry>
+        <title>Personal Skills</title>
+        <id>portfolio:artefact38</id>
+
+        <updated>2010-10-07T22:34:36+02:00</updated>
+        <published>2010-10-07T22:34:36+02:00</published>
+
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>Excellent personal skils in all areas</p></div></div></content>
+        <rdf:type rdf:resource="leap2:ability"/>
+        <mahara:artefactplugin mahara:type="personalskill" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:view4"/>
+
+
+
+
+    </entry>
+
+
+    <entry>
+        <title>Academic Skills</title>
+        <id>portfolio:artefact39</id>
+
+        <updated>2010-10-07T22:34:36+02:00</updated>
+        <published>2010-10-07T22:34:36+02:00</published>
+
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>Great in physics</p></div></div></content>
+        <rdf:type rdf:resource="leap2:ability"/>
+        <mahara:artefactplugin mahara:type="academicskill" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:view4"/>
+
+
+
+
+    </entry>
+
+
+    <entry>
+        <title>Work Skills</title>
+        <id>portfolio:artefact40</id>
+
+        <updated>2010-10-07T22:34:36+02:00</updated>
+        <published>2010-10-07T22:34:36+02:00</published>
+
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>Hard working</p></div></div></content>
+        <rdf:type rdf:resource="leap2:ability"/>
+        <mahara:artefactplugin mahara:type="workskill" mahara:plugin="resume"/>
+        <link rel="leap2:is_part_of" href="portfolio:view4"/>
+
+
+
+
+    </entry>
+
+
+    <entry>
+        <title>IMG_0883.JPG</title>
+        <id>portfolio:artefact42</id>
+
+        <updated>2010-10-07T22:40:20+02:00</updated>
+        <published>2010-10-07T22:40:20+02:00</published>
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:resource"/>
+        <mahara:artefactplugin mahara:type="image" mahara:plugin="file"/>
+        <link rel="enclosure" href="2010-10-16mahara1-2/0-IMG_0883.JPG"/>
+
+
+        <category term="Offline" scheme="categories:resource_type#" label="File"/>
+
+
+    </entry>
+
+
+    <entry>
+        <title>Teaching is easy</title>
+        <id>portfolio:artefact43</id>
+
+        <updated>2010-10-07T22:41:03+02:00</updated>
+        <published>2010-10-07T22:41:03+02:00</published>
+
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>Daily ramblings about teaching</p></div></div></content>
+        <rdf:type rdf:resource="leap2:selection"/>
+        <mahara:artefactplugin mahara:type="blog" mahara:plugin="blog"/>
+        <link rel="leap2:has_part" href="portfolio:artefact45"/>
+
+
+        <category term="Blog" scheme="categories:selection_type#"/>
+
+
+    </entry>
+
+
+    <entry>
+        <title>First post</title>
+        <id>portfolio:artefact44</id>
+
+        <updated>2010-10-07T22:41:40+02:00</updated>
+        <published>2010-10-07T22:41:40+02:00</published>
+
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>Just created my first Mahara account and I love it!</p>
+<p>Great work.</p></div></div></content>
+        <rdf:type rdf:resource="leap2:entry"/>
+        <mahara:artefactplugin mahara:type="blogpost" mahara:plugin="blog"/>
+        <link rel="leap2:is_part_of" href="portfolio:artefact12"/>
+
+
+
+
+    </entry>
+
+
+    <entry>
+        <title>Visit to Google</title>
+        <id>portfolio:artefact45</id>
+
+        <updated>2010-10-07T22:43:02+02:00</updated>
+        <published>2010-10-07T22:43:02+02:00</published>
+
+        <content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div><p>Visited Google today:</p>
+<p><img rel="leap2:has_part" href="portfolio:artefact42" alt="IMG_0883.JPG" width="400" height="300" /></p></div></div></content>
+        <rdf:type rdf:resource="leap2:entry"/>
+        <mahara:artefactplugin mahara:type="blogpost" mahara:plugin="blog"/>
+        <link rel="leap2:is_part_of" href="portfolio:artefact43"/>
+        <link rel="enclosure" href="portfolio:artefact42"/>
+
+
+
+
+    </entry>
+
+
+    <entry>
+        <title>me</title>
+        <id>portfolio:artefact46</id>
+
+        <updated>2010-10-07T22:49:22+02:00</updated>
+        <published>2010-10-07T22:49:22+02:00</published>
+
+        <content></content>
+        <rdf:type rdf:resource="leap2:resource"/>
+        <mahara:artefactplugin mahara:type="profileicon" mahara:plugin="file"/>
+        <link rel="enclosure" href="2010-10-16mahara1-2/1-me"/>
+        <link rel="leap2:is_part_of" href="portfolio:view5"/>
+        <link rel="related" href="portfolio:artefactinternal"/>
+
+
+        <category term="Offline" scheme="categories:resource_type#" label="File"/>
+
+
+    </entry>
+
+
+    <entry>
+        <title>Hans</title>
+        <id>portfolio:artefactinternal</id>
+
+        <updated>2010-10-16T16:51:19+02:00</updated>
+
+
+        <content type="html">&lt;p&gt;My name is Hans and I am just a virtual testing entity.&lt;/p&gt;</content>
+        <rdf:type rdf:resource="leap2:person"/>
+        <mahara:artefactplugin mahara:type="internal" mahara:plugin="internal"/>
+        <link rel="related" href="portfolio:artefact46"/>
+
+
+        <category term="Self" scheme="categories:person_type#"/>
+
+
+
+
+        <leap2:persondata
+            mahara:artefactplugin="internal"
+            mahara:artefacttype="email"
+            leap2:field="email"
+
+            leap2:label="Email Address"
+
+        >hans.muster@example.com</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="internal"
+            mahara:artefacttype="blogaddress"
+            leap2:field="website"
+
+            leap2:label="Blog Address"
+
+        >http://blog.hansmuster.com</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="internal"
+            mahara:artefacttype="firstname"
+            leap2:field="legal_given_name"
+
+            leap2:label="First Name"
+
+        >Hans</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="internal"
+            mahara:artefacttype="homenumber"
+            leap2:field="homephone"
+
+            leap2:label="Home Phone"
+
+        >123456789</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="internal"
+            mahara:artefacttype="icqnumber"
+            leap2:field="id"
+
+            leap2:label="ICQ Number"
+            leap2:service="icq"
+
+        >123456789</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="internal"
+            mahara:artefacttype="lastname"
+            leap2:field="legal_family_name"
+
+            leap2:label="Last Name"
+
+        >Müster</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="internal"
+            mahara:artefacttype="officialwebsite"
+            leap2:field="website"
+
+            leap2:label="Official Website Address"
+
+        >http://www.example.com</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="internal"
+            mahara:artefacttype="personalwebsite"
+            leap2:field="website"
+
+            leap2:label="Personal Website Address"
+
+        >http://www.hansmuster.com</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="internal"
+            mahara:artefacttype="preferredname"
+            leap2:field="preferred_given_name"
+
+            leap2:label="Display Name"
+
+        >Hans</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="internal"
+            mahara:artefacttype="studentid"
+            leap2:field="other"
+
+            leap2:label="Student ID"
+
+        >12345</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="resume"
+            mahara:artefacttype="personalinformation/dateofbirth"
+            leap2:field="dob"
+
+            leap2:label="Date of birth"
+
+        >1978-10-02T00:00:00+01:00</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="resume"
+            mahara:artefacttype="personalinformation/placeofbirth"
+            leap2:field="other" mahara:field="placeofbirth"
+
+            leap2:label="Place of birth"
+
+        >Zürich</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="resume"
+            mahara:artefacttype="personalinformation/citizenship"
+            leap2:field="other" mahara:field="citizenship"
+
+            leap2:label="Citizenship"
+
+        >Swiss</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="resume"
+            mahara:artefacttype="personalinformation/gender"
+            leap2:field="gender"
+
+            leap2:label="Gender"
+
+        >1</leap2:persondata>
+        <leap2:persondata
+            mahara:artefactplugin="resume"
+            mahara:artefacttype="personalinformation/maritalstatus"
+            leap2:field="other" mahara:field="maritalstatus"
+
+            leap2:label="Marital Status"
+
+        >unmarried</leap2:persondata>
+
+        <leap2:spatial>
+            <leap2:addressline mahara:artefacttype="address">Musterstrasse 1</leap2:addressline>
+            <leap2:addressline mahara:artefacttype="city">Musterkanton</leap2:addressline>
+            <leap2:country mahara:artefacttype="country" leap2:countrycode="che">Switzerland</leap2:country>
+            <leap2:addressline mahara:artefacttype="town">Muster</leap2:addressline>
+
+        </leap2:spatial>
+
+    </entry>
+
+</feed>
