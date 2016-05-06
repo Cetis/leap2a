@@ -1,4 +1,4 @@
-# HEAR Technical Specification
+# Leap2A Technical Specification
 
 ##Introduction
 The Leap2A Technical Specification is hosted and maintained on GitHub by [Cetis LLP](http://cetis.org.uk). Other specification repositories hosted by Cetis include [xcri](https://github.com/Cetis/xcri/) and [hear](https://github.com/Cetis/hear).
